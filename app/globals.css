@@ -13,6 +13,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--background);
+  overflow-x: hidden;
 }
 
 @layer utilities {
