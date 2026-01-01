@@ -290,6 +290,7 @@ button {
 .text-slate-900 { color: var(--slate-900); }
 .text-indigo-300 { color: #a5b4fc; }
 .text-indigo-400 { color: var(--indigo-400); }
+.text-indigo-950 { color: var(--indigo-950); }
 .text-violet-400 { color: var(--violet-400); }
 .text-pink-400 { color: var(--pink-400); }
 .text-cyan-300 { color: #67e8f9; }
