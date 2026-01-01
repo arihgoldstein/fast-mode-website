@@ -93,6 +93,12 @@ button, input, textarea, select {
   font: inherit;
 }
 
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 /* Selection */
 ::selection {
   background-color: rgba(99, 102, 241, 0.3);
@@ -316,6 +322,8 @@ button, input, textarea, select {
 .bg-pink-600 { background-color: var(--pink-600); }
 .bg-cyan-500 { background-color: var(--cyan-500); }
 .bg-emerald-500 { background-color: var(--emerald-500); }
+.bg-transparent { background-color: transparent; }
+.bg-\[\#1e1b4b\] { background-color: #1e1b4b; }
 
 /* Background with opacity */
 .bg-white\/5 { background-color: rgba(255, 255, 255, 0.05); }
@@ -401,6 +409,7 @@ button, input, textarea, select {
 
 /* Border radius */
 .rounded { border-radius: 0.25rem; }
+.rounded-md { border-radius: 0.375rem; }
 .rounded-lg { border-radius: 0.5rem; }
 .rounded-xl { border-radius: 0.75rem; }
 .rounded-2xl { border-radius: 1rem; }
@@ -662,4 +671,3 @@ button, input, textarea, select {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-
