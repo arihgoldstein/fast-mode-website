@@ -103,7 +103,7 @@ export default function Home() {
                        </div>
 
                        <nav className="space-y-1">
-                          <button className="w-full flex items-center gap-3 px-3 py-2 text-sm font-medium bg-indigo-500/10 text-indigo-400 rounded-lg">
+                          <button className="w-full flex items-center gap-3 px-3 py-2 text-sm font-medium bg-[#1e1b4b] text-indigo-300 rounded-lg">
                             <Layout className="w-4 h-4" /> Editor
                           </button>
                           <button className="w-full flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors">
@@ -142,7 +142,7 @@ export default function Home() {
                         </div>
                         
                         <div className="space-y-0.5 overflow-y-auto max-h-[500px] pr-2 custom-scrollbar">
-                           <div className="px-3 py-2 bg-indigo-500/20 text-indigo-300 rounded-lg text-sm font-medium flex flex-col gap-0.5 group cursor-pointer">
+                           <div className="px-3 py-2 bg-[#1e1b4b] text-indigo-300 rounded-lg text-sm font-medium flex flex-col gap-0.5 group cursor-pointer">
                               <span>Home</span>
                               <span className="text-[10px] opacity-60">/</span>
                            </div>
@@ -233,14 +233,14 @@ export default function Home() {
                                  </div>
                                  
                                  <div className="relative group mb-8">
-                                    <h1 className="text-4xl lg:text-7xl font-sans font-bold leading-[1.1] tracking-tight text-slate-900">
+                                    <h1 className="text-5xl lg:text-7xl font-sans font-bold leading-[1.1] tracking-tight text-slate-900">
                                        Digital Products <br/>
                                        <span className="relative inline-block mt-2">
-                                          <span className="bg-blue-100/60 rounded px-1">That Go Brrr.</span>
+                                          <span className="bg-blue-100 px-2 py-1">That Go Brrr.</span>
                                           {/* Cursor line at end of text */}
-                                          <span className="absolute -right-0.5 top-2 bottom-2 w-0.5 bg-blue-600"></span>
+                                          <span className="absolute right-0 top-1 bottom-1 w-0.5 bg-blue-600"></span>
                                           {/* You label */}
-                                          <div className="absolute right-0 translate-x-full top-1/2 -translate-y-1/2 ml-2 pl-2">
+                                          <div className="absolute right-0 translate-x-full top-1/2 -translate-y-1/2 ml-3">
                                              <div className="bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-lg whitespace-nowrap">
                                                 You
                                              </div>
