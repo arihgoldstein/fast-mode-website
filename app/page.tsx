@@ -180,7 +180,7 @@ export default function Home() {
                         </div>
                         <div className="flex items-center gap-2">
                            <button className="px-3 py-1.5 bg-slate-800 text-slate-300 text-xs font-medium rounded hover:bg-slate-700 transition-colors">SEO</button>
-                           <button className="px-3 py-1.5 bg-indigo-600 text-white text-xs font-medium rounded hover:bg-indigo-500 transition-colors flex items-center gap-1">
+                           <button className="px-3 py-1.5 bg-indigo-600 text-white text-xs font-medium rounded-md hover:bg-indigo-500 transition-colors flex items-center gap-1">
                               <ArrowRight className="w-3 h-3 -rotate-45" /> View Live
                            </button>
                         </div>
