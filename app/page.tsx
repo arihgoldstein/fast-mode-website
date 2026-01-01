@@ -106,13 +106,13 @@ export default function Home() {
                           <button className="w-full flex items-center gap-3 px-3 py-2 text-sm font-medium bg-[#1e1b4b] text-indigo-300 rounded-lg">
                             <Layout className="w-4 h-4" /> Editor
                           </button>
-                          <button className="w-full flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors">
+                          <button className="w-full flex items-center gap-3 px-3 py-2 text-sm font-medium bg-transparent text-slate-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors">
                             <Database className="w-4 h-4" /> CMS
                           </button>
-                          <button className="w-full flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors">
+                          <button className="w-full flex items-center gap-3 px-3 py-2 text-sm font-medium bg-transparent text-slate-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors">
                             <MessageSquare className="w-4 h-4" /> Forms
                           </button>
-                          <button className="w-full flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors">
+                          <button className="w-full flex items-center gap-3 px-3 py-2 text-sm font-medium bg-transparent text-slate-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors">
                             <Settings className="w-4 h-4" /> Settings
                           </button>
                        </nav>
