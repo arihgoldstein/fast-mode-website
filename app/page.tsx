@@ -295,34 +295,34 @@ export default function Home() {
         </section>
 
         {/* Problem Section */}
-        <section className="py-24 bg-slate-900/50 border-y border-white/5">
+        <section className="py-16 sm:py-20 md:py-24 bg-slate-900/50 border-y border-white/5">
            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-16">AI-built websites are hard to manage.</h2>
-              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                 <div className="p-8 rounded-2xl bg-white/5 border border-white/10 text-left hover:border-red-500/30 transition-colors group">
-                    <div className="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-10 sm:mb-12 md:mb-16">AI-built websites are hard to manage.</h2>
+              <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
+                 <div className="p-6 sm:p-8 rounded-2xl bg-white/5 border border-white/10 text-left hover:border-red-500/30 transition-colors group">
+                    <div className="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
                        <Code className="w-6 h-6 text-red-400" />
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-3">Stuck in Static Code</h3>
-                    <p className="text-slate-400">Great for prototypes, but impossible to manage at scale. Every edit requires diving back into the code.</p>
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">Stuck in Static Code</h3>
+                    <p className="text-sm sm:text-base text-slate-400">Great for prototypes, but impossible to manage at scale. Every edit requires diving back into the code.</p>
                  </div>
-                 <div className="p-8 rounded-2xl bg-white/5 border border-white/10 text-left hover:border-orange-500/30 transition-colors group">
-                    <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                 <div className="p-6 sm:p-8 rounded-2xl bg-white/5 border border-white/10 text-left hover:border-orange-500/30 transition-colors group">
+                    <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
                        <Database className="w-6 h-6 text-orange-400" />
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-3">No CMS Structure</h3>
-                    <p className="text-slate-400">Content is hardcoded. Marketing teams can't update blogs, team pages, or pricing without developer help.</p>
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">No CMS Structure</h3>
+                    <p className="text-sm sm:text-base text-slate-400">Content is hardcoded. Marketing teams can't update blogs, team pages, or pricing without developer help.</p>
                  </div>
               </div>
            </div>
         </section>
 
         {/* Solution Section Intro */}
-        <section className="py-24 relative overflow-hidden">
+        <section className="py-16 sm:py-20 md:py-24 relative overflow-hidden">
            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <span className="text-indigo-400 font-semibold tracking-wide uppercase text-sm">Solution</span>
-              <h2 className="mt-2 text-3xl md:text-5xl font-bold text-white mb-6">The bridge from AI to Production</h2>
-              <p className="text-lg text-slate-400 max-w-2xl mx-auto mb-16">
+              <span className="text-indigo-400 font-semibold tracking-wide uppercase text-xs sm:text-sm">Solution</span>
+              <h2 className="mt-2 text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 sm:mb-6">The bridge from AI to Production</h2>
+              <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto">
                  We automate the infrastructure so you can focus on shipping.
               </p>
            </div>
@@ -330,17 +330,17 @@ export default function Home() {
 
 
         {/* Deep Dive 2: CMS */}
-        <section className="py-24 relative overflow-hidden bg-slate-900/20">
+        <section className="py-16 sm:py-20 md:py-24 relative overflow-hidden bg-slate-900/20">
            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-             <div className="grid lg:grid-cols-2 gap-16 items-center">
+             <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
                 <div>
                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-sm font-medium mb-6">
                       <Layout className="w-4 h-4" /> Connect Once
                    </div>
-                   <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                   <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                       Automatic CMS Generation
                    </h2>
-                   <p className="text-lg text-slate-400 mb-8 leading-relaxed">
+                   <p className="text-base sm:text-lg text-slate-400 mb-6 sm:mb-8 leading-relaxed">
                       We parse your content and create structured collections instantly. Generate your site using your favorite AI web development tools, and we'll handle the rest.
                    </p>
                    
@@ -444,12 +444,12 @@ export default function Home() {
         </section>
 
         {/* Deep Dive 3: Visual Editor */}
-        <section className="py-24 relative overflow-hidden">
+        <section className="py-16 sm:py-20 md:py-24 relative overflow-hidden">
           {/* Background Gradient */}
           <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-cyan-500/10 rounded-full blur-[100px]" />
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-             <div className="grid lg:grid-cols-2 gap-16 items-center">
+             <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
                 <div className="order-2 lg:order-1 relative">
                    {/* Product Screenshot: Visual Editor */}
                    <div className="relative w-full aspect-[4/3] rounded-xl border border-white/10 bg-slate-950 shadow-2xl overflow-hidden flex flex-col group cursor-text select-none">
@@ -541,10 +541,10 @@ export default function Home() {
                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-medium mb-6">
                       <FileText className="w-4 h-4" /> Edit & Publish
                    </div>
-                   <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                   <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                       Visual Page Editing
                    </h2>
-                   <p className="text-lg text-slate-400 mb-8 leading-relaxed">
+                   <p className="text-base sm:text-lg text-slate-400 mb-6 sm:mb-8 leading-relaxed">
                       Visually edit content and push to production instantly. Why ask an AI to "change the headline" when you can just click it?
                    </p>
                    
@@ -583,11 +583,11 @@ export default function Home() {
         </section>
 
         {/* Deep Dive 1: Scale/Hosting */}
-        <section className="py-24 relative overflow-hidden">
+        <section className="py-16 sm:py-20 md:py-24 relative overflow-hidden">
           <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[100px]" />
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-             <div className="grid lg:grid-cols-2 gap-16 items-center">
+             <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
                 <div className="relative order-2 lg:order-1">
                    {/* Product Screenshot: Deployment Dashboard */}
                    <div className="relative w-full aspect-[4/3] rounded-xl border border-white/10 bg-slate-950 shadow-2xl overflow-hidden flex flex-col group select-none">
@@ -672,10 +672,10 @@ export default function Home() {
                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-sm font-medium mb-6">
                       <Globe className="w-4 h-4" /> Global Network
                    </div>
-                   <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                   <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                       Headless CMS + Hosting
                    </h2>
-                   <p className="text-lg text-slate-400 mb-8 leading-relaxed">
+                   <p className="text-base sm:text-lg text-slate-400 mb-6 sm:mb-8 leading-relaxed">
                       Link your project once. We automatically generate schemas and relationships, then deploy to a global edge network. Zero configuration, 100% peace of mind.
                    </p>
                    
@@ -705,14 +705,14 @@ export default function Home() {
         </section>
 
         {/* Replacement Section: Developer Experience / Stack */}
-        <section className="py-24 bg-slate-900/30 border-y border-white/5">
+        <section className="py-16 sm:py-20 md:py-24 bg-slate-900/30 border-y border-white/5">
            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
                  <div>
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
                        Your stack, supercharged.
                     </h2>
-                    <p className="text-lg text-slate-400 mb-8">
+                    <p className="text-base sm:text-lg text-slate-400 mb-6 sm:mb-8">
                        Don't change how you build. FastMode integrates directly with your GitHub repository and works with any modern frontend framework.
                     </p>
                     
@@ -784,9 +784,9 @@ export default function Home() {
         </section>
 
         {/* Features Grid (Key Features) */}
-        <section id="features" className="py-12 bg-slate-950">
+        <section id="features" className="py-12 sm:py-16 md:py-20 bg-slate-950">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 md:mb-16">
               <span className="text-indigo-400 font-semibold tracking-wide uppercase text-sm">Everything You Need</span>
               <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
                 Battery Included
@@ -795,8 +795,8 @@ export default function Home() {
                 From simple landing pages to complex web applications, we've got you covered.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-indigo-500/50 transition-colors group">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              <div className="p-6 sm:p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-indigo-500/50 transition-colors group">
                 <div className="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Database className="w-6 h-6 text-indigo-400" />
                 </div>
@@ -804,7 +804,7 @@ export default function Home() {
                 <p className="text-slate-400 text-sm">We parse your content and create structured collections instantly.</p>
               </div>
 
-              <div className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-pink-500/50 transition-colors group">
+              <div className="p-6 sm:p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-pink-500/50 transition-colors group">
                 <div className="w-12 h-12 bg-pink-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Layout className="w-6 h-6 text-pink-400" />
                 </div>
@@ -812,7 +812,7 @@ export default function Home() {
                 <p className="text-slate-400 text-sm">Click-to-edit interface. No form filling required for simple changes.</p>
               </div>
 
-              <div className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-violet-500/50 transition-colors group">
+              <div className="p-6 sm:p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-violet-500/50 transition-colors group">
                 <div className="w-12 h-12 bg-violet-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Server className="w-6 h-6 text-violet-400" />
                 </div>
@@ -820,7 +820,7 @@ export default function Home() {
                 <p className="text-slate-400 text-sm">Built-in global hosting with a powerful API-first backend.</p>
               </div>
               
-               <div className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-emerald-500/50 transition-colors group">
+               <div className="p-6 sm:p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-emerald-500/50 transition-colors group">
                 <div className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Zap className="w-6 h-6 text-emerald-400" />
                 </div>
@@ -828,7 +828,7 @@ export default function Home() {
                 <p className="text-slate-400 text-sm">Updates go live in seconds. No rebuilds or redeploys needed.</p>
               </div>
 
-               <div className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-colors group">
+               <div className="p-6 sm:p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-colors group">
                 <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Code className="w-6 h-6 text-cyan-400" />
                 </div>
@@ -836,7 +836,7 @@ export default function Home() {
                 <p className="text-slate-400 text-sm">Consume your content from any frontend framework or mobile app.</p>
               </div>
 
-               <div className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-amber-500/50 transition-colors group">
+               <div className="p-6 sm:p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-amber-500/50 transition-colors group">
                 <div className="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Search className="w-6 h-6 text-amber-400" />
                 </div>
@@ -848,11 +848,11 @@ export default function Home() {
         </section>
 
         {/* Call to Action */}
-        <section className="py-32 relative overflow-hidden">
+        <section className="py-20 sm:py-24 md:py-32 relative overflow-hidden">
            <div className="absolute inset-0 bg-gradient-to-b from-slate-950 to-indigo-950/20" />
            <div className="relative max-w-4xl mx-auto px-4 text-center">
-             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to ship?</h2>
-             <p className="text-lg text-slate-400 mb-10 max-w-2xl mx-auto">
+             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">Ready to ship?</h2>
+             <p className="text-base sm:text-lg text-slate-400 mb-8 sm:mb-10 max-w-2xl mx-auto">
                Turn your AI concepts into living, breathing websites today.
              </p>
              <Link

@@ -76,16 +76,16 @@ export default function Pricing() {
         </section>
 
         {/* Pricing Cards */}
-        <section id="plans" className="py-20">
+        <section id="plans" className="py-12 sm:py-16 md:py-20">
            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-16">
-                 <h2 className="text-3xl font-bold text-white mb-4">Simple plans for serious speed</h2>
-                 <p className="text-slate-400 max-w-2xl mx-auto">Everything you need to host, edit, and publish CMS-driven sites — without the usual maintenance.</p>
+              <div className="text-center mb-10 sm:mb-12 md:mb-16">
+                 <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 sm:mb-4">Simple plans for serious speed</h2>
+                 <p className="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto">Everything you need to host, edit, and publish CMS-driven sites — without the usual maintenance.</p>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
                  {/* Free Plan */}
-                 <div className="p-8 rounded-3xl bg-white/5 border border-white/10 flex flex-col relative overflow-hidden">
+                 <div className="p-6 sm:p-8 rounded-3xl bg-white/5 border border-white/10 flex flex-col relative overflow-hidden">
                     <div className="mb-8">
                        <h3 className="text-xl font-bold text-white mb-2">Free</h3>
                        <div className="flex items-baseline gap-1 mb-2">
@@ -130,7 +130,7 @@ export default function Pricing() {
                  </div>
 
                  {/* Pro Plan */}
-                 <div className="p-8 rounded-3xl bg-slate-900 border border-indigo-500/50 flex flex-col relative overflow-hidden shadow-2xl shadow-indigo-500/10">
+                 <div className="p-6 sm:p-8 rounded-3xl bg-slate-900 border border-indigo-500/50 flex flex-col relative overflow-hidden shadow-2xl shadow-indigo-500/10">
                     <div className="absolute top-0 right-0 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-bl-xl">
                        Most popular
                     </div>
@@ -182,9 +182,9 @@ export default function Pricing() {
         </section>
 
         {/* Comparison Table */}
-        <section className="py-20 bg-slate-900/30 border-y border-white/5">
+        <section className="py-12 sm:py-16 md:py-20 bg-slate-900/30 border-y border-white/5">
            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-2xl font-bold text-white mb-12 text-center">Compare plans</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-white mb-8 sm:mb-10 md:mb-12 text-center">Compare plans</h2>
               
               <div className="overflow-x-auto">
                  <table className="w-full text-left border-collapse">
@@ -224,10 +224,10 @@ export default function Pricing() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-24">
+        <section className="py-16 sm:py-20 md:py-24">
            <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl font-bold text-white mb-12 text-center">Questions, answered</h2>
-              <div className="space-y-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 sm:mb-10 md:mb-12 text-center">Questions, answered</h2>
+              <div className="space-y-6 sm:space-y-8">
                  {[
                     { q: "What do I get on the Free plan?", a: "You can host a full site on a Fastmode subdomain, publish CMS content, edit page copy visually, and manage SEO — all for $0." },
                     { q: "Can I connect my own domain?", a: "Yep — that’s included on Pro. Point your DNS, and we handle hosting + CDN delivery." },
@@ -236,9 +236,9 @@ export default function Pricing() {
                     { q: "Do you support tracking pixels and scripts?", a: "Yes. Add anything you need once, and we inject it into the head of every page." },
                     { q: "Is the CMS included in both plans?", a: "Yes — Blogs, Authors, Team Members, and Downloads are included in every plan." },
                  ].map((faq, i) => (
-                    <div key={i} className="border-b border-white/10 pb-8 last:border-0">
-                       <h3 className="text-lg font-semibold text-white mb-3">{faq.q}</h3>
-                       <p className="text-slate-400 leading-relaxed">{faq.a}</p>
+                    <div key={i} className="border-b border-white/10 pb-6 sm:pb-8 last:border-0">
+                       <h3 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">{faq.q}</h3>
+                       <p className="text-sm sm:text-base text-slate-400 leading-relaxed">{faq.a}</p>
                     </div>
                  ))}
               </div>
@@ -246,11 +246,11 @@ export default function Pricing() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-32 relative overflow-hidden">
+        <section className="py-20 sm:py-24 md:py-32 relative overflow-hidden">
            <div className="absolute inset-0 bg-gradient-to-b from-slate-950 to-indigo-950/20" />
            <div className="relative max-w-4xl mx-auto px-4 text-center">
-             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ship faster. Worry less.</h2>
-             <p className="text-lg text-slate-400 mb-10 max-w-2xl mx-auto">
+             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">Ship faster. Worry less.</h2>
+             <p className="text-base sm:text-lg text-slate-400 mb-8 sm:mb-10 max-w-2xl mx-auto">
                Start free on a Fastmode subdomain, then go Pro when you’re ready for your own domain and white-label hosting.
              </p>
              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
