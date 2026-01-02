@@ -1280,6 +1280,9 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
 }
+.border-white\/20 {
+  border-color: rgb(255 255 255 / 0.2);
+}
 .bg-\[\#0B0D13\] {
   --tw-bg-opacity: 1;
   background-color: rgb(11 13 19 / var(--tw-bg-opacity, 1));
@@ -2023,6 +2026,9 @@ video {
 }
 .ring-white\/10 {
   --tw-ring-color: rgb(255 255 255 / 0.1);
+}
+.ring-white\/20 {
+  --tw-ring-color: rgb(255 255 255 / 0.2);
 }
 .blur-3xl {
   --tw-blur: blur(64px);
