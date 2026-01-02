@@ -333,7 +333,7 @@ export default function Home() {
         <section className="py-16 sm:py-20 md:py-24 relative overflow-hidden bg-slate-900/20">
            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
              <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
-                <div>
+                <div className="order-2 lg:order-1">
                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-sm font-medium mb-6">
                       <Layout className="w-4 h-4" /> Connect Once
                    </div>
@@ -356,7 +356,7 @@ export default function Home() {
                    </div>
                 </div>
                 
-                <div className="relative">
+                <div className="relative order-1 lg:order-2">
                    {/* Product Screenshot: CMS Interface */}
                    <div className="relative w-full aspect-[4/3] rounded-xl border border-white/10 bg-slate-950 shadow-2xl overflow-hidden flex flex-col group select-none">
                       {/* Sidebar + Main */}
@@ -450,7 +450,7 @@ export default function Home() {
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
              <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
-                <div className="order-2 lg:order-1 relative">
+                <div className="order-1 lg:order-1 relative">
                    {/* Product Screenshot: Visual Editor */}
                    <div className="relative w-full aspect-[4/3] rounded-xl border border-white/10 bg-slate-950 shadow-2xl overflow-hidden flex flex-col group cursor-text select-none">
                       {/* Editor Chrome */}
@@ -537,7 +537,7 @@ export default function Home() {
                    </div>
                 </div>
 
-                <div className="order-1 lg:order-2">
+                <div className="order-2 lg:order-2">
                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-medium mb-6">
                       <FileText className="w-4 h-4" /> Edit & Publish
                    </div>
@@ -588,7 +588,7 @@ export default function Home() {
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
              <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
-                <div className="relative order-2 lg:order-1">
+                <div className="relative order-1 lg:order-1">
                    {/* Product Screenshot: Deployment Dashboard */}
                    <div className="relative w-full aspect-[4/3] rounded-xl border border-white/10 bg-slate-950 shadow-2xl overflow-hidden flex flex-col group select-none">
                       {/* Dashboard Header */}
@@ -668,7 +668,7 @@ export default function Home() {
                    </div>
                 </div>
                 
-                <div className="order-1 lg:order-2">
+                <div className="order-2 lg:order-2">
                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-sm font-medium mb-6">
                       <Globe className="w-4 h-4" /> Global Network
                    </div>
@@ -708,7 +708,7 @@ export default function Home() {
         <section className="py-16 sm:py-20 md:py-24 bg-slate-900/30 border-y border-white/5">
            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
-                 <div>
+                 <div className="order-2 lg:order-1">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
                        Your stack, supercharged.
                     </h2>
@@ -738,7 +738,7 @@ export default function Home() {
                     </div>
                  </div>
                  
-                 <div className="relative">
+                 <div className="relative order-1 lg:order-2">
                     {/* Code Window Visual */}
                     <div className="rounded-xl bg-[#0F1117] border border-white/10 overflow-hidden shadow-2xl">
                        <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-white/5">
