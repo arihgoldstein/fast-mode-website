@@ -11,12 +11,6 @@
       "file": "pages/pricing.html",
       "title": "Pricing",
       "editable": true
-    },
-    {
-      "path": "/siteline-demo",
-      "file": "pages/siteline-demo.html",
-      "title": "Siteline Demo",
-      "editable": false
     }
   ],
   "cmsTemplates": {},
