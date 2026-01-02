@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Siteline Demo | FastMode</title>
+  <meta name="description" content="Siteline dashboard demo recreation">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/public/css/style.css">
+  <style>
+    .bg-gray-50 { background-color: #f9fafb; }
+    .bg-gray-100 { background-color: #f3f4f6; }
+    .bg-gray-200 { background-color: #e5e7eb; }
+    .bg-gray-600 { background-color: #4b5563; }
+    .bg-gray-900 { background-color: #111827; }
+    .text-gray-300 { color: #d1d5db; }
+    .text-gray-400 { color: #9ca3af; }
+    .text-gray-500 { color: #6b7280; }
+    .text-gray-600 { color: #4b5563; }
+    .text-gray-700 { color: #374151; }
+    .text-gray-900 { color: #111827; }
+    .border-gray-200 { border-color: #e5e7eb; }
+    .bg-\[\#1a2332\] { background-color: #1a2332; }
+    .bg-\[\#ff6b4a\] { background-color: #ff6b4a; }
+    .border-\[\#ff6b4a\] { border-color: #ff6b4a; }
+    .bg-purple-100 { background-color: #f3e8ff; }
+    .bg-purple-500 { background-color: #a855f7; }
+    .text-purple-600 { color: #9333ea; }
+    .bg-blue-100 { background-color: #dbeafe; }
+    .bg-blue-500 { background-color: #3b82f6; }
+    .text-blue-600 { color: #2563eb; }
+    .hover\:text-gray-900:hover { color: #111827; }
+    .hover\:text-gray-600:hover { color: #4b5563; }
+    .hover\:bg-gray-50:hover { background-color: #f9fafb; }
+    .hover\:bg-white\/20:hover { background-color: rgba(255, 255, 255, 0.2); }
+    .hover\:bg-indigo-700:hover { background-color: #4338ca; }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+  <!-- Header -->
+  <header class="bg-[#1a2332] text-white">
+    <div class="flex items-center justify-between px-6 py-3">
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 bg-[#ff6b4a] flex items-center justify-center text-white font-bold text-sm">S</div>
+        </div>
+        <div class="flex items-center gap-2 text-sm">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          <span>Billing</span>
+          <span class="text-gray-400">/</span>
+          <span>Harmony Heights Mall</span>
+          <svg class="w-4 h-4 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <svg class="w-5 h-5 text-gray-300 cursor-pointer hover:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <svg class="w-5 h-5 text-gray-300 cursor-pointer hover:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        <div class="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded cursor-pointer hover:bg-white/20">
+          <div class="w-6 h-6 bg-gray-600 rounded flex items-center justify-center text-xs font-bold">P</div>
+          <span class="text-sm">Precision Masonry</span>
+          <svg class="w-4 h-4 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Tabs -->
+  <div class="bg-white border-b border-gray-200">
+    <div class="flex items-center justify-between px-6">
+      <div class="flex items-center gap-8">
+        <button class="px-4 py-4 text-sm font-medium text-gray-900 border-b-2 border-[#ff6b4a]">
+          Pay Apps
+        </button>
+        <button class="px-4 py-4 text-sm font-medium text-gray-600 hover:text-gray-900">
+          SOV
+        </button>
+        <button class="px-4 py-4 text-sm font-medium text-gray-600 hover:text-gray-900">
+          Forecast
+        </button>
+        <button class="px-4 py-4 text-sm font-medium text-gray-600 hover:text-gray-900">
+          Change Order Log
+        </button>
+        <button class="px-4 py-4 text-sm font-medium text-gray-600 hover:text-gray-900">
+          Settings
+        </button>
+      </div>
+      <button class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        Add new pay app
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="flex gap-6 p-6">
+    <!-- Left Column -->
+    <div class="flex-1 space-y-6">
+      <!-- Chart Card -->
+      <div class="bg-white rounded-lg border border-gray-200 p-6">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-2xl font-semibold text-gray-900">4% billed</h2>
+          <button class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900">
+            Project forecast <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </div>
+        
+        <!-- Simple Chart -->
+        <div class="relative h-48">
+          <svg class="w-full h-full" viewBox="0 0 700 200">
+            <!-- Grid lines -->
+            <line x1="0" y1="40" x2="700" y2="40" stroke="#e5e7eb" stroke-width="1" />
+            <line x1="0" y1="90" x2="700" y2="90" stroke="#e5e7eb" stroke-width="1" />
+            <line x1="0" y1="140" x2="700" y2="140" stroke="#e5e7eb" stroke-width="1" />
+            <line x1="0" y1="190" x2="700" y2="190" stroke="#e5e7eb" stroke-width="1" />
+            
+            <!-- Chart line -->
+            <polyline points="50,150 150,110 250,105 350,115 450,120" fill="none" stroke="#3b82f6" stroke-width="2" />
+            <polyline points="450,120 550,125 650,130" fill="none" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4" />
+            
+            <!-- Data points -->
+            <circle cx="50" cy="150" r="4" fill="#3b82f6" />
+            <circle cx="150" cy="110" r="4" fill="#3b82f6" />
+            <circle cx="250" cy="105" r="4" fill="#3b82f6" />
+            <circle cx="350" cy="115" r="4" fill="#3b82f6" />
+            <circle cx="450" cy="120" r="4" fill="#3b82f6" />
+            <circle cx="550" cy="125" r="4" fill="#3b82f6" />
+            <circle cx="650" cy="130" r="4" fill="#3b82f6" />
+            
+            <!-- Labels -->
+            <text x="50" y="200" font-size="11" fill="#6b7280" text-anchor="middle">Nov</text>
+            <text x="250" y="200" font-size="11" fill="#6b7280" text-anchor="middle">Oct</text>
+            <text x="350" y="200" font-size="11" fill="#6b7280" text-anchor="middle">Dec</text>
+            <text x="450" y="200" font-size="11" fill="#6b7280" text-anchor="middle">Jan</text>
+            <text x="550" y="200" font-size="11" fill="#6b7280" text-anchor="middle">Feb</text>
+            <text x="650" y="200" font-size="11" fill="#6b7280" text-anchor="middle">Mar (proj. end)</text>
+            
+            <text x="0" y="45" font-size="11" fill="#6b7280">100%</text>
+            <text x="0" y="95" font-size="11" fill="#6b7280">50%</text>
+            <text x="0" y="195" font-size="11" fill="#6b7280">0</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Metrics Grid -->
+      <div class="grid grid-cols-4 gap-4">
+        <div class="bg-white rounded-lg border border-gray-200 p-4">
+          <div class="text-2xl font-semibold text-gray-900 mb-1">$19,000.00</div>
+          <div class="text-xs text-gray-500">Billed to date</div>
+        </div>
+        <div class="bg-white rounded-lg border border-gray-200 p-4">
+          <div class="text-2xl font-semibold text-gray-900 mb-1">$480,000.00</div>
+          <div class="text-xs text-gray-500">Contract value</div>
+        </div>
+        <div class="bg-white rounded-lg border border-gray-200 p-4">
+          <div class="text-2xl font-semibold text-gray-900 mb-1">$461,000.00</div>
+          <div class="text-xs text-gray-500">Left to bill</div>
+        </div>
+        <div class="bg-white rounded-lg border border-gray-200 p-4">
+          <div class="text-2xl font-semibold text-gray-900 mb-1">$1,801.00</div>
+          <div class="text-xs text-gray-500">Retention held</div>
+        </div>
+      </div>
+
+      <!-- Pay Apps List -->
+      <div class="bg-white rounded-lg border border-gray-200">
+        <!-- NOV -->
+        <div class="flex items-center gap-4 p-6 border-b border-gray-200 hover:bg-gray-50">
+          <div class="text-sm font-medium text-gray-500 w-12">NOV</div>
+          <div class="flex-1 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+              <div class="text-sm font-medium text-gray-900">Pay App #5</div>
+              <div class="text-sm text-gray-600">$100,350.00</div>
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-purple-500"></div>
+                <span class="text-sm font-medium text-purple-600">Signed</span>
+              </div>
+              <span class="text-xs text-gray-500">Due Nov 21</span>
+            </div>
+            <svg class="w-5 h-5 text-gray-400 cursor-pointer hover:text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+          </div>
+        </div>
+
+        <!-- OCT -->
+        <div class="flex items-center gap-4 p-6 border-b border-gray-200 hover:bg-gray-50">
+          <div class="text-sm font-medium text-gray-500 w-12">OCT</div>
+          <div class="flex-1 flex items-center justify-between">
+            <div class="text-sm italic text-gray-500">Not billing this month</div>
+            <svg class="w-5 h-5 text-gray-400 cursor-pointer hover:text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+          </div>
+        </div>
+
+        <!-- SEP -->
+        <div class="flex items-center gap-4 p-6 hover:bg-gray-50">
+          <div class="text-sm font-medium text-gray-500 w-12">SEP</div>
+          <div class="flex-1 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+              <div class="text-sm font-medium text-gray-900">Pay App #4</div>
+              <div class="text-sm text-gray-600">$12,100.00</div>
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-blue-500"></div>
+                <span class="text-sm font-medium text-blue-600">Submitted</span>
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-gray-400 cursor-pointer hover:text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Sidebar -->
+    <div class="w-80 space-y-6">
+      <!-- Bulletin Board -->
+      <div class="bg-white rounded-lg border border-gray-200 p-4">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-sm font-semibold text-gray-900">Bulletin board</h3>
+          <button class="text-xs text-gray-600 hover:text-gray-900">Edit</button>
+        </div>
+        <p class="text-sm text-gray-700 leading-relaxed">
+          Project forms must be signed in Textura after submission. GC requires Excel backup.
+        </p>
+      </div>
+
+      <!-- Project Team -->
+      <div class="bg-white rounded-lg border border-gray-200 p-4">
+        <button class="flex items-center justify-between w-full">
+          <h3 class="text-sm font-semibold text-gray-900">Project team</h3>
+          <svg class="w-4 h-4 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+      </div>
+
+      <!-- Project Info -->
+      <div class="bg-white rounded-lg border border-gray-200 p-4">
+        <button class="flex items-center justify-between w-full">
+          <h3 class="text-sm font-semibold text-gray-900">Project info</h3>
+          <svg class="w-4 h-4 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+      </div>
+
+      <!-- Activity -->
+      <div class="bg-white rounded-lg border border-gray-200 p-4">
+        <h3 class="text-sm font-semibold text-gray-900 mb-4">Activity</h3>
+        <div class="space-y-4">
+          <div class="flex gap-3">
+            <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4 text-purple-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="flex-1">
+              <p class="text-sm text-gray-900 mb-0.5">
+                <span class="font-medium">Malik Patel</span>
+              </p>
+              <p class="text-xs text-gray-600">signed pay app</p>
+            </div>
+            <span class="text-xs text-gray-500">Nov 17</span>
+          </div>
+
+          <div class="flex gap-3">
+            <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <div class="flex-1">
+              <p class="text-sm text-gray-900 mb-0.5">
+                <span class="font-medium">Malik Patel</span>
+              </p>
+              <p class="text-xs text-gray-600">submitted pay app draft</p>
+              <p class="text-xs text-gray-500 mt-1">
+                To: Andrew Cameron, Therese Ng, & 3 others
+              </p>
+            </div>
+            <span class="text-xs text-gray-500">Nov 17</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back Link -->
+  <div class="fixed bottom-6 left-6">
+    <a href="/" class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-medium transition-colors shadow-lg">
+      <svg class="w-4 h-4 rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      Back to FastMode
+    </a>
+  </div>
+
+  <script src="/public/js/main.js"></script>
+</body>
+</html>
+
