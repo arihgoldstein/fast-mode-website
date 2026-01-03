@@ -17,6 +17,18 @@
       "file": "pages/blog.html",
       "title": "Blog",
       "editable": true
+    },
+    {
+      "path": "/privacy",
+      "file": "pages/privacy.html",
+      "title": "Privacy Policy",
+      "editable": true
+    },
+    {
+      "path": "/terms",
+      "file": "pages/terms.html",
+      "title": "Terms of Service",
+      "editable": true
     }
   ],
   "cmsTemplates": {

@@ -888,26 +888,23 @@ export default function Home() {
               </div>
               <div>
                 <h4 className="text-white font-semibold mb-4">Product</h4>
-                <ul className="space-y-2 text-sm text-slate-400">
-                   <li><Link href="#" className="hover:text-white transition-colors">Features</Link></li>
-                   <li><Link href="#" className="hover:text-white transition-colors">Pricing</Link></li>
-                   <li><Link href="#" className="hover:text-white transition-colors">Showcase</Link></li>
-                </ul>
+                <div className="space-y-2 text-sm text-slate-400">
+                   <div><Link href="/#features" className="hover:text-white transition-colors">Features</Link></div>
+                   <div><Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link></div>
+                </div>
               </div>
               <div>
-                <h4 className="text-white font-semibold mb-4">Company</h4>
-                <ul className="space-y-2 text-sm text-slate-400">
-                   <li><Link href="#" className="hover:text-white transition-colors">About</Link></li>
-                   <li><Link href="#" className="hover:text-white transition-colors">Blog</Link></li>
-                   <li><Link href="#" className="hover:text-white transition-colors">Careers</Link></li>
-                </ul>
+                <h4 className="text-white font-semibold mb-4">Resources</h4>
+                <div className="space-y-2 text-sm text-slate-400">
+                   <div><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></div>
+                </div>
               </div>
               <div>
                 <h4 className="text-white font-semibold mb-4">Legal</h4>
-                <ul className="space-y-2 text-sm text-slate-400">
-                   <li><Link href="#" className="hover:text-white transition-colors">Privacy</Link></li>
-                   <li><Link href="#" className="hover:text-white transition-colors">Terms</Link></li>
-                </ul>
+                <div className="space-y-2 text-sm text-slate-400">
+                   <div><Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link></div>
+                   <div><Link href="/terms" className="hover:text-white transition-colors">Terms</Link></div>
+                </div>
               </div>
            </div>
            <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
