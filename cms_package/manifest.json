@@ -32,7 +32,7 @@
     }
   ],
   "cmsTemplates": {
-    "blogs": {
+    "blog": {
       "detailTemplate": "templates/blog-post.html",
       "basePath": "/blog"
     }
