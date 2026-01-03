@@ -31,37 +31,11 @@
       "editable": true
     }
   ],
-  "templates": [
-    {
-      "name": "blog-post",
-      "label": "Blog Post",
-      "description": "Template for individual blog posts",
-      "file": "templates/blog-post.html",
-      "type": "blog",
-      "basePath": "/blog"
-    }
-  ],
-  "collections": {
-    "blog": {
-      "name": "Blog Posts",
-      "template": "templates/blog-post.html",
-      "basePath": "/blog",
-      "fields": {
-        "name": "title",
-        "postSummary": "summary",
-        "postBody": "content",
-        "mainImage": "image",
-        "author": "author",
-        "publishedAt": "date",
-        "featured": "boolean"
-      }
-    }
-  },
   "cmsTemplates": {
-    "blog": {
-      "detailTemplate": "templates/blog-post.html",
-      "basePath": "/blog"
-    }
+    "blogIndex": "pages/blog.html",
+    "blogIndexPath": "/blog",
+    "blogPost": "templates/blog-post.html",
+    "blogPostPath": "/blog"
   },
   "defaultHeadHtml": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap\" rel=\"stylesheet\"><link rel=\"stylesheet\" href=\"/public/css/style.css\">"
 }
