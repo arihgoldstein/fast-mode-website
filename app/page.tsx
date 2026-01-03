@@ -136,9 +136,9 @@ export default function Home() {
                         <span className="text-xs bg-white/10 px-1.5 py-0.5 rounded text-slate-400">12</span>
                      </div>
                      <div className="p-3">
-                        <div className="relative mb-4">
-                           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
-                           <input type="text" placeholder="Search pages..." className="w-full bg-slate-950 border border-white/10 rounded-lg pl-9 pr-3 py-1.5 text-sm text-slate-300 placeholder-slate-600 focus:outline-none focus:ring-1 focus:ring-indigo-500" />
+                        <div className="flex items-center gap-2 mb-4 bg-slate-950 border border-white/10 rounded-lg px-3 py-1.5">
+                           <Search className="w-4 h-4 text-slate-500 shrink-0" />
+                           <input type="text" placeholder="Search pages..." className="flex-1 bg-transparent text-sm text-slate-300 placeholder-slate-600 focus:outline-none" />
                         </div>
                         
                         <div className="space-y-0.5 overflow-y-auto max-h-[500px] pr-2 custom-scrollbar">
