@@ -82,7 +82,7 @@ export default function Home() {
             {/* Visual Element Placeholder - App Interface */}
             <div className="mt-20 relative mx-auto max-w-[1200px] pointer-events-none select-none text-left">
               <div className="relative rounded-2xl border-2 border-indigo-500/40 bg-slate-950 overflow-hidden group" style={{boxShadow: '0 0 80px -10px rgba(99, 102, 241, 0.5), 0 25px 50px -12px rgba(0, 0, 0, 0.25)'}}>
-                <div className="flex h-[600px] md:h-[700px]">
+                <div className="flex h-[600px] md:h-[700px] rounded-2xl overflow-hidden">
                   
                   {/* Sidebar 1: Main Nav */}
                   <div className="w-64 bg-slate-950 border-r border-white/5 flex-col flex-shrink-0 hidden lg:flex">
