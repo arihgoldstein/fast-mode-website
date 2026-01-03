@@ -7,9 +7,10 @@ export default function LoginPage() {
        <div className="w-full max-w-md bg-slate-900/50 border border-white/10 rounded-2xl p-8 backdrop-blur-xl shadow-2xl">
           <div className="flex justify-center mb-8">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-gradient-to-tr from-indigo-500 to-violet-500 rounded-lg flex items-center justify-center">
-                <Zap className="w-6 h-6 text-white" />
-              </div>
+              <svg className="h-8" viewBox="0 0 253 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M182.377 141.045H70.5226C31.5732 141.045 0 109.472 0 70.5226C0 31.5732 31.5732 0 70.5226 0H182.377C221.327 0 252.9 31.5732 252.9 70.5226C252.9 109.472 221.327 141.045 182.377 141.045Z" fill="#6062EE"/>
+                <path d="M182.377 120.816C210.154 120.816 232.671 98.2992 232.671 70.5224C232.671 42.7455 210.154 20.229 182.377 20.229C154.601 20.229 132.084 42.7455 132.084 70.5224C132.084 98.2992 154.601 120.816 182.377 120.816Z" fill="#F9F9F9"/>
+              </svg>
               <span className="text-2xl font-bold text-white">FastMode</span>
             </Link>
           </div>
