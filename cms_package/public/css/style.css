@@ -637,6 +637,10 @@ button {
   .md\:text-7xl { font-size: 4.5rem; line-height: 1; }
 }
 
+/* Order */
+.order-1 { order: 1; }
+.order-2 { order: 2; }
+
 /* Responsive - LG (1024px) */
 @media (min-width: 1024px) {
   .lg\:flex { display: flex; }
