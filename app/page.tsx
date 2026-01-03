@@ -81,7 +81,7 @@ export default function Home() {
 
             {/* Visual Element Placeholder - App Interface */}
             <div className="mt-20 relative mx-auto max-w-[1200px] pointer-events-none select-none text-left">
-              <div className="relative rounded-xl border border-indigo-500/30 bg-slate-950 shadow-2xl overflow-hidden ring-1 ring-indigo-500/20 shadow-[0_0_60px_-15px_rgba(99,102,241,0.3)] group">
+              <div className="relative rounded-xl border border-indigo-500/50 bg-slate-950 shadow-2xl overflow-hidden ring-1 ring-indigo-500/30 shadow-[0_0_80px_-10px_rgba(99,102,241,0.5)] group">
                 <div className="flex h-[600px] md:h-[700px]">
                   
                   {/* Sidebar 1: Main Nav */}
