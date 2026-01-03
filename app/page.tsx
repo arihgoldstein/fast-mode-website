@@ -89,9 +89,10 @@ export default function Home() {
                   {/* Sidebar 1: Main Nav */}
                   <div className="w-64 bg-slate-950 border-r border-white/5 flex-col flex-shrink-0 hidden lg:flex">
                     <div className="p-4 flex items-center gap-2 border-b border-white/5 h-14">
-                      <div className="w-6 h-6 bg-indigo-500 rounded flex items-center justify-center">
-                        <Zap className="w-3 h-3 text-white" />
-                      </div>
+                      <svg className="h-4" viewBox="0 0 253 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M182.377 141.045H70.5226C31.5732 141.045 0 109.472 0 70.5226C0 31.5732 31.5732 0 70.5226 0H182.377C221.327 0 252.9 31.5732 252.9 70.5226C252.9 109.472 221.327 141.045 182.377 141.045Z" fill="#6062EE"/>
+                        <path d="M182.377 120.816C210.154 120.816 232.671 98.2992 232.671 70.5224C232.671 42.7455 210.154 20.229 182.377 20.229C154.601 20.229 132.084 42.7455 132.084 70.5224C132.084 98.2992 154.601 120.816 182.377 120.816Z" fill="#F9F9F9"/>
+                      </svg>
                       <span className="font-bold text-white tracking-tight">Fastmode</span>
                     </div>
                     
