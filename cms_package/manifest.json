@@ -31,6 +31,32 @@
       "editable": true
     }
   ],
+  "templates": [
+    {
+      "name": "blog-post",
+      "label": "Blog Post",
+      "description": "Template for individual blog posts",
+      "file": "templates/blog-post.html",
+      "type": "blog",
+      "basePath": "/blog"
+    }
+  ],
+  "collections": {
+    "blog": {
+      "name": "Blog Posts",
+      "template": "templates/blog-post.html",
+      "basePath": "/blog",
+      "fields": {
+        "name": "title",
+        "postSummary": "summary",
+        "postBody": "content",
+        "mainImage": "image",
+        "author": "author",
+        "publishedAt": "date",
+        "featured": "boolean"
+      }
+    }
+  },
   "cmsTemplates": {
     "blog": {
       "detailTemplate": "templates/blog-post.html",
