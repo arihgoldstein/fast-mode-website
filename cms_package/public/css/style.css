@@ -700,3 +700,42 @@ button {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* Prose styling for blog content */
+.prose { max-width: 65ch; }
+.prose-lg { font-size: 1.125rem; line-height: 1.8; }
+.prose-invert { color: #94a3b8; }
+
+/* Aspect ratio utilities */
+.aspect-video { aspect-ratio: 16 / 9; }
+.aspect-square { aspect-ratio: 1 / 1; }
+
+/* Object fit */
+.object-cover { object-fit: cover; }
+.object-contain { object-fit: contain; }
+
+/* Blog form input styles */
+input[type="email"]:focus {
+  outline: none;
+}
+
+/* Additional responsive utilities for blog */
+@media (min-width: 640px) {
+  .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sm\:flex-row { flex-direction: row; }
+}

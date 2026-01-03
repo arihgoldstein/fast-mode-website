@@ -11,9 +11,19 @@
       "file": "pages/pricing.html",
       "title": "Pricing",
       "editable": true
+    },
+    {
+      "path": "/blog",
+      "file": "pages/blog.html",
+      "title": "Blog",
+      "editable": true
     }
   ],
-  "cmsTemplates": {},
+  "cmsTemplates": {
+    "blogs": {
+      "detailTemplate": "templates/blog-post.html",
+      "basePath": "/blog"
+    }
+  },
   "defaultHeadHtml": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap\" rel=\"stylesheet\">"
 }
-
