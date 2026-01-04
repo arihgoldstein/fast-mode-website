@@ -304,16 +304,6 @@ export default function Home() {
                   <img src="/images/logos/claude.svg" alt="Claude" className="h-6 w-6 object-contain" />
                   <span className="font-semibold">Claude</span>
                 </div>
-                {/* v0 */}
-                <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors" title="v0">
-                  <img src="/images/logos/v0.svg" alt="v0" className="h-5 w-5 object-contain" />
-                  <span className="font-semibold">v0</span>
-                </div>
-                {/* Bolt */}
-                <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors" title="Bolt">
-                  <img src="/images/logos/bolt.svg" alt="Bolt" className="h-6 w-6 object-contain" />
-                  <span className="font-semibold">Bolt</span>
-                </div>
                 {/* Replit */}
                 <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors" title="Replit">
                   <img src="/images/logos/replit.svg" alt="Replit" className="h-6 w-6 object-contain" />
@@ -323,6 +313,11 @@ export default function Home() {
                 <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors" title="Windsurf">
                   <img src="/images/logos/windsurf.svg" alt="Windsurf" className="h-6 w-6 object-contain" />
                   <span className="font-semibold">Windsurf</span>
+                </div>
+                {/* Google AI Studio */}
+                <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors" title="Google AI Studio">
+                  <img src="/images/logos/google%20ai%20studio.svg" alt="Google AI Studio" className="h-6 w-6 object-contain" />
+                  <span className="font-semibold">AI Studio</span>
                 </div>
               </div>
             </div>
