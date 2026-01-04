@@ -289,36 +289,12 @@ export default function Home() {
             <div className="mt-12 pt-8 border-t border-white/5">
               <p className="text-sm text-slate-500 mb-6">Works with every AI coding tool</p>
               <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-70 hover:opacity-100 transition-all duration-500">
-                {/* Cursor */}
-                <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors" title="Cursor">
-                  <img src="/images/logos/cursor.svg" alt="Cursor" className="h-6 w-6 object-contain" />
-                  <span className="font-semibold">Cursor</span>
-                </div>
-                {/* Lovable */}
-                <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors" title="Lovable">
-                  <img src="/images/logos/lovable.svg" alt="Lovable" className="h-6 w-6 object-contain" />
-                  <span className="font-semibold">Lovable</span>
-                </div>
-                {/* Claude */}
-                <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors" title="Claude">
-                  <img src="/images/logos/claude.svg" alt="Claude" className="h-6 w-6 object-contain" />
-                  <span className="font-semibold">Claude</span>
-                </div>
-                {/* Replit */}
-                <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors" title="Replit">
-                  <img src="/images/logos/replit.svg" alt="Replit" className="h-6 w-6 object-contain" />
-                  <span className="font-semibold">Replit</span>
-                </div>
-                {/* Windsurf */}
-                <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors" title="Windsurf">
-                  <img src="/images/logos/windsurf.svg" alt="Windsurf" className="h-6 w-6 object-contain" />
-                  <span className="font-semibold">Windsurf</span>
-                </div>
-                {/* Google AI Studio */}
-                <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors" title="Google AI Studio">
-                  <img src="/images/logos/google%20ai%20studio.svg" alt="Google AI Studio" className="h-6 w-6 object-contain" />
-                  <span className="font-semibold">AI Studio</span>
-                </div>
+                <img src="/images/logos/cursor.svg" alt="Cursor" className="h-6 object-contain" />
+                <img src="/images/logos/lovable.svg" alt="Lovable" className="h-6 object-contain" />
+                <img src="/images/logos/claude.svg" alt="Claude" className="h-6 object-contain" />
+                <img src="/images/logos/replit.svg" alt="Replit" className="h-6 object-contain" />
+                <img src="/images/logos/windsurf.svg" alt="Windsurf" className="h-6 object-contain" />
+                <img src="/images/logos/google%20ai%20studio.svg" alt="Google AI Studio" className="h-6 object-contain" />
               </div>
             </div>
           </div>
