@@ -294,7 +294,7 @@ export default function Home() {
                 <img src="/images/logos/claude.svg" alt="Claude" className="h-6 object-contain" />
                 <img src="/images/logos/replit.svg" alt="Replit" className="h-6 object-contain" />
                 <img src="/images/logos/windsurf.svg" alt="Windsurf" className="h-6 object-contain" />
-                <img src="/images/logos/google%20ai%20studio.svg" alt="Google AI Studio" className="h-6 object-contain" />
+                <img src="/images/logos/google-ai-studio.svg" alt="Google AI Studio" className="h-6 object-contain" />
               </div>
             </div>
           </div>
