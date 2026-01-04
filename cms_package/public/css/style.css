@@ -530,12 +530,15 @@ button {
 .h-14 { height: 3.5rem; }
 .h-16 { height: 4rem; }
 .h-20 { height: 5rem; }
+.h-24 { height: 6rem; }
 
 /* Responsive height utilities */
 @media (min-width: 640px) {
+  .sm\:h-5 { height: 1.25rem; }
   .sm\:h-6 { height: 1.5rem; }
   .sm\:h-12 { height: 3rem; }
   .sm\:h-20 { height: 5rem; }
+  .sm\:h-24 { height: 6rem; }
 }
 
 /* Responsive gap utilities */
