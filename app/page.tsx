@@ -292,8 +292,8 @@ export default function Home() {
                 <img src="/images/logos/cursor.svg" alt="Cursor" className="h-6 object-contain brightness-0 invert" />
                 <img src="/images/logos/lovable.svg" alt="Lovable" className="h-6 object-contain brightness-0 invert" />
                 <img src="/images/logos/claude.svg" alt="Claude" className="h-6 object-contain brightness-0 invert" />
-                <img src="/images/logos/replit.svg" alt="Replit" className="h-10 object-contain brightness-0 invert" />
-                <img src="/images/logos/windsurf.svg" alt="Windsurf" className="h-8 object-contain brightness-0 invert" />
+                <img src="/images/logos/replit.svg" alt="Replit" className="h-20 object-contain brightness-0 invert" />
+                <img src="/images/logos/windsurf.svg" alt="Windsurf" className="h-12 object-contain brightness-0 invert" />
                 <img src="/images/logos/google-ai-studio.svg" alt="Google AI Studio" className="h-6 object-contain brightness-0 invert" />
               </div>
             </div>
