@@ -288,40 +288,40 @@ export default function Home() {
             
             <div className="mt-12 pt-8 border-t border-white/5">
               <p className="text-sm text-slate-500 mb-6">Works with every AI coding tool</p>
-              <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 opacity-60 hover:opacity-100 transition-all duration-500">
+              <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-70 hover:opacity-100 transition-all duration-500">
                 {/* Cursor */}
-                <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors">
-                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M5.5 3L3 5.5L5.5 8L8 5.5L5.5 3ZM12 3L3 12L12 21L21 12L12 3ZM12 6.83L17.17 12L12 17.17L6.83 12L12 6.83Z"/></svg>
+                <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors" title="Cursor">
+                  <img src="/images/logos/cursor.svg" alt="Cursor" className="h-6 w-6 object-contain" />
                   <span className="font-semibold">Cursor</span>
                 </div>
                 {/* Lovable */}
-                <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors">
-                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors" title="Lovable">
+                  <img src="/images/logos/lovable.svg" alt="Lovable" className="h-6 w-6 object-contain" />
                   <span className="font-semibold">Lovable</span>
                 </div>
                 {/* Claude */}
-                <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors">
-                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8" stroke="#0f172a" strokeWidth="2" strokeLinecap="round"/></svg>
+                <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors" title="Claude">
+                  <img src="/images/logos/claude.svg" alt="Claude" className="h-6 w-6 object-contain" />
                   <span className="font-semibold">Claude</span>
                 </div>
                 {/* v0 */}
-                <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors">
-                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 2,22 12,17 22,22"/></svg>
+                <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors" title="v0">
+                  <img src="/images/logos/v0.svg" alt="v0" className="h-5 w-5 object-contain" />
                   <span className="font-semibold">v0</span>
                 </div>
                 {/* Bolt */}
-                <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors">
-                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"/></svg>
+                <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors" title="Bolt">
+                  <img src="/images/logos/bolt.svg" alt="Bolt" className="h-6 w-6 object-contain" />
                   <span className="font-semibold">Bolt</span>
                 </div>
                 {/* Replit */}
-                <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors">
-                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10S2 17.52 2 12zm9-4v3H8v2h3v3h2v-3h3v-2h-3V8h-2z"/></svg>
+                <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors" title="Replit">
+                  <img src="/images/logos/replit.svg" alt="Replit" className="h-6 w-6 object-contain" />
                   <span className="font-semibold">Replit</span>
                 </div>
                 {/* Windsurf */}
-                <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors">
-                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M3 12c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2s-.9 2-2 2H5c-1.1 0-2-.9-2-2zm2-6h14c1.1 0 2 .9 2 2s-.9 2-2 2H5c-1.1 0-2-.9-2-2s.9-2 2-2zm0 12h14c1.1 0 2 .9 2 2s-.9 2-2 2H5c-1.1 0-2-.9-2-2s.9-2 2-2z"/></svg>
+                <div className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors" title="Windsurf">
+                  <img src="/images/logos/windsurf.svg" alt="Windsurf" className="h-6 w-6 object-contain" />
                   <span className="font-semibold">Windsurf</span>
                 </div>
               </div>
