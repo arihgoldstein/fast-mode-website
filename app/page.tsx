@@ -330,7 +330,7 @@ export default function Home() {
         </section>
 
         {/* Problem Section */}
-        <section className="py-16 sm:py-20 md:py-24 bg-slate-900/50 border-y border-white/5">
+        <section className="py-16 sm:py-20 md:py-24 bg-[#0B0F17] border-y border-white/5">
            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-10 sm:mb-12 md:mb-16">AI-built websites are hard to manage.</h2>
               <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
@@ -365,8 +365,11 @@ export default function Home() {
 
 
         {/* Deep Dive 2: CMS */}
-        <section className="py-16 sm:py-20 md:py-24 relative overflow-hidden bg-slate-900/20">
-           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-16 sm:py-20 md:py-24 relative overflow-hidden bg-slate-950">
+           {/* Background Glow */}
+           <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 w-[800px] h-[800px] bg-pink-500/5 rounded-full blur-[120px] pointer-events-none" />
+           
+           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
              <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
                 <div className="order-2 lg:order-1">
                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-sm font-medium mb-6">
@@ -479,11 +482,11 @@ export default function Home() {
         </section>
 
         {/* Deep Dive 3: Visual Editor */}
-        <section className="py-16 sm:py-20 md:py-24 relative overflow-hidden">
+        <section className="py-16 sm:py-20 md:py-24 relative overflow-hidden bg-slate-950">
           {/* Background Gradient */}
-          <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-cyan-500/10 rounded-full blur-[100px]" />
+          <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
           
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
              <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
                 <div className="order-1 lg:order-1 relative">
                    {/* Product Screenshot: Visual Editor */}
@@ -618,10 +621,10 @@ export default function Home() {
         </section>
 
         {/* Deep Dive 1: Scale/Hosting */}
-        <section className="py-16 sm:py-20 md:py-24 relative overflow-hidden">
-          <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[100px]" />
+        <section className="py-16 sm:py-20 md:py-24 relative overflow-hidden bg-slate-950">
+          <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none" />
           
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
              <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
                 <div className="relative order-1 lg:order-1">
                    {/* Product Screenshot: Deployment Dashboard */}
@@ -740,7 +743,7 @@ export default function Home() {
         </section>
 
         {/* Replacement Section: Developer Experience / Stack */}
-        <section className="py-16 sm:py-20 md:py-24 bg-slate-900/30 border-y border-white/5">
+        <section className="py-16 sm:py-20 md:py-24 bg-[#0B0F17] border-y border-white/5">
            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
                  <div className="order-2 lg:order-1">

@@ -328,6 +328,7 @@ button {
 .bg-emerald-500 { background-color: var(--emerald-500); }
 .bg-transparent { background-color: transparent; }
 .bg-\[\#1e1b4b\] { background-color: #1e1b4b; }
+.bg-\[\#0B0F17\] { background-color: #0B0F17; }
 
 /* Background with opacity */
 .bg-white\/5 { background-color: rgba(255, 255, 255, 0.05); }
