@@ -288,13 +288,13 @@ export default function Home() {
             
             <div className="mt-12 pt-8 border-t border-white/5">
               <p className="text-sm text-slate-500 mb-6">Works with every AI coding tool</p>
-              <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16 opacity-70 hover:opacity-100 transition-all duration-500">
-                <img src="/images/logos/cursor.svg" alt="Cursor" className="h-6 object-contain brightness-0 invert" />
-                <img src="/images/logos/lovable.svg" alt="Lovable" className="h-6 object-contain brightness-0 invert" />
-                <img src="/images/logos/claude.svg" alt="Claude" className="h-6 object-contain brightness-0 invert" />
-                <img src="/images/logos/replit.svg" alt="Replit" className="h-20 object-contain brightness-0 invert" />
-                <img src="/images/logos/windsurf.svg" alt="Windsurf" className="h-12 object-contain brightness-0 invert" />
-                <img src="/images/logos/google-ai-studio.svg" alt="Google AI Studio" className="h-6 object-contain brightness-0 invert" />
+              <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 md:gap-16 opacity-70 hover:opacity-100 transition-all duration-500">
+                <img src="/images/logos/cursor.svg" alt="Cursor" className="h-5 sm:h-6 object-contain brightness-0 invert" />
+                <img src="/images/logos/lovable.svg" alt="Lovable" className="h-5 sm:h-6 object-contain brightness-0 invert" />
+                <img src="/images/logos/claude.svg" alt="Claude" className="h-5 sm:h-6 object-contain brightness-0 invert" />
+                <img src="/images/logos/replit.svg" alt="Replit" className="h-16 sm:h-20 object-contain brightness-0 invert" />
+                <img src="/images/logos/windsurf.svg" alt="Windsurf" className="h-10 sm:h-12 object-contain brightness-0 invert" />
+                <img src="/images/logos/google-ai-studio.svg" alt="Google AI Studio" className="h-5 sm:h-6 object-contain brightness-0 invert" />
               </div>
             </div>
           </div>
