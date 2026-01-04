@@ -735,6 +735,10 @@ button {
 .invert { filter: invert(1); }
 .brightness-0.invert { filter: brightness(0) invert(1); }
 
+/* Logo sizing utilities */
+.max-w-\[120px\] { max-width: 120px; }
+.max-w-\[140px\] { max-width: 140px; }
+
 /* Blog form input styles */
 input[type="email"]:focus {
   outline: none;
