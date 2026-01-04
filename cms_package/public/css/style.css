@@ -730,6 +730,11 @@ button {
 .object-cover { object-fit: cover; }
 .object-contain { object-fit: contain; }
 
+/* Filter utilities for logo inversion */
+.brightness-0 { filter: brightness(0); }
+.invert { filter: invert(1); }
+.brightness-0.invert { filter: brightness(0) invert(1); }
+
 /* Blog form input styles */
 input[type="email"]:focus {
   outline: none;
