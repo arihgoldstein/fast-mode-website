@@ -60,15 +60,67 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Mobile navigation toggle (if needed)
-const mobileMenuBtn = document.querySelector('[data-mobile-menu-btn]');
-const mobileMenu = document.querySelector('[data-mobile-menu]');
-
-if (mobileMenuBtn && mobileMenu) {
-  mobileMenuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
+// Mobile navigation toggle with animations
+(function() {
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const topBar = document.getElementById('hamburger-top');
+  const midBar = document.getElementById('hamburger-mid');
+  const botBar = document.getElementById('hamburger-bot');
+  
+  if (!btn || !menu) return;
+  
+  let isOpen = false;
+  
+  function toggleMenu() {
+    isOpen = !isOpen;
+    btn.setAttribute('aria-expanded', isOpen);
+    
+    if (isOpen) {
+      menu.style.maxHeight = menu.scrollHeight + 'px';
+      menu.style.opacity = '1';
+      if (topBar) topBar.style.transform = 'rotate(45deg) translateY(6px)';
+      if (midBar) midBar.style.opacity = '0';
+      if (botBar) botBar.style.transform = 'rotate(-45deg) translateY(-6px)';
+      btn.classList.add('bg-white/10', 'text-white');
+    } else {
+      menu.style.maxHeight = '0';
+      menu.style.opacity = '0';
+      if (topBar) topBar.style.transform = 'rotate(0) translateY(0)';
+      if (midBar) midBar.style.opacity = '1';
+      if (botBar) botBar.style.transform = 'rotate(0) translateY(0)';
+      btn.classList.remove('bg-white/10', 'text-white');
+    }
+  }
+  
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    toggleMenu();
   });
-}
+  
+  // Close menu when clicking outside
+  document.addEventListener('click', function(e) {
+    if (isOpen && !menu.contains(e.target) && !btn.contains(e.target)) {
+      toggleMenu();
+    }
+  });
+  
+  // Close menu on escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && isOpen) {
+      toggleMenu();
+    }
+  });
+  
+  // Close menu when clicking a link
+  menu.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      if (isOpen) {
+        toggleMenu();
+      }
+    });
+  });
+})();
 
 // Add loaded class to body for animations
 document.addEventListener('DOMContentLoaded', () => {

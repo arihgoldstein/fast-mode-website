@@ -43,26 +43,28 @@
         </div>
         
         <!-- Mobile Menu Button -->
-        <button type="button" class="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+        <button type="button" id="mobile-menu-btn" class="md:hidden relative w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500/50" aria-expanded="false" aria-controls="mobile-menu">
           <span class="sr-only">Open main menu</span>
-          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
+          <div class="w-5 h-4 flex flex-col justify-between items-center">
+            <span id="hamburger-top" class="w-5 h-0.5 bg-current rounded-full transition-all duration-300 origin-center"></span>
+            <span id="hamburger-mid" class="w-5 h-0.5 bg-current rounded-full transition-all duration-300"></span>
+            <span id="hamburger-bot" class="w-5 h-0.5 bg-current rounded-full transition-all duration-300 origin-center"></span>
+          </div>
         </button>
       </div>
     </div>
     
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-slate-950/95 backdrop-blur-md">
+    <div id="mobile-menu" class="md:hidden border-t border-white/10 bg-slate-950/95 backdrop-blur-md overflow-hidden transition-all duration-300 ease-out" style="max-height: 0; opacity: 0;">
       <div class="px-4 pt-4 pb-6 space-y-2">
-        <a href="/" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Home</a>
-        <a href="/pricing" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Pricing</a>
-        <a href="/videos" class="block px-4 py-3 rounded-xl text-base font-medium text-indigo-400 bg-white/5">Videos</a>
-        <a href="/blog" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Blog</a>
+        <a href="/" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all duration-200">Home</a>
+        <a href="/pricing" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all duration-200">Pricing</a>
+        <a href="/videos" class="block px-4 py-3 rounded-xl text-base font-medium text-indigo-400 bg-white/5 transition-all duration-200">Videos</a>
+        <a href="/blog" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all duration-200">Blog</a>
         
-        <div class="pt-4 mt-4 border-t border-white/10 space-y-3">
-          <a href="https://app.fastmode.ai/login" class="block w-full text-center px-4 py-3 rounded-xl text-base font-medium text-white bg-white/10 hover:bg-white/20 border border-white/10 transition-colors">Log in</a>
-          <a href="https://app.fastmode.ai/register" class="block w-full text-center px-4 py-3 rounded-xl text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 transition-colors shadow-[0_0_20px_-5px_rgba(79,70,229,0.5)]">Get Started</a>
+        <div class="pt-4 mt-4 border-t border-white/10 flex gap-3">
+          <a href="https://app.fastmode.ai/login" class="flex-1 text-center px-4 py-3 rounded-xl text-sm font-medium text-white bg-white/10 hover:bg-white/20 border border-white/10 transition-all duration-200">Log in</a>
+          <a href="https://app.fastmode.ai/register" class="flex-1 text-center px-4 py-3 rounded-xl text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-200 shadow-[0_0_20px_-5px_rgba(79,70,229,0.5)]">Get Started</a>
         </div>
       </div>
     </div>
