@@ -19,6 +19,12 @@
       "editable": true
     },
     {
+      "path": "/videos",
+      "file": "pages/videos.html",
+      "title": "Videos",
+      "editable": true
+    },
+    {
       "path": "/privacy",
       "file": "pages/privacy.html",
       "title": "Privacy Policy",
@@ -35,7 +41,11 @@
     "blogIndex": "pages/blog.html",
     "blogIndexPath": "/blog",
     "blogPost": "templates/blog-post.html",
-    "blogPostPath": "/blog"
+    "blogPostPath": "/blog",
+    "videoIndex": "pages/videos.html",
+    "videoIndexPath": "/videos",
+    "videoDetail": "templates/video-detail.html",
+    "videoDetailPath": "/videos"
   },
   "defaultHeadHtml": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap\" rel=\"stylesheet\"><link rel=\"stylesheet\" href=\"/public/css/style.css\">"
 }
