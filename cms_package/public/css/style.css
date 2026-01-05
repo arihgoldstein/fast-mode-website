@@ -765,3 +765,36 @@ input[type="email"]:focus {
   .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .sm\:flex-row { flex-direction: row; }
 }
+
+/* Video card specific utilities */
+.flex-grow { flex-grow: 1; }
+.flex-shrink-0 { flex-shrink: 0; }
+.h-full { height: 100%; }
+.w-14 { width: 3.5rem; }
+.pt-4 { padding-top: 1rem; }
+.gap-2\.5 { gap: 0.625rem; }
+.leading-snug { line-height: 1.375; }
+.bg-slate-900\/60 { background-color: rgba(15, 23, 42, 0.6); }
+.bg-slate-800\/60 { background-color: rgba(30, 41, 59, 0.6); }
+.bg-black\/40 { background-color: rgba(0, 0, 0, 0.4); }
+.bg-black\/50 { background-color: rgba(0, 0, 0, 0.5); }
+.bg-indigo-600\/20 { background-color: rgba(79, 70, 229, 0.2); }
+.bg-violet-600\/20 { background-color: rgba(124, 58, 237, 0.2); }
+.border-white\/\[0\.06\] { border-color: rgba(255, 255, 255, 0.06); }
+.border-white\/\[0\.08\] { border-color: rgba(255, 255, 255, 0.08); }
+.shadow-indigo-500\/10 { --tw-shadow-color: rgba(99, 102, 241, 0.1); box-shadow: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color); }
+.transition-opacity { transition-property: opacity; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+
+/* Hover transforms for cards */
+.hover\:-translate-y-1:hover { transform: translateY(-0.25rem); }
+.hover\:shadow-xl:hover { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
+.hover\:shadow-indigo-500\/10:hover { box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.1), 0 8px 10px -6px rgba(99, 102, 241, 0.1); }
+.hover\:bg-slate-800\/60:hover { background-color: rgba(30, 41, 59, 0.6); }
+.hover\:bg-slate-900\/80:hover { background-color: rgba(15, 23, 42, 0.8); }
+
+/* Group hover utilities for cards */
+.group:hover .group-hover\:scale-105 { transform: scale(1.05); }
+.group:hover .group-hover\:text-indigo-400 { color: var(--indigo-400); }
+.group:hover .group-hover\:bg-indigo-600 { background-color: var(--indigo-600); }
+.group:hover .group-hover\:border-indigo-500 { border-color: var(--indigo-500); }
+.group:hover .group-hover\:gap-2\.5 { gap: 0.625rem; }
