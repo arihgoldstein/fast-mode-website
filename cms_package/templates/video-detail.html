@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{shortdescription}} | Videos | FastMode</title>
+  <title>{{name}} | Videos | FastMode</title>
   <meta name="description" content="{{shortdescription}}">
   {{#if ogimage}}
   <meta property="og:image" content="{{ogimage}}">
@@ -102,10 +102,10 @@
               <!-- Fallback: Show thumbnail with message -->
               <div class="aspect-video w-full relative">
                 {{#if videothumbnail}}
-                <img src="{{videothumbnail}}" alt="{{shortdescription}}" class="w-full h-full object-cover">
+                <img src="{{videothumbnail}}" alt="{{name}}" class="w-full h-full object-cover">
                 {{else}}
                 {{#if ogimage}}
-                <img src="{{ogimage}}" alt="{{shortdescription}}" class="w-full h-full object-cover">
+                <img src="{{ogimage}}" alt="{{name}}" class="w-full h-full object-cover">
                 {{else}}
                 <div class="w-full h-full bg-gradient-to-br from-violet-500/20 to-indigo-500/20 flex items-center justify-center">
                   <svg class="w-20 h-20 text-violet-500/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
@@ -129,8 +129,11 @@
             <!-- Video Info -->
             <div class="mb-8">
               <h1 class="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
-                {{shortdescription}}
+                {{name}}
               </h1>
+              {{#if shortdescription}}
+              <p class="text-lg text-slate-400 mb-4">{{shortdescription}}</p>
+              {{/if}}
               
               <div class="flex flex-wrap items-center gap-4 mb-6">
                 {{#if publishedAt}}
@@ -188,10 +191,10 @@
                     <!-- Thumbnail -->
                     <div class="relative w-32 aspect-video rounded-lg overflow-hidden flex-shrink-0">
                       {{#if videothumbnail}}
-                      <img src="{{videothumbnail}}" alt="{{shortdescription}}" class="w-full h-full object-cover">
+                      <img src="{{videothumbnail}}" alt="{{name}}" class="w-full h-full object-cover">
                       {{else}}
                       {{#if ogimage}}
-                      <img src="{{ogimage}}" alt="{{shortdescription}}" class="w-full h-full object-cover">
+                      <img src="{{ogimage}}" alt="{{name}}" class="w-full h-full object-cover">
                       {{else}}
                       <div class="w-full h-full bg-gradient-to-br from-violet-500/20 to-indigo-500/20 flex items-center justify-center">
                         <svg class="w-6 h-6 text-violet-500/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
@@ -210,7 +213,7 @@
                     <!-- Info -->
                     <div class="flex-1 min-w-0">
                       <h4 class="text-sm font-medium text-white group-hover:text-violet-400 transition-colors line-clamp-2 mb-1">
-                        {{shortdescription}}
+                        {{name}}
                       </h4>
                       {{#if publishedAt}}
                       <p class="text-xs text-slate-500">{{publishedAt}}</p>
