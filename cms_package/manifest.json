@@ -38,12 +38,8 @@
     }
   ],
   "cmsTemplates": {
-    "blogIndex": "pages/blog.html",
-    "blogIndexPath": "/blog",
     "blogPost": "templates/blog-post.html",
     "blogPostPath": "/blog",
-    "videoIndex": "pages/videos.html",
-    "videoIndexPath": "/videos",
     "videoDetail": "templates/video-detail.html",
     "videoDetailPath": "/videos"
   },
