@@ -79,16 +79,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (isOpen) {
       menu.style.maxHeight = menu.scrollHeight + 'px';
       menu.style.opacity = '1';
-      if (topBar) topBar.style.transform = 'rotate(45deg) translateY(6px)';
+      // Translate first, then rotate for proper X formation
+      if (topBar) topBar.style.transform = 'translateY(6px) rotate(45deg)';
       if (midBar) midBar.style.opacity = '0';
-      if (botBar) botBar.style.transform = 'rotate(-45deg) translateY(-6px)';
+      if (botBar) botBar.style.transform = 'translateY(-6px) rotate(-45deg)';
       btn.classList.add('bg-white/10', 'text-white');
     } else {
       menu.style.maxHeight = '0';
       menu.style.opacity = '0';
-      if (topBar) topBar.style.transform = 'rotate(0) translateY(0)';
+      if (topBar) topBar.style.transform = 'translateY(0) rotate(0)';
       if (midBar) midBar.style.opacity = '1';
-      if (botBar) botBar.style.transform = 'rotate(0) translateY(0)';
+      if (botBar) botBar.style.transform = 'translateY(0) rotate(0)';
       btn.classList.remove('bg-white/10', 'text-white');
     }
   }
