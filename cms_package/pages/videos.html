@@ -33,16 +33,19 @@
       background: rgba(255, 255, 255, 0.02);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: 1.5rem;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 1.25rem;
+      transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
       overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
 
     .glass-card:hover {
-      border-color: rgba(99, 102, 241, 0.3);
       background: rgba(255, 255, 255, 0.04);
       transform: translateY(-4px);
-      box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.15);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3);
+      border-color: rgba(255, 255, 255, 0.08); /* Subtle brightness increase only */
     }
 
     .gradient-text {
@@ -72,7 +75,7 @@
       width: 56px;
       height: 56px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(8px);
       border: 1px solid rgba(255, 255, 255, 0.2);
       display: flex;
@@ -98,37 +101,25 @@
       margin-left: 3px;
     }
 
-    /* CTA Styles */
-    .cta-gradient {
-      background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
-      position: relative;
+    /* New Clean Watch Button */
+    .watch-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      color: #94a3b8;
+      font-size: 0.75rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
     }
-    
-    .cta-glow {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      overflow: hidden;
-      border-radius: 1.5rem;
-      pointer-events: none;
-    }
-    
-    .cta-glow::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
-      animation: rotate 20s linear infinite;
-    }
-    
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+
+    .group:hover .watch-btn {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border-color: rgba(255, 255, 255, 0.1);
     }
 
     /* Mobile Menu - Inline fix for immediate visibility */
@@ -230,14 +221,14 @@
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {{#each video sort="publishedAt" order="desc"}}
           <a href="{{url}}" class="group block h-full">
-            <article class="glass-card h-full flex flex-col">
+            <article class="glass-card">
               <!-- Thumbnail -->
               <div class="relative aspect-video overflow-hidden bg-slate-900 border-b border-white/5">
                 {{#if videothumbnail}}
-                <img src="{{videothumbnail}}" alt="{{name}}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                <img src="{{videothumbnail}}" alt="{{name}}" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500">
                 {{else}}
                 {{#if ogimage}}
-                <img src="{{ogimage}}" alt="{{name}}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                <img src="{{ogimage}}" alt="{{name}}" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500">
                 {{else}}
                 <div class="w-full h-full bg-gradient-to-br from-indigo-900/40 to-slate-900 flex items-center justify-center">
                   <svg class="w-12 h-12 text-indigo-500/20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
@@ -246,18 +237,13 @@
                 {{/if}}
                 
                 <!-- Overlay Gradient -->
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-50"></div>
                 
                 <!-- Play button overlay -->
                 <div class="absolute inset-0 flex items-center justify-center">
                   <div class="card-play-button">
                     <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
                   </div>
-                </div>
-                
-                <!-- Duration/Label (Optional) -->
-                <div class="absolute top-3 right-3 px-2 py-1 rounded bg-black/60 backdrop-blur-sm text-xs font-medium text-white border border-white/10">
-                  Video
                 </div>
               </div>
               
@@ -268,9 +254,9 @@
                 </h3>
                 
                 {{#if shortdescription}}
-                <p class="text-sm text-slate-400 leading-relaxed mb-4 line-clamp-2 flex-grow">{{shortdescription}}</p>
+                <p class="text-sm text-slate-400 leading-relaxed mb-6 line-clamp-2 flex-grow">{{shortdescription}}</p>
                 {{else}}
-                <div class="flex-grow"></div>
+                <div class="flex-grow mb-6"></div>
                 {{/if}}
                 
                 <div class="flex items-center justify-between pt-4 border-t border-white/5 mt-auto">
@@ -280,9 +266,9 @@
                   <span></span>
                   {{/if}}
                   
-                  <span class="text-xs font-semibold text-indigo-400 flex items-center gap-1.5 opacity-80 group-hover:opacity-100 group-hover:gap-2 transition-all">
-                    Watch Now
-                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  <span class="watch-btn">
+                    Watch
+                    <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
                   </span>
                 </div>
               </div>
@@ -304,21 +290,26 @@
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-      <div class="max-w-5xl mx-auto">
-        <div class="relative overflow-hidden rounded-3xl cta-gradient shadow-2xl shadow-indigo-900/20">
-          <div class="cta-glow"></div>
+    <!-- New CTA Section -->
+    <section class="py-16 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative overflow-hidden rounded-3xl bg-slate-900 border border-white/10">
+          <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"></div>
+          <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl"></div>
           
           <div class="relative z-10 px-8 py-16 md:py-20 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight" data-edit-key="videos-cta-title">Ready to build faster?</h2>
-            <p class="text-indigo-100 mb-8 text-lg max-w-2xl mx-auto leading-relaxed" data-edit-key="videos-cta-description">
-              Turn your AI-generated websites into production-ready CMS sites with FastMode.
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">Start building today</h2>
+            <p class="text-slate-400 mb-8 text-lg max-w-2xl mx-auto leading-relaxed">
+              Join thousands of developers using FastMode to ship production-ready sites faster than ever before.
             </p>
-            <a href="https://app.fastmode.ai/register" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-indigo-600 hover:bg-white/90 rounded-full font-bold transition-all text-lg shadow-lg hover:shadow-xl group">
-              Start for Free
-              <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="https://app.fastmode.ai/register" class="inline-flex items-center justify-center px-8 py-3.5 bg-white text-slate-950 rounded-full font-bold text-base hover:bg-indigo-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                Get Started for Free
+              </a>
+              <a href="/pricing" class="inline-flex items-center justify-center px-8 py-3.5 bg-white/5 text-white rounded-full font-bold text-base border border-white/10 hover:bg-white/10 transition-all">
+                View Pricing
+              </a>
+            </div>
           </div>
         </div>
       </div>
