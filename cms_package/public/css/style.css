@@ -804,3 +804,5 @@ input[type="email"]:focus {
 .group:hover .group-hover\:bg-indigo-600 { background-color: var(--indigo-600); }
 .group:hover .group-hover\:border-indigo-500 { border-color: var(--indigo-500); }
 .group:hover .group-hover\:gap-2\.5 { gap: 0.625rem; }
+
+.shadow-indigo-500\/20 { --tw-shadow-color: rgba(99, 102, 241, 0.2); }
