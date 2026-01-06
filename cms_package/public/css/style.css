@@ -293,6 +293,9 @@ button {
 .text-slate-900 { color: var(--slate-900); }
 .text-indigo-300 { color: #a5b4fc; }
 .text-indigo-400 { color: var(--indigo-400); }
+.text-indigo-500 { color: var(--indigo-500); }
+.text-indigo-600 { color: var(--indigo-600); }
+.text-indigo-700 { color: var(--indigo-700); }
 .text-indigo-950 { color: var(--indigo-950); }
 .text-violet-400 { color: var(--violet-400); }
 .text-pink-400 { color: var(--pink-400); }
@@ -480,6 +483,7 @@ button {
 .blur-3xl { filter: blur(64px); }
 .backdrop-blur { backdrop-filter: blur(8px); }
 .backdrop-blur-md { backdrop-filter: blur(12px); }
+.backdrop-blur-xl { backdrop-filter: blur(24px); }
 
 /* Transitions */
 .transition { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
