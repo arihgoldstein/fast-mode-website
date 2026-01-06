@@ -9,8 +9,113 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/public/css/style.css">
+  <style>
+    /* Custom Ambience */
+    .ambient-glow {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at 50% 20%, rgba(99, 102, 241, 0.08), transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .content-relative {
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Glassmorphism & Cards */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 1.25rem;
+      transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+      overflow: hidden;
+    }
+
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.04);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .gradient-text {
+      background: linear-gradient(to right, #ffffff, #94a3b8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .tag-pill {
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      color: #818cf8;
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.025em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+    }
+
+    /* CTA Styles */
+    .cta-gradient {
+      background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+      position: relative;
+    }
+    
+    .cta-glow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      pointer-events: none;
+    }
+    
+    .cta-glow::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+      animation: rotate 20s linear infinite;
+    }
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Mobile Menu - Inline fix */
+    #mobile-menu-btn span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: currentColor;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+  </style>
 </head>
-<body class="min-h-screen bg-slate-950 text-white">
+<body class="min-h-screen bg-slate-950 text-white selection:bg-indigo-500/30">
+  
+  <!-- Ambient Background -->
+  <div class="ambient-glow"></div>
+
   <!-- Navigation -->
   <nav class="fixed w-full z-50 top-0 start-0 border-b border-white/10 bg-slate-950/80 backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,80 +172,80 @@
     </div>
   </nav>
 
-  <main class="pt-24 pb-16">
+  <main class="pt-24 pb-16 content-relative">
     <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Breadcrumb -->
       <div class="mb-8">
-        <a href="/blog" class="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-indigo-400 transition-colors">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        <a href="/blog" class="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors group">
+          <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
           Back to Blog
         </a>
       </div>
 
-      <!-- Hero Image -->
-      {{#if mainImage}}
-      <div class="relative aspect-video rounded-2xl overflow-hidden mb-10 border border-white/10">
-        <img src="{{mainImage}}" alt="{{name}}" class="w-full h-full object-cover">
-      </div>
-      {{/if}}
-
       <!-- Post Header -->
-      <header class="mb-12">
+      <header class="mb-12 text-center">
         {{#if featured}}
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-indigo-400 text-xs font-medium mb-6">
           Featured
         </div>
         {{/if}}
 
-        <h1 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">{{name}}</h1>
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight tracking-tight gradient-text">{{name}}</h1>
         
         {{#if postSummary}}
-        <p class="text-xl text-slate-400 leading-relaxed mb-8">{{postSummary}}</p>
+        <p class="text-xl text-slate-400 leading-relaxed mb-8 max-w-2xl mx-auto">{{postSummary}}</p>
         {{/if}}
 
-        <div class="flex flex-wrap items-center gap-6 pb-8 border-b border-white/10">
+        <div class="flex flex-wrap items-center justify-center gap-6 pb-8 border-b border-white/10">
           {{#if author}}
           <div class="flex items-center gap-3">
             {{#if author.picture}}
-            <img src="{{author.picture}}" alt="{{author.name}}" class="w-12 h-12 rounded-full border-2 border-white/10">
+            <img src="{{author.picture}}" alt="{{author.name}}" class="w-10 h-10 rounded-full border border-white/10">
             {{else}}
-            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-lg font-bold text-white">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-sm font-bold text-white">
               {{author.name}}
             </div>
             {{/if}}
-            <div>
-              <a href="{{author.url}}" class="text-white font-semibold hover:text-indigo-400 transition-colors">{{author.name}}</a>
-              <div class="text-sm text-slate-500">{{publishedAt}}</div>
+            <div class="text-left">
+              <div class="text-white font-medium text-sm">{{author.name}}</div>
+              <div class="text-xs text-slate-500">{{publishedAt}}</div>
             </div>
           </div>
           {{/if}}
         </div>
       </header>
 
+      <!-- Hero Image -->
+      {{#if mainImage}}
+      <div class="relative aspect-video rounded-2xl overflow-hidden mb-16 border border-white/10 shadow-2xl shadow-indigo-500/5">
+        <img src="{{mainImage}}" alt="{{name}}" class="w-full h-full object-cover">
+      </div>
+      {{/if}}
+
       <!-- Post Content -->
       <div class="prose prose-invert prose-lg max-w-none mb-16">
         <style>
-          .prose h2 { color: #fff; font-weight: 700; font-size: 1.75rem; margin-top: 2.5rem; margin-bottom: 1rem; }
-          .prose h3 { color: #fff; font-weight: 600; font-size: 1.375rem; margin-top: 2rem; margin-bottom: 0.75rem; }
-          .prose p { color: #94a3b8; line-height: 1.8; margin-bottom: 1.5rem; }
-          .prose a { color: #818cf8; text-decoration: underline; }
-          .prose a:hover { color: #a5b4fc; }
-          .prose strong { color: #fff; }
+          .prose h2 { color: #fff; font-weight: 700; font-size: 1.75rem; margin-top: 3rem; margin-bottom: 1.25rem; letter-spacing: -0.02em; }
+          .prose h3 { color: #fff; font-weight: 600; font-size: 1.375rem; margin-top: 2.5rem; margin-bottom: 1rem; }
+          .prose p { color: #94a3b8; line-height: 1.8; margin-bottom: 1.5rem; font-size: 1.125rem; }
+          .prose a { color: #818cf8; text-decoration: none; border-bottom: 1px solid rgba(129, 140, 248, 0.3); transition: all 0.2s; }
+          .prose a:hover { color: #a5b4fc; border-color: #a5b4fc; }
+          .prose strong { color: #fff; font-weight: 600; }
           .prose ul, .prose ol { color: #94a3b8; margin-bottom: 1.5rem; padding-left: 1.5rem; }
-          .prose li { margin-bottom: 0.5rem; }
-          .prose blockquote { border-left: 4px solid #6366f1; padding-left: 1.5rem; margin: 2rem 0; color: #cbd5e1; font-style: italic; }
-          .prose code { background: rgba(255,255,255,0.1); padding: 0.25rem 0.5rem; border-radius: 0.25rem; color: #e2e8f0; font-size: 0.875rem; }
-          .prose pre { background: #0f172a; border: 1px solid rgba(255,255,255,0.1); border-radius: 0.75rem; padding: 1.5rem; overflow-x: auto; margin: 2rem 0; }
-          .prose pre code { background: transparent; padding: 0; }
-          .prose img { border-radius: 0.75rem; margin: 2rem 0; }
+          .prose li { margin-bottom: 0.5rem; position: relative; }
+          .prose blockquote { border-left: 4px solid #6366f1; padding-left: 1.5rem; margin: 2.5rem 0; color: #fff; font-style: italic; font-size: 1.25rem; line-height: 1.6; }
+          .prose code { background: rgba(255,255,255,0.1); padding: 0.25rem 0.5rem; border-radius: 0.375rem; color: #e2e8f0; font-size: 0.875rem; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+          .prose pre { background: #0f172a; border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem; padding: 1.5rem; overflow-x: auto; margin: 2.5rem 0; }
+          .prose pre code { background: transparent; padding: 0; color: #e2e8f0; }
+          .prose img { border-radius: 1rem; margin: 3rem 0; border: 1px solid rgba(255,255,255,0.05); }
         </style>
         {{{postBody}}}
       </div>
 
       <!-- Author Bio -->
       {{#if author}}
-      <aside class="p-8 rounded-2xl bg-white/5 border border-white/10 mb-16">
-        <div class="flex flex-col sm:flex-row gap-6">
+      <aside class="glass-card p-8 mb-16">
+        <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left">
           {{#if author.picture}}
           <img src="{{author.picture}}" alt="{{author.name}}" class="w-20 h-20 rounded-full border-2 border-white/10 shrink-0">
           {{else}}
@@ -149,25 +254,25 @@
           </div>
           {{/if}}
           <div class="flex-1">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="text-sm text-slate-500">Written by</span>
+            <div class="flex items-center justify-center sm:justify-start gap-2 mb-2">
+              <span class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Written by</span>
             </div>
-            <h3 class="text-xl font-bold text-white mb-2">
+            <h3 class="text-xl font-bold text-white mb-3">
               <a href="{{author.url}}" class="hover:text-indigo-400 transition-colors">{{author.name}}</a>
             </h3>
             {{#if author.bio}}
-            <div class="text-slate-400 mb-4">
+            <div class="text-slate-400 mb-4 text-sm leading-relaxed">
               {{{author.bio}}}
             </div>
             {{/if}}
-            <div class="flex gap-4">
+            <div class="flex gap-4 justify-center sm:justify-start">
               {{#if author.twitterProfileLink}}
-              <a href="{{author.twitterProfileLink}}" class="text-slate-500 hover:text-indigo-400 transition-colors" target="_blank" rel="noopener">
+              <a href="{{author.twitterProfileLink}}" class="text-slate-500 hover:text-white transition-colors" target="_blank" rel="noopener">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
               </a>
               {{/if}}
               {{#if author.linkedinProfileLink}}
-              <a href="{{author.linkedinProfileLink}}" class="text-slate-500 hover:text-indigo-400 transition-colors" target="_blank" rel="noopener">
+              <a href="{{author.linkedinProfileLink}}" class="text-slate-500 hover:text-white transition-colors" target="_blank" rel="noopener">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
               </a>
               {{/if}}
@@ -178,41 +283,54 @@
       {{/if}}
 
       <!-- Related Posts -->
-      <section>
+      <section class="border-t border-white/10 pt-16">
         <h2 class="text-2xl font-bold text-white mb-8">More from the blog</h2>
         <div class="grid sm:grid-cols-2 gap-6">
           {{#each blogs limit=2}}
           {{#unless (eq slug ../slug)}}
-          <article class="group rounded-2xl bg-white/5 border border-white/10 overflow-hidden hover:border-indigo-500/50 transition-all duration-300">
-            {{#if mainImage}}
-            <div class="aspect-video overflow-hidden">
-              <img src="{{mainImage}}" alt="{{name}}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-            </div>
-            {{/if}}
-            <div class="p-6">
-              <h3 class="text-lg font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">
-                <a href="{{url}}">{{name}}</a>
-              </h3>
-              <p class="text-slate-400 text-sm line-clamp-2">{{postSummary}}</p>
-            </div>
-          </article>
+          <a href="{{url}}" class="group block h-full">
+            <article class="glass-card h-full flex flex-col">
+              {{#if mainImage}}
+              <div class="aspect-video overflow-hidden border-b border-white/5">
+                <img src="{{mainImage}}" alt="{{name}}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+              </div>
+              {{/if}}
+              <div class="p-6 flex flex-col flex-grow">
+                <h3 class="text-lg font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors line-clamp-2">
+                  {{name}}
+                </h3>
+                <p class="text-slate-400 text-sm line-clamp-2 mb-4 flex-grow">{{postSummary}}</p>
+                <div class="text-xs text-slate-500 mt-auto">{{publishedAt}}</div>
+              </div>
+            </article>
+          </a>
           {{/unless}}
           {{/each}}
         </div>
       </section>
     </article>
 
-    <!-- CTA -->
-    <section class="py-20 sm:py-24 mt-16 relative overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-b from-slate-950 to-indigo-950/20"></div>
-      <div class="relative max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to get started?</h2>
-        <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto">
-          Turn your AI concepts into production-ready CMS sites in minutes.
-        </p>
-        <a href="https://app.fastmode.ai/register" class="inline-flex items-center justify-center px-8 py-4 bg-white text-indigo-950 rounded-full font-bold text-lg hover:bg-indigo-50 transition-all shadow-lg shadow-white/10">
-          Start for Free
-        </a>
+    <!-- New CTA Section -->
+    <section class="py-16 sm:py-24 mt-8">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative overflow-hidden rounded-3xl cta-gradient shadow-2xl shadow-indigo-900/20">
+          <div class="cta-glow"></div>
+          
+          <div class="relative z-10 px-8 py-16 md:py-20 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">Start building today</h2>
+            <p class="text-indigo-100 mb-8 text-lg max-w-2xl mx-auto leading-relaxed">
+              Join thousands of developers using FastMode to ship production-ready sites faster than ever before.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="https://app.fastmode.ai/register" class="inline-flex items-center justify-center px-8 py-3.5 bg-white text-indigo-950 rounded-full font-bold text-base hover:bg-indigo-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                Get Started for Free
+              </a>
+              <a href="/pricing" class="inline-flex items-center justify-center px-8 py-3.5 bg-white/5 text-white rounded-full font-bold text-base border border-white/10 hover:bg-white/10 transition-all">
+                View Pricing
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -272,4 +390,3 @@
   <script src="/public/js/main.js"></script>
 </body>
 </html>
-
