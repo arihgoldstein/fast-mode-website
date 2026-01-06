@@ -7,7 +7,7 @@ export default function Home() {
     <div className="min-h-screen bg-slate-950 text-white selection:bg-indigo-500/30">
       {/* Navigation */}
       <nav className="fixed w-full z-50 top-0 start-0 border-b border-white/10 bg-slate-950/80 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-2">
               <svg className="h-6" viewBox="0 0 253 142" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -47,12 +47,12 @@ export default function Home() {
         {/* Hero Section */}
         <section className="relative overflow-hidden py-20 sm:py-32">
           {/* Background effects */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-[1400px] pointer-events-none">
             <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-500/20 rounded-full blur-[100px]" />
             <div className="absolute top-40 right-10 w-96 h-96 bg-violet-500/20 rounded-full blur-[100px]" />
           </div>
 
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-indigo-300 mb-8 animate-fade-in-up">
               <span className="flex h-2 w-2 rounded-full bg-indigo-500 animate-pulse"></span>
               The AI-Native CMS
@@ -304,7 +304,7 @@ export default function Home() {
         <section className="py-16 sm:py-20 md:py-24 bg-slate-950 border-y border-white/5 relative overflow-hidden">
            {/* Subtle background gradient to match hero vibe */}
            <div className="absolute inset-0 bg-indigo-500/[0.02] pointer-events-none" />
-           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+           <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-10 sm:mb-12 md:mb-16">AI-built websites are hard to manage.</h2>
               <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
                  <div className="p-6 sm:p-8 rounded-2xl bg-white/5 border border-white/10 text-left hover:border-red-500/30 transition-colors group">
@@ -327,7 +327,7 @@ export default function Home() {
 
         {/* Solution Section Intro */}
         <section className="py-16 sm:py-20 md:py-24 relative overflow-hidden">
-           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+           <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <span className="text-indigo-400 font-semibold tracking-wide uppercase text-xs sm:text-sm">Solution</span>
               <h2 className="mt-2 text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 sm:mb-6">The bridge from AI to Production</h2>
               <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto">
@@ -340,7 +340,7 @@ export default function Home() {
         {/* Deep Dive 2: CMS */}
         <section className="py-16 sm:py-20 md:py-24 relative overflow-hidden bg-slate-950">
            {/* Removed Pink Glow - Keeping it clean dark */}
-           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+           <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
              <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
                 <div className="order-2 lg:order-1">
                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-sm font-medium mb-6">
@@ -455,7 +455,7 @@ export default function Home() {
         {/* Deep Dive 3: Visual Editor */}
         <section className="py-16 sm:py-20 md:py-24 relative overflow-hidden bg-slate-950">
           {/* Removed Cyan Glow - Keeping it clean dark */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
              <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
                 <div className="order-1 lg:order-1 relative">
                    {/* Product Screenshot: Visual Editor */}
@@ -594,7 +594,7 @@ export default function Home() {
           {/* Kept extremely subtle Indigo glow to match brand, but reduced intensity */}
           <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[500px] h-[500px] bg-indigo-500/[0.03] rounded-full blur-[100px] pointer-events-none" />
           
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
              <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
                 <div className="relative order-1 lg:order-1">
                    {/* Product Screenshot: Deployment Dashboard */}
@@ -716,7 +716,7 @@ export default function Home() {
         <section className="py-16 sm:py-20 md:py-24 bg-slate-950 border-y border-white/5 relative overflow-hidden">
            {/* Subtle background gradient to match hero vibe */}
            <div className="absolute inset-0 bg-indigo-500/[0.02] pointer-events-none" />
-           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+           <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
                  <div className="order-2 lg:order-1">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
@@ -795,7 +795,7 @@ export default function Home() {
 
         {/* Features Grid (Key Features) */}
         <section id="features" className="py-12 sm:py-16 md:py-20 bg-slate-950">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 md:mb-16">
               <span className="text-indigo-400 font-semibold tracking-wide uppercase text-sm">Everything You Need</span>
               <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -877,7 +877,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-slate-950 border-t border-white/10 pt-16 pb-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
               <div>
                 <div className="flex items-center gap-2 mb-6">
