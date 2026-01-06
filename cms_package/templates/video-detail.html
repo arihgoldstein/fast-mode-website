@@ -333,7 +333,25 @@
           <svg class="w-5 h-5 text-indigo-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
           Description
         </h3>
-        <div class="text-slate-300 leading-relaxed prose prose-invert prose-lg max-w-none">
+        <div class="video-description">
+          <style>
+            .video-description p { color: #94a3b8; line-height: 1.8; margin-bottom: 1.25rem; font-size: 1rem; }
+            .video-description p:last-child { margin-bottom: 0; }
+            .video-description a { color: #818cf8; text-decoration: none; border-bottom: 1px solid rgba(129, 140, 248, 0.3); transition: all 0.2s; }
+            .video-description a:hover { color: #a5b4fc; border-color: #a5b4fc; }
+            .video-description strong { color: #fff; font-weight: 600; }
+            .video-description ul, .video-description ol { color: #94a3b8; margin-bottom: 1.25rem; padding-left: 1.5rem; font-size: 1rem; }
+            .video-description ul { list-style-type: disc; }
+            .video-description ol { list-style-type: decimal; }
+            .video-description li { margin-bottom: 0.5rem; line-height: 1.7; }
+            .video-description li::marker { color: #64748b; }
+            .video-description h2 { color: #fff; font-weight: 700; font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; }
+            .video-description h3 { color: #fff; font-weight: 600; font-size: 1.25rem; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+            .video-description blockquote { border-left: 3px solid #6366f1; padding-left: 1rem; margin: 1.5rem 0; color: #cbd5e1; font-style: italic; }
+            .video-description code { background: rgba(255,255,255,0.1); padding: 0.2rem 0.4rem; border-radius: 0.25rem; color: #e2e8f0; font-size: 0.875rem; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+            .video-description pre { background: #0f172a; border: 1px solid rgba(255,255,255,0.1); border-radius: 0.75rem; padding: 1rem; overflow-x: auto; margin: 1.5rem 0; }
+            .video-description pre code { background: transparent; padding: 0; }
+          </style>
           {{{longdescription}}}
         </div>
       </div>
