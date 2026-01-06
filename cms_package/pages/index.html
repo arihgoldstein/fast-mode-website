@@ -394,123 +394,108 @@
             <!-- Product Screenshot: CMS Interface -->
             <div class="relative w-full aspect-[4/3] rounded-xl border border-white/10 bg-slate-900 shadow-2xl shadow-indigo-500/10 overflow-hidden flex flex-col select-none group transform transition-transform duration-700 hover:scale-[1.02]">
               <!-- Window Controls & Header -->
-              <div class="h-10 border-b border-white/5 flex items-center justify-between px-4 bg-slate-950/50">
+              <div class="h-10 border-b border-white/5 flex items-center justify-between px-4 bg-slate-950/30">
                 <div class="flex gap-2">
-                  <div class="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/30"></div>
-                  <div class="w-3 h-3 rounded-full bg-amber-500/20 border border-amber-500/30"></div>
-                  <div class="w-3 h-3 rounded-full bg-emerald-500/20 border border-emerald-500/30"></div>
+                  <div class="w-3 h-3 rounded-full bg-white/10"></div>
+                  <div class="w-3 h-3 rounded-full bg-white/10"></div>
+                  <div class="w-3 h-3 rounded-full bg-white/10"></div>
                 </div>
-                <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/50 border border-white/5">
-                  <svg class="w-3 h-3 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                  <span class="text-[10px] font-medium text-slate-400">fastmode.app</span>
+                <div class="flex items-center gap-2 px-3 py-1 rounded-md bg-black/20 border border-white/5">
+                  <svg class="w-3 h-3 text-indigo-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  <span class="text-[10px] font-medium text-slate-400">admin.fastmode.app</span>
                 </div>
               </div>
 
               <div class="flex h-full">
                 <!-- Sidebar -->
-                <div class="w-48 border-r border-white/5 flex flex-col bg-slate-950/30 hidden sm:flex">
-                  <div class="p-4">
-                    <div class="text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-2">Collections</div>
-                    <div class="space-y-1">
-                      <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
-                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                        <span class="text-xs font-medium">Blog Posts</span>
-                      </div>
-                      <div class="flex items-center gap-2 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-colors">
-                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                        <span class="text-xs font-medium">Authors</span>
-                      </div>
-                      <div class="flex items-center gap-2 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-colors">
-                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
-                        <span class="text-xs font-medium">Categories</span>
-                      </div>
+                <div class="w-16 sm:w-48 border-r border-white/5 flex flex-col bg-slate-950/20">
+                  <div class="p-4 space-y-1">
+                    <div class="px-3 py-2 bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 rounded-lg text-xs font-medium flex items-center gap-3">
+                      <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                      <span class="hidden sm:inline">Collections</span>
                     </div>
-                  </div>
-                  <div class="mt-auto p-4 border-t border-white/5">
-                    <div class="flex items-center gap-2">
-                      <div class="w-6 h-6 rounded-full bg-gradient-to-tr from-indigo-500 to-violet-500"></div>
-                      <div class="text-xs font-medium text-slate-300">FastMode User</div>
+                    <div class="px-3 py-2 text-slate-400 hover:text-white hover:bg-white/5 rounded-lg text-xs font-medium flex items-center gap-3 transition-colors">
+                      <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                      <span class="hidden sm:inline">Comments</span>
+                    </div>
+                    <div class="px-3 py-2 text-slate-400 hover:text-white hover:bg-white/5 rounded-lg text-xs font-medium flex items-center gap-3 transition-colors">
+                      <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                      <span class="hidden sm:inline">Settings</span>
                     </div>
                   </div>
                 </div>
 
-                <!-- Content Area -->
-                <div class="flex-1 flex flex-col bg-slate-900">
-                  <!-- Toolbar -->
-                  <div class="h-14 border-b border-white/5 flex items-center justify-between px-6">
-                    <div class="flex items-center gap-3">
-                      <h3 class="font-bold text-white">Blog Posts</h3>
-                      <span class="px-2 py-0.5 rounded-full bg-white/5 text-[10px] text-slate-400 border border-white/5">12 items</span>
+                <!-- Main Content -->
+                <div class="flex-1 p-6 sm:p-8 bg-gradient-to-br from-slate-900 to-slate-900/50">
+                  <div class="flex items-center justify-between mb-8">
+                    <div>
+                      <h3 class="text-white font-bold text-lg">Content Models</h3>
+                      <p class="text-slate-400 text-xs mt-1">Schema generated from codebase</p>
                     </div>
-                    <button class="px-3 py-1.5 bg-indigo-600 text-white text-xs font-bold rounded-lg hover:bg-indigo-500 transition-colors shadow-lg shadow-indigo-500/20 flex items-center gap-2">
-                      <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> New Entry
-                    </button>
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-medium">
+                      <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                      </span>
+                      Live Sync
+                    </span>
                   </div>
 
-                  <!-- Table Header -->
-                  <div class="grid grid-cols-12 gap-4 px-6 py-3 border-b border-white/5 bg-slate-950/20">
-                    <div class="col-span-6 text-[10px] font-semibold text-slate-500 uppercase tracking-wider">Title</div>
-                    <div class="col-span-3 text-[10px] font-semibold text-slate-500 uppercase tracking-wider">Status</div>
-                    <div class="col-span-3 text-[10px] font-semibold text-slate-500 uppercase tracking-wider">Date</div>
-                  </div>
-
-                  <!-- Table Items -->
-                  <div class="p-2 space-y-1">
-                    <!-- Item 1 -->
-                    <div class="grid grid-cols-12 gap-4 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors items-center group/item cursor-pointer border border-transparent hover:border-white/5">
-                      <div class="col-span-6 flex items-center gap-3">
-                        <div class="w-8 h-8 rounded bg-slate-800 border border-white/5 flex items-center justify-center text-slate-600">
-                          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><image x="2" y="2" width="20" height="20" rx="2" ry="2"></image><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Collection Card 1 -->
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/5 hover:border-indigo-500/30 hover:bg-white/10 transition-all group/card cursor-pointer">
+                      <div class="flex items-start justify-between mb-3">
+                        <div class="w-10 h-10 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center group-hover/card:scale-110 transition-transform">
+                          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                         </div>
-                        <span class="text-sm font-medium text-slate-200 group-hover/item:text-white transition-colors">Getting Started with AI</span>
+                        <svg class="w-4 h-4 text-slate-500 group-hover/card:text-indigo-400 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
                       </div>
-                      <div class="col-span-3">
-                        <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-medium">
-                          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Published
-                        </span>
-                      </div>
-                      <div class="col-span-3 text-xs text-slate-500">Oct 24, 2024</div>
+                      <div class="font-semibold text-white text-sm mb-1">Blog Posts</div>
+                      <div class="text-xs text-slate-400">12 items · 4 fields</div>
                     </div>
 
-                    <!-- Item 2 -->
-                    <div class="grid grid-cols-12 gap-4 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors items-center group/item cursor-pointer border border-transparent hover:border-white/5">
-                      <div class="col-span-6 flex items-center gap-3">
-                        <div class="w-8 h-8 rounded bg-slate-800 border border-white/5 flex items-center justify-center text-slate-600">
-                          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    <!-- Collection Card 2 -->
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/5 hover:border-indigo-500/30 hover:bg-white/10 transition-all group/card cursor-pointer">
+                      <div class="flex items-start justify-between mb-3">
+                        <div class="w-10 h-10 rounded-lg bg-violet-500/20 text-violet-400 flex items-center justify-center group-hover/card:scale-110 transition-transform">
+                          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                         </div>
-                        <span class="text-sm font-medium text-slate-200 group-hover/item:text-white transition-colors">The Future of CMS</span>
+                        <svg class="w-4 h-4 text-slate-500 group-hover/card:text-violet-400 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
                       </div>
-                      <div class="col-span-3">
-                        <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-md bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[10px] font-medium">
-                          <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Draft
-                        </span>
-                      </div>
-                      <div class="col-span-3 text-xs text-slate-500">Just now</div>
+                      <div class="font-semibold text-white text-sm mb-1">Authors</div>
+                      <div class="text-xs text-slate-400">4 items · 3 fields</div>
                     </div>
 
-                    <!-- Item 3 -->
-                    <div class="grid grid-cols-12 gap-4 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors items-center group/item cursor-pointer border border-transparent hover:border-white/5 opacity-60">
-                      <div class="col-span-6 flex items-center gap-3">
-                         <div class="w-8 h-8 rounded bg-slate-800 border border-white/5 flex items-center justify-center text-slate-600">
-                          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path></svg>
+                    <!-- Collection Card 3 -->
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/5 hover:border-indigo-500/30 hover:bg-white/10 transition-all group/card cursor-pointer opacity-75">
+                      <div class="flex items-start justify-between mb-3">
+                        <div class="w-10 h-10 rounded-lg bg-pink-500/20 text-pink-400 flex items-center justify-center group-hover/card:scale-110 transition-transform">
+                          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
                         </div>
-                        <span class="text-sm font-medium text-slate-200">Web Design Trends</span>
+                        <svg class="w-4 h-4 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
                       </div>
-                      <div class="col-span-3">
-                        <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-md bg-slate-700/30 text-slate-400 border border-slate-600/20 text-[10px] font-medium">
-                          <span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span> Archived
-                        </span>
-                      </div>
-                      <div class="col-span-3 text-xs text-slate-500">Sep 12, 2024</div>
+                      <div class="font-semibold text-white text-sm mb-1">Tags</div>
+                      <div class="text-xs text-slate-400">8 items · 2 fields</div>
                     </div>
                   </div>
                 </div>
               </div>
+              
+              <!-- Floating Notification -->
+              <div class="absolute bottom-6 right-6 bg-slate-800/90 backdrop-blur-md border border-indigo-500/30 shadow-2xl shadow-black/50 rounded-xl p-4 flex items-center gap-4 animate-fade-in-up max-w-[260px]">
+                 <div class="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center text-white shrink-0 shadow-lg shadow-indigo-500/30">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                 </div>
+                 <div>
+                    <div class="text-xs font-bold text-white mb-0.5">Auto-Scan Complete</div>
+                    <div class="text-[10px] text-slate-300 leading-tight">FastMode detected 3 collections from your code.</div>
+                 </div>
+              </div>
             </div>
             
-            <!-- Decorative Elements -->
-            <div class="absolute -top-10 -right-10 w-40 h-40 bg-indigo-500/20 rounded-full blur-[60px] -z-10 pointer-events-none"></div>
-            <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-violet-500/20 rounded-full blur-[60px] -z-10 pointer-events-none"></div>
+            <!-- Decorative Glows (Subtler) -->
+            <div class="absolute -top-20 -right-20 w-64 h-64 bg-indigo-500/10 rounded-full blur-[80px] -z-10 pointer-events-none"></div>
+            <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-violet-500/10 rounded-full blur-[80px] -z-10 pointer-events-none"></div>
           </div>
         </div>
       </div>
