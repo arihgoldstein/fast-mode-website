@@ -226,7 +226,7 @@
 
       <!-- Author Bio -->
       {{#if author}}
-      <aside class="glass-card p-8 mb-16">
+      <aside class="glass-card p-8">
         <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left">
           {{#if author.picture}}
           <img src="{{author.picture}}" alt="{{author.name}}" class="w-20 h-20 rounded-full border-2 border-white/10 shrink-0">
@@ -263,37 +263,10 @@
         </div>
       </aside>
       {{/if}}
-
-      <!-- Related Posts -->
-      <section class="border-t border-white/10 pt-16">
-        <h2 class="text-2xl font-bold text-white mb-8">More from the blog</h2>
-        <div class="grid sm:grid-cols-2 gap-6">
-          {{#each blogs limit=2}}
-          {{#unless (eq slug ../slug)}}
-          <a href="{{url}}" class="group block h-full">
-            <article class="glass-card h-full flex flex-col">
-              {{#if mainImage}}
-              <div class="aspect-video overflow-hidden border-b border-white/5">
-                <img src="{{mainImage}}" alt="{{name}}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100">
-              </div>
-              {{/if}}
-              <div class="p-6 flex flex-col flex-grow">
-                <h3 class="text-lg font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors line-clamp-2">
-                  {{name}}
-                </h3>
-                <p class="text-slate-400 text-sm line-clamp-2 mb-4 flex-grow">{{postSummary}}</p>
-                <div class="text-xs text-slate-500 mt-auto">{{publishedAt}}</div>
-              </div>
-            </article>
-          </a>
-          {{/unless}}
-          {{/each}}
-        </div>
-      </section>
     </article>
 
-    <!-- New CTA Section -->
-    <section class="py-16 sm:py-24 mt-8">
+    <!-- CTA Section -->
+    <section class="py-16 sm:py-20">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="relative overflow-hidden rounded-3xl cta-gradient shadow-2xl shadow-indigo-900/20">
           <div class="cta-glow"></div>
