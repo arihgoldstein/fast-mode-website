@@ -275,8 +275,11 @@
       <div class="video-container">
         {{#if videourl}}
         <iframe 
-          src="{{videourl}}" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          src="{{videourl}}"
+          title="{{name}}"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
         ></iframe>
         {{else}}
