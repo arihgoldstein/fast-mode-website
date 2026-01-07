@@ -97,7 +97,7 @@ export default function Home() {
             {/* Visual Element Placeholder - App Interface */}
             <div className="mt-20 relative mx-auto max-w-[1200px] pointer-events-none select-none text-left">
               <div className="relative rounded-2xl border-2 border-indigo-500/40 bg-slate-950 overflow-hidden group" style={{boxShadow: '0 0 80px -10px rgba(99, 102, 241, 0.5), 0 25px 50px -12px rgba(0, 0, 0, 0.25)'}}>
-                <div className="flex h-[600px] md:h-[700px] rounded-2xl overflow-hidden">
+                <div className="flex h-[380px] md:h-[700px] rounded-2xl overflow-hidden">
                   
                   {/* Sidebar 1: Main Nav */}
                   <div className="w-64 bg-slate-950 border-r border-white/5 flex-col flex-shrink-0 hidden lg:flex">
@@ -226,7 +226,7 @@ export default function Home() {
                            </div>
 
                            {/* Website Hero - Centered Layout */}
-                           <div className="relative flex-1 flex items-center justify-center p-4 lg:p-8 overflow-hidden">
+                           <div className="relative flex-1 flex items-center justify-center pt-12 px-4 pb-4 md:p-8 overflow-hidden">
                               {/* Background Decorations */}
                               <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-50/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
                               <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-50/50 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
