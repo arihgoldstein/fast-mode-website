@@ -57,14 +57,14 @@ export default function Home() {
               <span className="flex h-2 w-2 rounded-full bg-indigo-500 animate-pulse"></span>
               The AI-Native CMS
             </div>
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-8 max-w-5xl mx-auto leading-[1.1]">
-              <span className="block text-slate-400 mb-2 sm:mb-3">AI Built Your Website.</span>
-              <span className="block text-white drop-shadow-2xl">
-                Fast Mode Gets It to Production.
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-slate-400">
+              Turn AI Websites into <br />
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-violet-400">
+                Production-Ready CMS Sites
               </span>
             </h1>
-            <p className="max-w-2xl mx-auto text-lg sm:text-xl text-slate-400 mb-10 leading-relaxed">
-              Convert static AI-built websites into fully editable, production-ready CMS sites in under 5 minutes.
+            <p className="max-w-2xl mx-auto text-lg text-slate-400 mb-10 leading-relaxed">
+              Stop manually rebuilding AI prototypes. Instantly generate a headless CMS, deploy to a global network, and enable visual editing for any AI-generated code.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
