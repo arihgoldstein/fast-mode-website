@@ -45,7 +45,7 @@ export default function Home() {
 
       <main className="pt-24 pb-16">
         {/* Hero Section */}
-        <section className="relative overflow-hidden py-20 sm:py-32">
+        <section className="relative overflow-hidden py-16 sm:py-24">
           {/* Background effects */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-[1400px] pointer-events-none">
             <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-500/20 rounded-full blur-[100px]" />
@@ -53,18 +53,18 @@ export default function Home() {
           </div>
 
           <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-indigo-300 mb-8 animate-fade-in-up">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-indigo-300 mb-8">
               <span className="flex h-2 w-2 rounded-full bg-indigo-500 animate-pulse"></span>
               The AI-Native CMS
             </div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-slate-400">
-              Turn AI Websites into <br />
+              AI Built Your Website. <br />
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-violet-400">
-                Production-Ready CMS Sites
+                Fast Mode Gets It to Production.
               </span>
             </h1>
             <p className="max-w-2xl mx-auto text-lg text-slate-400 mb-10 leading-relaxed">
-              Stop manually rebuilding AI prototypes. Instantly generate a headless CMS, deploy to a global network, and enable visual editing for any AI-generated code.
+              Convert static AI-built websites into fully editable, production-ready CMS sites in under 5 minutes.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
