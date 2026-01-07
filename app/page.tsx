@@ -57,25 +57,25 @@ export default function Home() {
               <span className="flex h-2 w-2 rounded-full bg-indigo-500 animate-pulse"></span>
               The AI-Native CMS
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-slate-400">
-              AI Built Your Website. <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-violet-400">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-8">
+              <span className="block text-white mb-2 leading-tight">AI Built Your Website.</span>
+              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-violet-400 pb-2 leading-tight">
                 Fast Mode Gets It to Production.
               </span>
             </h1>
             <p className="max-w-2xl mx-auto text-lg text-slate-400 mb-10 leading-relaxed">
               Convert static AI-built websites into fully editable, production-ready CMS sites in under 5 minutes.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-row items-center justify-center gap-4 w-full sm:w-auto px-4 sm:px-0">
               <Link
                 href="https://app.fastmode.ai/register"
-                className="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-semibold transition-all shadow-[0_0_30px_-5px_rgba(79,70,229,0.5)] flex items-center justify-center gap-2"
+                className="flex-1 sm:flex-initial px-6 py-3 sm:px-8 sm:py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-semibold transition-all shadow-[0_0_30px_-5px_rgba(79,70,229,0.5)] flex items-center justify-center gap-2 text-sm sm:text-base whitespace-nowrap"
               >
-                Get Started <ArrowRight className="w-5 h-5" />
+                Get Started <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </Link>
               <Link
                 href="/demo"
-                className="w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-2xl font-semibold transition-all flex items-center justify-center gap-2"
+                className="flex-1 sm:flex-initial px-6 py-3 sm:px-8 sm:py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-2xl font-semibold transition-all flex items-center justify-center gap-2 text-sm sm:text-base whitespace-nowrap"
               >
                 View Demo
               </Link>
