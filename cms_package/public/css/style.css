@@ -112,6 +112,9 @@ button {
 .w-full { width: 100%; }
 .max-w-7xl { max-width: 1400px; }
 .max-w-4xl { max-width: 56rem; }
+@media (min-width: 640px) {
+  .sm\:max-w-4xl { max-width: 56rem; }
+}
 .max-w-3xl { max-width: 48rem; }
 .max-w-2xl { max-width: 42rem; }
 .max-w-xl { max-width: 36rem; }

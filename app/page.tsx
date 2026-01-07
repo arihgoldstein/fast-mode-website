@@ -319,7 +319,7 @@ export default function Home() {
            <div className="absolute inset-0 bg-indigo-500/[0.02] pointer-events-none" />
            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-10 sm:mb-12 md:mb-16">AI-built websites are hard to manage.</h2>
-              <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-6 sm:gap-8 sm:max-w-4xl mx-auto">
                  <div className="p-6 sm:p-8 rounded-2xl bg-white/5 border border-white/10 text-left hover:border-red-500/30 transition-colors group">
                     <div className="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
                        <Code className="w-6 h-6 text-red-400" />
