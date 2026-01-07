@@ -58,9 +58,9 @@ export default function Home() {
               The AI-Native CMS
             </div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-slate-400">
-              Pricing that stays <br />
+              Ship AI Websites <br />
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-violet-400">
-                out of your way
+                to Production
               </span>
             </h1>
             <p className="max-w-2xl mx-auto text-lg text-slate-400 mb-10 leading-relaxed">
