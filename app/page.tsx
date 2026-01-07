@@ -45,7 +45,7 @@ export default function Home() {
 
       <main className="pt-24 pb-16">
         {/* Hero Section */}
-        <section className="relative overflow-hidden py-16 sm:py-24">
+        <section className="relative overflow-hidden pt-20 pb-16 sm:pt-24 sm:pb-32">
           {/* Background effects */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-[1400px] pointer-events-none">
             <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-500/20 rounded-full blur-[100px]" />
@@ -57,8 +57,8 @@ export default function Home() {
               <span className="flex h-2 w-2 rounded-full bg-indigo-500 animate-pulse"></span>
               The AI-Native CMS
             </div>
-            <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight mb-6 sm:mb-8 leading-[1.1]">
-              <span className="block text-slate-400 mb-2">AI Built Your Website.</span>
+            <h1 className="text-4xl sm:text-7xl lg:text-9xl font-extrabold tracking-tighter mb-8 sm:mb-12 leading-none">
+              <span className="block text-indigo-300 mb-2 sm:mb-4">AI Built Your Website.</span>
               <span className="block text-white">
                 Fast Mode Gets It to Production.
               </span>
