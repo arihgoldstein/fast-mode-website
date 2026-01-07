@@ -53,7 +53,20 @@ export default function Home() {
           </div>
 
           <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-xs font-semibold uppercase tracking-wide text-indigo-400 mb-8">
+            <div 
+              className="inline-flex items-center gap-1.5 mb-8"
+              style={{
+                background: 'rgba(99, 102, 241, 0.1)',
+                border: '1px solid rgba(99, 102, 241, 0.2)',
+                color: '#818cf8',
+                padding: '0.35rem 1rem',
+                borderRadius: '9999px',
+                fontSize: '0.75rem',
+                fontWeight: 600,
+                letterSpacing: '0.025em',
+                textTransform: 'uppercase' as const,
+              }}
+            >
               <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
               The AI-Native CMS
             </div>
