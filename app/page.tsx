@@ -359,7 +359,7 @@ export default function Home() {
                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-sm font-medium mb-6">
                       <Layout className="w-4 h-4" /> Connect Once
                    </div>
-                   <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+                   <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                       Automatic CMS Generation
                    </h2>
                    <p className="text-base sm:text-lg text-slate-400 mb-6 sm:mb-8 leading-relaxed">
@@ -561,7 +561,7 @@ export default function Home() {
                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-medium mb-6">
                       <FileText className="w-4 h-4" /> Edit & Publish
                    </div>
-                   <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+                   <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                       Visual Page Editing
                    </h2>
                    <p className="text-base sm:text-lg text-slate-400 mb-6 sm:mb-8 leading-relaxed">
@@ -693,7 +693,7 @@ export default function Home() {
                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-sm font-medium mb-6">
                       <Globe className="w-4 h-4" /> Global Network
                    </div>
-                   <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+                   <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                       Headless CMS + Hosting
                    </h2>
                    <p className="text-base sm:text-lg text-slate-400 mb-6 sm:mb-8 leading-relaxed">
