@@ -45,7 +45,7 @@ export default function Home() {
 
       <main className="pt-24 pb-16">
         {/* Hero Section */}
-        <section className="relative overflow-hidden pt-32 pb-16 sm:pt-24 sm:pb-32">
+        <section className="relative overflow-hidden pt-32 pb-20 sm:py-32">
           {/* Background effects */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-[1400px] pointer-events-none">
             <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-500/20 rounded-full blur-[100px]" />
@@ -57,27 +57,27 @@ export default function Home() {
               <span className="flex h-2 w-2 rounded-full bg-indigo-500 animate-pulse"></span>
               The AI-Native CMS
             </div>
-            <h1 className="text-4xl sm:text-7xl lg:text-9xl font-extrabold tracking-tighter mb-8 sm:mb-12 leading-none">
-              <span className="block text-indigo-300 mb-2 sm:mb-4">AI Built Your Website.</span>
-              <span className="block text-white">
-                Fast Mode Gets It to Production.
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-slate-400">
+              Pricing that stays <br />
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-violet-400">
+                out of your way
               </span>
             </h1>
-            <p className="max-w-2xl mx-auto text-lg sm:text-xl text-slate-400 mb-8 sm:mb-10 leading-relaxed">
-              Convert static AI-built websites into fully editable, production-ready CMS sites in under 5 minutes.
+            <p className="max-w-2xl mx-auto text-lg text-slate-400 mb-10 leading-relaxed">
+              Launch on a Fastmode subdomain for free in minutes. Upgrade when you want your own domain, white-label hosting, and CDN delivery.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto px-4 sm:px-0">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="https://app.fastmode.ai/register"
-                className="w-full sm:w-auto px-8 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full font-semibold transition-all shadow-lg shadow-indigo-500/20 flex items-center justify-center gap-2 text-sm sm:text-base"
+                className="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-semibold transition-all shadow-[0_0_30px_-5px_rgba(79,70,229,0.5)] flex items-center justify-center gap-2"
               >
-                Get Started <ArrowRight className="w-4 h-4" />
+                Start free <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
-                href="/demo"
-                className="w-full sm:w-auto px-8 py-3.5 bg-white/10 hover:bg-white/15 border border-white/10 text-white rounded-full font-semibold transition-all flex items-center justify-center gap-2 text-sm sm:text-base"
+                href="#plans"
+                className="w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-2xl font-semibold transition-all flex items-center justify-center gap-2"
               >
-                View Demo
+                View plans
               </Link>
             </div>
 
