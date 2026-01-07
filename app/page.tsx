@@ -54,7 +54,7 @@ export default function Home() {
 
           <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-xs font-semibold uppercase tracking-wide text-indigo-400 mb-8">
-              <span className="flex h-2 w-2 rounded-full bg-indigo-500 animate-pulse"></span>
+              <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
               The AI-Native CMS
             </div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-slate-400">
