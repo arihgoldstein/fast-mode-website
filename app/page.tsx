@@ -339,7 +339,7 @@ export default function Home() {
         </section>
 
         {/* Solution Section Intro */}
-        <section className="py-16 sm:py-20 md:py-24 relative overflow-hidden">
+        <section className="pt-16 pb-8 sm:pt-20 sm:pb-10 md:pt-24 md:pb-12 relative overflow-hidden">
            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <span className="text-indigo-400 font-semibold tracking-wide uppercase text-xs sm:text-sm">Solution</span>
               <h2 className="mt-2 text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 sm:mb-6">The bridge from AI to Production</h2>
