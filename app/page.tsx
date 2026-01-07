@@ -45,7 +45,7 @@ export default function Home() {
 
       <main className="pt-24 pb-16">
         {/* Hero Section */}
-        <section className="relative overflow-hidden pt-24 pb-20 sm:py-32">
+        <section className="relative overflow-hidden pt-20 pb-20 sm:py-32">
           {/* Background effects */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-[1400px] pointer-events-none">
             <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-500/20 rounded-full blur-[100px]" />
