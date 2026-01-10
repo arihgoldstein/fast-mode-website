@@ -326,9 +326,36 @@
         {{/if}}
       </div>
 
+      {{#if longdescription}}
+      <!-- Content Card -->
+      <div class="glass-card mb-16">
+        <div class="video-description">
+          <style>
+            .video-description p { color: #94a3b8; line-height: 1.8; margin-bottom: 1.25rem; font-size: 1rem; }
+            .video-description p:last-child { margin-bottom: 0; }
+            .video-description a { color: #818cf8; text-decoration: none; border-bottom: 1px solid rgba(129, 140, 248, 0.3); transition: all 0.2s; }
+            .video-description a:hover { color: #a5b4fc; border-color: #a5b4fc; }
+            .video-description strong { color: #fff; font-weight: 600; }
+            .video-description ul, .video-description ol { color: #94a3b8; margin-bottom: 1.25rem; padding-left: 1.5rem; font-size: 1rem; }
+            .video-description ul { list-style-type: disc; }
+            .video-description ol { list-style-type: decimal; }
+            .video-description li { margin-bottom: 0.5rem; line-height: 1.7; }
+            .video-description li::marker { color: #64748b; }
+            .video-description h2 { color: #fff; font-weight: 700; font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; }
+            .video-description h3 { color: #fff; font-weight: 600; font-size: 1.25rem; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+            .video-description blockquote { border-left: 3px solid #6366f1; padding-left: 1rem; margin: 1.5rem 0; color: #cbd5e1; font-style: italic; }
+            .video-description code { background: rgba(255,255,255,0.1); padding: 0.2rem 0.4rem; border-radius: 0.25rem; color: #e2e8f0; font-size: 0.875rem; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+            .video-description pre { background: #0f172a; border: 1px solid rgba(255,255,255,0.1); border-radius: 0.75rem; padding: 1rem; overflow-x: auto; margin: 1.5rem 0; }
+            .video-description pre code { background: transparent; padding: 0; }
+          </style>
+          {{{longdescription}}}
+        </div>
+      </div>
+      {{/if}}
+
       {{#if creator}}
       <!-- Creator Bio -->
-      <div class="glass-card mb-12">
+      <div class="glass-card mb-16">
         <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left">
           {{#if creator.picture}}
           <img src="{{creator.picture}}" alt="{{creator.name}}" class="w-20 h-20 rounded-full border-2 border-white/10 shrink-0">
@@ -362,33 +389,6 @@
               {{/if}}
             </div>
           </div>
-        </div>
-      </div>
-      {{/if}}
-
-      {{#if longdescription}}
-      <!-- Content Card -->
-      <div class="glass-card mb-16">
-        <div class="video-description">
-          <style>
-            .video-description p { color: #94a3b8; line-height: 1.8; margin-bottom: 1.25rem; font-size: 1rem; }
-            .video-description p:last-child { margin-bottom: 0; }
-            .video-description a { color: #818cf8; text-decoration: none; border-bottom: 1px solid rgba(129, 140, 248, 0.3); transition: all 0.2s; }
-            .video-description a:hover { color: #a5b4fc; border-color: #a5b4fc; }
-            .video-description strong { color: #fff; font-weight: 600; }
-            .video-description ul, .video-description ol { color: #94a3b8; margin-bottom: 1.25rem; padding-left: 1.5rem; font-size: 1rem; }
-            .video-description ul { list-style-type: disc; }
-            .video-description ol { list-style-type: decimal; }
-            .video-description li { margin-bottom: 0.5rem; line-height: 1.7; }
-            .video-description li::marker { color: #64748b; }
-            .video-description h2 { color: #fff; font-weight: 700; font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; }
-            .video-description h3 { color: #fff; font-weight: 600; font-size: 1.25rem; margin-top: 1.5rem; margin-bottom: 0.75rem; }
-            .video-description blockquote { border-left: 3px solid #6366f1; padding-left: 1rem; margin: 1.5rem 0; color: #cbd5e1; font-style: italic; }
-            .video-description code { background: rgba(255,255,255,0.1); padding: 0.2rem 0.4rem; border-radius: 0.25rem; color: #e2e8f0; font-size: 0.875rem; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
-            .video-description pre { background: #0f172a; border: 1px solid rgba(255,255,255,0.1); border-radius: 0.75rem; padding: 1rem; overflow-x: auto; margin: 1.5rem 0; }
-            .video-description pre code { background: transparent; padding: 0; }
-          </style>
-          {{{longdescription}}}
         </div>
       </div>
       {{/if}}
