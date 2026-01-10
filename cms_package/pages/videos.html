@@ -264,10 +264,19 @@
                 {{/if}}
                 
                 <div class="flex items-center justify-between pt-4 border-t border-white/5 mt-auto">
+                  {{#if creator}}
+                  <div class="flex items-center gap-2">
+                    {{#if creator.picture}}
+                    <img src="{{creator.picture}}" alt="{{creator.name}}" class="w-6 h-6 rounded-full border border-white/10">
+                    {{/if}}
+                    <span class="text-sm text-slate-500">{{creator.name}}</span>
+                  </div>
+                  {{else}}
                   {{#if publishedAt}}
                   <span class="text-xs text-slate-500 font-medium">{{publishedAt}}</span>
                   {{else}}
                   <span></span>
+                  {{/if}}
                   {{/if}}
                   
                   <span class="watch-btn">
