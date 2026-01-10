@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{name}} | FastMode Blog</title>
-  <meta name="description" content="{{postSummary}}">
+  <meta name="description" content="{{post_summary}}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -200,9 +200,9 @@
       </header>
 
       <!-- Hero Image -->
-      {{#if mainImage}}
+      {{#if main_image}}
       <div class="relative aspect-video rounded-2xl overflow-hidden mb-12 border border-white/10 shadow-2xl shadow-indigo-500/5">
-        <img src="{{mainImage}}" alt="{{name}}" class="w-full h-full object-cover">
+        <img src="{{main_image}}" alt="{{name}}" class="w-full h-full object-cover">
       </div>
       {{/if}}
 
@@ -223,7 +223,7 @@
           .prose pre code { background: transparent; padding: 0; color: #e2e8f0; }
           .prose img { border-radius: 1rem; margin: 3rem 0; border: 1px solid rgba(255,255,255,0.05); }
         </style>
-        {{{postBody}}}
+        {{{post_body}}}
       </div>
 
       <!-- Author Bio -->
