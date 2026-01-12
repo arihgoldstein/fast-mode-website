@@ -916,7 +916,7 @@ input[type="email"]:focus {
 }
 
 .docs-nav-link.active {
-  background: rgba(99, 102, 241, 0.12);
+  background: transparent;
   color: var(--docs-link);
   font-weight: 500;
 }
