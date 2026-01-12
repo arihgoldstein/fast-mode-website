@@ -980,6 +980,40 @@ input[type="email"]:focus {
   color: var(--docs-border);
 }
 
+/* Header logo - visible on mobile/tablet, hidden on desktop */
+.docs-header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--docs-text);
+  text-decoration: none;
+}
+
+.docs-header-logo svg {
+  width: 20px;
+  height: auto;
+}
+
+/* Hide header logo on desktop where sidebar is visible */
+@media (min-width: 1024px) {
+  .docs-header-logo {
+    display: none;
+  }
+}
+
+/* Hide desktop breadcrumb text on mobile/tablet */
+.docs-breadcrumb-desktop {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .docs-breadcrumb-desktop {
+    display: inline;
+  }
+}
+
 .docs-content {
   max-width: 800px;
   margin: 0 auto;
