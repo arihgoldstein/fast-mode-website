@@ -27,14 +27,14 @@
         </a>
       </div>
       
-      <nav class="docs-sidebar-nav">
+      <nav class="docs-sidebar-nav" id="docs-nav">
         {{#each doc_categories}}
         <div class="docs-nav-section">
           <div class="docs-nav-section-title">{{name}}</div>
           <div class="docs-nav-children">
             {{#each @root.doc_pages}}
             {{#if (eq category.slug ../slug)}}
-            <a href="{{url}}" class="docs-nav-link">
+            <a href="{{url}}" class="docs-nav-link" data-doc-order="{{order}}">
               {{title}}
             </a>
             {{/if}}
@@ -57,7 +57,17 @@
               <line x1="3" y1="18" x2="21" y2="18"></line>
             </svg>
           </button>
-          <span>Documentation</span>
+          <span>Docs</span>
+          {{#each doc_pages}}
+          {{#if @first}}
+          {{#if category}}
+          <span class="docs-breadcrumb-separator">/</span>
+          <span>{{category.name}}</span>
+          {{/if}}
+          <span class="docs-breadcrumb-separator">/</span>
+          <span>{{title}}</span>
+          {{/if}}
+          {{/each}}
         </div>
         
         <a href="/" class="docs-nav-link" style="color: var(--docs-link);">
@@ -65,76 +75,30 @@
         </a>
       </header>
       
-      <!-- Content -->
+      <!-- Content - Show first doc page dynamically -->
       <article class="docs-content">
-        <h1 data-edit-key="docs-title">Getting Started</h1>
-        
-        <p data-edit-key="docs-intro">Welcome to FastMode! This documentation will help you get your first website up and running in minutes.</p>
-        
-        <h2>What is FastMode?</h2>
-        
-        <p>FastMode is a modern CMS and website hosting platform that lets you:</p>
-        
-        <ul>
-          <li><strong>Deploy websites instantly</strong> — Upload your HTML/CSS/JS or connect GitHub for auto-deployments</li>
-          <li><strong>Edit content visually</strong> — Update text, images, and content without touching code</li>
-          <li><strong>Manage structured content</strong> — Built-in blog, team, and custom collections</li>
-          <li><strong>Connect with 5,000+ apps</strong> — Zapier integration for forms and CMS automation</li>
-          <li><strong>Use your own domain</strong> — Free SSL certificates included</li>
-        </ul>
-        
-        <h2>Browse Documentation</h2>
-        
-        <div style="display: grid; gap: 1.5rem; margin-top: 1.5rem;">
-          {{#each doc_categories}}
-          <div style="background: var(--docs-sidebar-bg); border: 1px solid var(--docs-border); border-radius: 0.75rem; padding: 1.5rem;">
-            <h3 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 1.125rem;">{{name}}</h3>
-            {{#if description}}
-            <div style="color: var(--docs-text-muted); font-size: 0.9375rem; margin-bottom: 1rem;">{{{description}}}</div>
-            {{/if}}
-            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-              {{#each @root.doc_pages}}
-              {{#if (eq category.slug ../slug)}}
-              <a href="{{url}}" style="display: inline-flex; padding: 0.375rem 0.75rem; background: white; border: 1px solid var(--docs-border); border-radius: 0.375rem; font-size: 0.8125rem; color: var(--docs-link); text-decoration: none; transition: all 150ms;">
-                {{title}}
-              </a>
-              {{/if}}
-              {{/each}}
-            </div>
-          </div>
-          {{/each}}
+        {{#each doc_pages}}
+        {{#if @first}}
+        <div class="docs-page-header">
+          {{#if category}}
+          <div class="docs-category-badge">{{category.name}}</div>
+          {{/if}}
+          <h1 data-edit-key="title">{{title}}</h1>
         </div>
         
-        <h2>Your First 5 Minutes</h2>
-        
-        <ol>
-          <li><strong>Sign up</strong> at <a href="https://app.fastmode.ai" target="_blank">app.fastmode.ai</a></li>
-          <li><strong>Create a site</strong> — Pick a name and subdomain</li>
-          <li><strong>Deploy</strong> — Connect GitHub or upload a ZIP</li>
-          <li><strong>Edit</strong> — Use the visual editor to update content</li>
-          <li><strong>Go live</strong> — Your site is instantly available at yoursite.fastmode.ai</li>
-        </ol>
-        
-        <h2>Who is FastMode For?</h2>
-        
-        <ul>
-          <li><strong>Developers</strong> building client sites who want easy handoff for content editing</li>
-          <li><strong>Designers</strong> who want to deploy static sites with a built-in CMS</li>
-          <li><strong>Agencies</strong> managing multiple client websites</li>
-          <li><strong>Small businesses</strong> who need a simple, fast website with easy updates</li>
-          <li><strong>AI builders</strong> using tools like Cursor, Claude, or ChatGPT to generate websites</li>
-        </ul>
-        
-        <div class="docs-callout docs-callout-info">
-          <svg class="docs-callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="12" y1="16" x2="12" y2="12"></line>
-            <line x1="12" y1="8" x2="12.01" y2="8"></line>
-          </svg>
-          <div class="docs-callout-content">
-            <strong>Need help?</strong> Contact us at <a href="mailto:support@fastmode.ai">support@fastmode.ai</a>
-          </div>
+        <div class="docs-page-body" data-edit-key="content">
+          {{{content}}}
         </div>
+        {{/if}}
+        {{/each}}
+        
+        <!-- Fallback if no docs exist -->
+        {{#unless doc_pages}}
+        <div class="docs-empty-state">
+          <h1>Welcome to FastMode Docs</h1>
+          <p>Documentation pages haven't been added yet. Create your first doc page in the CMS to get started.</p>
+        </div>
+        {{/unless}}
       </article>
     </main>
   </div>
@@ -146,6 +110,14 @@
       sidebar.classList.toggle('open');
       overlay.classList.toggle('open');
     }
+    
+    // Activate the first doc link in the sidebar (matching the displayed content)
+    document.addEventListener('DOMContentLoaded', function() {
+      const firstDocLink = document.querySelector('.docs-nav-children .docs-nav-link');
+      if (firstDocLink) {
+        firstDocLink.classList.add('active');
+      }
+    });
   </script>
 </body>
 </html>

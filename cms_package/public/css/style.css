@@ -986,6 +986,45 @@ input[type="email"]:focus {
   padding: 3rem 2rem;
 }
 
+/* Docs Page Header */
+.docs-page-header {
+  margin-bottom: 2rem;
+}
+
+.docs-category-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--docs-link);
+  background: rgba(99, 102, 241, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 0.75rem;
+}
+
+.docs-page-body {
+  color: var(--docs-text);
+}
+
+/* Docs Empty State */
+.docs-empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--docs-text-muted);
+}
+
+.docs-empty-state h1 {
+  color: var(--docs-text);
+  margin-bottom: 1rem;
+}
+
+.docs-empty-state p {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
 /* Docs Typography */
 .docs-content h1 {
   font-size: 2.25rem;
