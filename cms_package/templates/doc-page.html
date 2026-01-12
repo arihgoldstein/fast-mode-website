@@ -34,7 +34,7 @@
           <div class="docs-nav-children">
             {{#each @root.doc_pages}}
             {{#if (eq category.slug ../slug)}}
-            <a href="{{url}}" class="docs-nav-link {{#if (eq slug @root.slug)}}active{{/if}}">
+            <a href="{{url}}" class="docs-nav-link">
               {{title}}
             </a>
             {{/if}}
@@ -98,6 +98,17 @@
       sidebar.classList.toggle('open');
       overlay.classList.toggle('open');
     }
+    
+    // Highlight the current page in the sidebar
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentPath = window.location.pathname;
+      const navLinks = document.querySelectorAll('.docs-nav-children .docs-nav-link');
+      navLinks.forEach(function(link) {
+        if (link.getAttribute('href') === currentPath) {
+          link.classList.add('active');
+        }
+      });
+    });
   </script>
 </body>
 </html>
