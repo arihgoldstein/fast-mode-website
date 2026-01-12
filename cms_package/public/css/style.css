@@ -1036,15 +1036,9 @@ input[type="email"]:focus {
   flex-shrink: 0;
 }
 
-/* Hide back text on mobile, show icon only */
+/* Back text visible on all screen sizes */
 .docs-back-text {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .docs-back-text {
-    display: inline;
-  }
+  display: inline;
 }
 
 .docs-content {
