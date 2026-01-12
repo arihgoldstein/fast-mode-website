@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation | FastMode</title>
+  <meta name="description" content="FastMode documentation - Learn how to build and deploy websites with FastMode CMS.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body class="docs-page">
+  <!-- Mobile Overlay -->
+  <div class="docs-overlay" id="docs-overlay" onclick="toggleSidebar()"></div>
+  
+  <div class="docs-layout">
+    <!-- Sidebar -->
+    <aside class="docs-sidebar" id="docs-sidebar">
+      <div class="docs-sidebar-header">
+        <a href="/docs" class="docs-sidebar-logo">
+          <svg viewBox="0 0 253 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M182.377 141.045H70.5226C31.5732 141.045 0 109.472 0 70.5226C0 31.5732 31.5732 0 70.5226 0H182.377C221.327 0 252.9 31.5732 252.9 70.5226C252.9 109.472 221.327 141.045 182.377 141.045Z" fill="#6366f1"/>
+            <path d="M182.377 120.816C210.154 120.816 232.671 98.2992 232.671 70.5224C232.671 42.7455 210.154 20.229 182.377 20.229C154.601 20.229 132.084 42.7455 132.084 70.5224C132.084 98.2992 154.601 120.816 182.377 120.816Z" fill="#F9F9F9"/>
+          </svg>
+          <span>FastMode Docs</span>
+        </a>
+      </div>
+      
+      <nav class="docs-sidebar-nav">
+        {{#each doc_categories}}
+        <div class="docs-nav-section">
+          <div class="docs-nav-section-title">{{name}}</div>
+          <div class="docs-nav-children">
+            {{#each @root.doc_pages}}
+            {{#if (eq category.slug ../slug)}}
+            <a href="{{url}}" class="docs-nav-link">
+              {{title}}
+            </a>
+            {{/if}}
+            {{/each}}
+          </div>
+        </div>
+        {{/each}}
+      </nav>
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="docs-main">
+      <!-- Header -->
+      <header class="docs-header">
+        <div class="docs-breadcrumb">
+          <button class="docs-mobile-toggle" onclick="toggleSidebar()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <span>Documentation</span>
+        </div>
+        
+        <a href="/" class="docs-nav-link" style="color: var(--docs-link);">
+          ← Back to FastMode
+        </a>
+      </header>
+      
+      <!-- Content -->
+      <article class="docs-content">
+        <h1 data-edit-key="docs-title">Getting Started</h1>
+        
+        <p data-edit-key="docs-intro">Welcome to FastMode! This documentation will help you get your first website up and running in minutes.</p>
+        
+        <h2>What is FastMode?</h2>
+        
+        <p>FastMode is a modern CMS and website hosting platform that lets you:</p>
+        
+        <ul>
+          <li><strong>Deploy websites instantly</strong> — Upload your HTML/CSS/JS or connect GitHub for auto-deployments</li>
+          <li><strong>Edit content visually</strong> — Update text, images, and content without touching code</li>
+          <li><strong>Manage structured content</strong> — Built-in blog, team, and custom collections</li>
+          <li><strong>Connect with 5,000+ apps</strong> — Zapier integration for forms and CMS automation</li>
+          <li><strong>Use your own domain</strong> — Free SSL certificates included</li>
+        </ul>
+        
+        <h2>Browse Documentation</h2>
+        
+        <div style="display: grid; gap: 1.5rem; margin-top: 1.5rem;">
+          {{#each doc_categories}}
+          <div style="background: var(--docs-sidebar-bg); border: 1px solid var(--docs-border); border-radius: 0.75rem; padding: 1.5rem;">
+            <h3 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 1.125rem;">{{name}}</h3>
+            {{#if description}}
+            <div style="color: var(--docs-text-muted); font-size: 0.9375rem; margin-bottom: 1rem;">{{{description}}}</div>
+            {{/if}}
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              {{#each @root.doc_pages}}
+              {{#if (eq category.slug ../slug)}}
+              <a href="{{url}}" style="display: inline-flex; padding: 0.375rem 0.75rem; background: white; border: 1px solid var(--docs-border); border-radius: 0.375rem; font-size: 0.8125rem; color: var(--docs-link); text-decoration: none; transition: all 150ms;">
+                {{title}}
+              </a>
+              {{/if}}
+              {{/each}}
+            </div>
+          </div>
+          {{/each}}
+        </div>
+        
+        <h2>Your First 5 Minutes</h2>
+        
+        <ol>
+          <li><strong>Sign up</strong> at <a href="https://app.fastmode.ai" target="_blank">app.fastmode.ai</a></li>
+          <li><strong>Create a site</strong> — Pick a name and subdomain</li>
+          <li><strong>Deploy</strong> — Connect GitHub or upload a ZIP</li>
+          <li><strong>Edit</strong> — Use the visual editor to update content</li>
+          <li><strong>Go live</strong> — Your site is instantly available at yoursite.fastmode.ai</li>
+        </ol>
+        
+        <h2>Who is FastMode For?</h2>
+        
+        <ul>
+          <li><strong>Developers</strong> building client sites who want easy handoff for content editing</li>
+          <li><strong>Designers</strong> who want to deploy static sites with a built-in CMS</li>
+          <li><strong>Agencies</strong> managing multiple client websites</li>
+          <li><strong>Small businesses</strong> who need a simple, fast website with easy updates</li>
+          <li><strong>AI builders</strong> using tools like Cursor, Claude, or ChatGPT to generate websites</li>
+        </ul>
+        
+        <div class="docs-callout docs-callout-info">
+          <svg class="docs-callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          <div class="docs-callout-content">
+            <strong>Need help?</strong> Contact us at <a href="mailto:support@fastmode.ai">support@fastmode.ai</a>
+          </div>
+        </div>
+      </article>
+    </main>
+  </div>
+  
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('docs-sidebar');
+      const overlay = document.getElementById('docs-overlay');
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

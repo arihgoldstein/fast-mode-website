@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}} | FastMode Docs</title>
+  <meta name="description" content="{{title}} - FastMode documentation">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body class="docs-page">
+  <!-- Mobile Overlay -->
+  <div class="docs-overlay" id="docs-overlay" onclick="toggleSidebar()"></div>
+  
+  <div class="docs-layout">
+    <!-- Sidebar -->
+    <aside class="docs-sidebar" id="docs-sidebar">
+      <div class="docs-sidebar-header">
+        <a href="/docs" class="docs-sidebar-logo">
+          <svg viewBox="0 0 253 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M182.377 141.045H70.5226C31.5732 141.045 0 109.472 0 70.5226C0 31.5732 31.5732 0 70.5226 0H182.377C221.327 0 252.9 31.5732 252.9 70.5226C252.9 109.472 221.327 141.045 182.377 141.045Z" fill="#6366f1"/>
+            <path d="M182.377 120.816C210.154 120.816 232.671 98.2992 232.671 70.5224C232.671 42.7455 210.154 20.229 182.377 20.229C154.601 20.229 132.084 42.7455 132.084 70.5224C132.084 98.2992 154.601 120.816 182.377 120.816Z" fill="#F9F9F9"/>
+          </svg>
+          <span>FastMode Docs</span>
+        </a>
+      </div>
+      
+      <nav class="docs-sidebar-nav">
+        {{#each doc_categories}}
+        <div class="docs-nav-section">
+          <div class="docs-nav-section-title">{{name}}</div>
+          <div class="docs-nav-children">
+            {{#each doc_pages}}
+            {{#if (eq category.slug ../slug)}}
+            <a href="{{url}}" class="docs-nav-link {{#if (eq slug @root.slug)}}active{{/if}}">
+              {{title}}
+            </a>
+            {{/if}}
+            {{/each}}
+          </div>
+        </div>
+        {{/each}}
+      </nav>
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="docs-main">
+      <!-- Header -->
+      <header class="docs-header">
+        <div class="docs-breadcrumb">
+          <button class="docs-mobile-toggle" onclick="toggleSidebar()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <a href="/docs">Docs</a>
+          {{#if category}}
+          <span class="docs-breadcrumb-separator">/</span>
+          <span>{{category.name}}</span>
+          {{/if}}
+          <span class="docs-breadcrumb-separator">/</span>
+          <span>{{title}}</span>
+        </div>
+        
+        <a href="/" class="docs-nav-link" style="color: var(--docs-link);">
+          ← Back to FastMode
+        </a>
+      </header>
+      
+      <!-- Content -->
+      <article class="docs-content">
+        <h1 data-edit-key="title">{{title}}</h1>
+        
+        <div data-edit-key="content">
+          {{{content}}}
+        </div>
+        
+        <!-- Navigation Footer -->
+        <nav class="docs-nav-footer">
+          <div></div>
+          <a href="/docs" class="docs-nav-next">
+            <span class="docs-nav-label">Back to</span>
+            <span class="docs-nav-title">All Documentation</span>
+          </a>
+        </nav>
+      </article>
+    </main>
+  </div>
+  
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('docs-sidebar');
+      const overlay = document.getElementById('docs-overlay');
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
