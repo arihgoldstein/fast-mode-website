@@ -32,7 +32,7 @@
         <div class="docs-nav-section">
           <div class="docs-nav-section-title">{{name}}</div>
           <div class="docs-nav-children">
-            {{#each doc_pages}}
+            {{#each @root.doc_pages}}
             {{#if (eq category.slug ../slug)}}
             <a href="{{url}}" class="docs-nav-link {{#if (eq slug @root.slug)}}active{{/if}}">
               {{title}}
