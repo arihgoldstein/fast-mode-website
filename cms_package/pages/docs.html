@@ -32,7 +32,7 @@
         <div class="docs-nav-section">
           <div class="docs-nav-section-title">{{name}}</div>
           <div class="docs-nav-children">
-            {{#each @root.doc_pages sort="order" order="asc" where="category.slug:{{slug}}"}}
+            {{#each @root.doc_pages where="category.slug:{{slug}}" sort="order" order="asc"}}
             <a href="{{url}}" class="docs-nav-link">
               {{title}}
             </a>
