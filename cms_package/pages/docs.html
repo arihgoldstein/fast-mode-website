@@ -28,16 +28,14 @@
       </div>
       
       <nav class="docs-sidebar-nav" id="docs-nav">
-        {{#each doc_categories}}
+        {{#each doc_categories sort="order" order="asc"}}
         <div class="docs-nav-section">
           <div class="docs-nav-section-title">{{name}}</div>
           <div class="docs-nav-children">
-            {{#each @root.doc_pages}}
-            {{#if (eq category.slug ../slug)}}
-            <a href="{{url}}" class="docs-nav-link" data-doc-order="{{order}}">
+            {{#each @root.doc_pages sort="order" order="asc" where="category.slug:{{slug}}"}}
+            <a href="{{url}}" class="docs-nav-link">
               {{title}}
             </a>
-            {{/if}}
             {{/each}}
           </div>
         </div>

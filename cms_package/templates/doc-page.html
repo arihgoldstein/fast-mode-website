@@ -27,17 +27,15 @@
         </a>
       </div>
       
-      <nav class="docs-sidebar-nav">
-        {{#each doc_categories}}
+      <nav class="docs-sidebar-nav" id="docs-nav">
+        {{#each doc_categories sort="order" order="asc"}}
         <div class="docs-nav-section">
           <div class="docs-nav-section-title">{{name}}</div>
           <div class="docs-nav-children">
-            {{#each @root.doc_pages}}
-            {{#if (eq category.slug ../slug)}}
+            {{#each @root.doc_pages sort="order" order="asc" where="category.slug:{{slug}}"}}
             <a href="{{url}}" class="docs-nav-link">
               {{title}}
             </a>
-            {{/if}}
             {{/each}}
           </div>
         </div>
@@ -94,11 +92,14 @@
         </div>
         
         <!-- Navigation Footer -->
-        <nav class="docs-nav-footer">
-          <div></div>
-          <a href="/docs" class="docs-nav-next">
-            <span class="docs-nav-label">Back to</span>
-            <span class="docs-nav-title">All Documentation</span>
+        <nav class="docs-nav-footer" id="docs-nav-footer">
+          <a href="#" class="docs-nav-prev" id="docs-nav-prev" style="display: none;">
+            <span class="docs-nav-label">Previous</span>
+            <span class="docs-nav-title" id="docs-prev-title"></span>
+          </a>
+          <a href="#" class="docs-nav-next" id="docs-nav-next" style="display: none;">
+            <span class="docs-nav-label">Next</span>
+            <span class="docs-nav-title" id="docs-next-title"></span>
           </a>
         </nav>
       </article>
@@ -113,15 +114,38 @@
       overlay.classList.toggle('open');
     }
     
-    // Highlight the current page in the sidebar
     document.addEventListener('DOMContentLoaded', function() {
       const currentPath = window.location.pathname;
-      const navLinks = document.querySelectorAll('.docs-nav-children .docs-nav-link');
-      navLinks.forEach(function(link) {
+      const navLinks = Array.from(document.querySelectorAll('.docs-nav-children .docs-nav-link'));
+      
+      // Find current page index and highlight it
+      let currentIndex = -1;
+      navLinks.forEach(function(link, index) {
         if (link.getAttribute('href') === currentPath) {
           link.classList.add('active');
+          currentIndex = index;
         }
       });
+      
+      // Set up prev/next navigation
+      const prevEl = document.getElementById('docs-nav-prev');
+      const nextEl = document.getElementById('docs-nav-next');
+      const prevTitle = document.getElementById('docs-prev-title');
+      const nextTitle = document.getElementById('docs-next-title');
+      
+      if (currentIndex > 0) {
+        const prevLink = navLinks[currentIndex - 1];
+        prevEl.href = prevLink.getAttribute('href');
+        prevTitle.textContent = prevLink.textContent.trim();
+        prevEl.style.display = 'flex';
+      }
+      
+      if (currentIndex >= 0 && currentIndex < navLinks.length - 1) {
+        const nextLink = navLinks[currentIndex + 1];
+        nextEl.href = nextLink.getAttribute('href');
+        nextTitle.textContent = nextLink.textContent.trim();
+        nextEl.style.display = 'flex';
+      }
     });
   </script>
 </body>
