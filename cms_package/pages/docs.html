@@ -110,6 +110,18 @@
           <p>Documentation pages haven't been added yet. Create your first doc page in the CMS to get started.</p>
         </div>
         {{/unless}}
+        
+        <!-- Navigation Footer -->
+        <nav class="docs-nav-footer" id="docs-nav-footer">
+          <a href="#" class="docs-nav-prev" id="docs-nav-prev" style="display: none;">
+            <span class="docs-nav-label">Previous</span>
+            <span class="docs-nav-title" id="docs-prev-title"></span>
+          </a>
+          <a href="#" class="docs-nav-next" id="docs-nav-next" style="display: none;">
+            <span class="docs-nav-label">Next</span>
+            <span class="docs-nav-title" id="docs-next-title"></span>
+          </a>
+        </nav>
       </article>
     </main>
   </div>
@@ -122,11 +134,23 @@
       overlay.classList.toggle('open');
     }
     
-    // Activate the first doc link in the sidebar (matching the displayed content)
     document.addEventListener('DOMContentLoaded', function() {
-      const firstDocLink = document.querySelector('.docs-nav-children .docs-nav-link');
-      if (firstDocLink) {
-        firstDocLink.classList.add('active');
+      const navLinks = Array.from(document.querySelectorAll('.docs-nav-children .docs-nav-link'));
+      
+      // Highlight first link (this is the index page showing first doc)
+      if (navLinks.length > 0) {
+        navLinks[0].classList.add('active');
+      }
+      
+      // Set up prev/next navigation (index shows first doc, so only next exists)
+      const nextEl = document.getElementById('docs-nav-next');
+      const nextTitle = document.getElementById('docs-next-title');
+      
+      if (navLinks.length > 1) {
+        const nextLink = navLinks[1];
+        nextEl.href = nextLink.getAttribute('href');
+        nextTitle.textContent = nextLink.textContent.trim();
+        nextEl.style.display = 'flex';
       }
     });
   </script>

@@ -1251,6 +1251,7 @@ input[type="email"]:focus {
 .docs-nav-next {
   align-items: flex-end;
   text-align: right;
+  margin-left: auto;
 }
 
 .docs-nav-label {
