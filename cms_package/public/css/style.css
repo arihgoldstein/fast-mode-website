@@ -1116,16 +1116,16 @@ input[type="email"]:focus {
   padding-left: 0;
 }
 
+/* Main heading links (h2) - no border */
 .docs-toc-link {
   display: block;
-  padding: 0.5rem 0 0.5rem 1rem;
+  padding: 0.375rem 0;
   font-size: 0.8125rem;
-  color: var(--docs-text-muted);
+  color: var(--docs-text);
   text-decoration: none;
   line-height: 1.5;
   transition: all 150ms;
-  border-left: 2px solid transparent;
-  margin-left: -1px;
+  font-weight: 500;
 }
 
 .docs-toc-link:hover {
@@ -1134,12 +1134,26 @@ input[type="email"]:focus {
 
 .docs-toc-link.active {
   color: var(--docs-link);
+}
+
+/* Sub-item links (h3) - with border highlight */
+.docs-toc-link-nested {
+  padding: 0.375rem 0 0.375rem 1rem;
+  margin-left: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--docs-text-muted);
+  border-left: 2px solid var(--docs-border);
+}
+
+.docs-toc-link-nested:hover {
+  color: var(--docs-link);
   border-left-color: var(--docs-link);
 }
 
-.docs-toc-link-nested {
-  padding-left: 1.5rem;
-  font-size: 0.75rem;
+.docs-toc-link-nested.active {
+  color: var(--docs-link);
+  border-left-color: var(--docs-link);
 }
 
 /* Docs Page Header */
