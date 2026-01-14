@@ -44,7 +44,7 @@
     </aside>
     
     <!-- Main Content -->
-    <main class="docs-main">
+    <main class="docs-main docs-main-with-toc">
       <!-- Header -->
       <header class="docs-header">
         <div class="docs-breadcrumb">
@@ -85,44 +85,54 @@
         </a>
       </header>
       
-      <!-- Content - Show first doc from first category -->
-      <article class="docs-content">
-        {{#each doc_categories sort="order" order="asc"}}
-        {{#if @first}}
-          {{#each @root.doc_pages where="category.slug:{{slug}}" sort="order" order="asc"}}
+      <div class="docs-content-wrapper">
+        <!-- Content - Show first doc from first category -->
+        <article class="docs-content">
+          {{#each doc_categories sort="order" order="asc"}}
           {{#if @first}}
-          <div class="docs-page-header">
-            <h1 data-edit-key="title">{{title}}</h1>
-          </div>
-          
-          <div class="docs-page-body" data-edit-key="content">
-            {{{content}}}
-          </div>
+            {{#each @root.doc_pages where="category.slug:{{slug}}" sort="order" order="asc"}}
+            {{#if @first}}
+            <div class="docs-page-header">
+              <h1 data-edit-key="title">{{title}}</h1>
+            </div>
+            
+            <div class="docs-page-body" data-edit-key="content">
+              {{{content}}}
+            </div>
+            {{/if}}
+            {{/each}}
           {{/if}}
           {{/each}}
-        {{/if}}
-        {{/each}}
+          
+          <!-- Fallback if no docs exist -->
+          {{#unless doc_pages}}
+          <div class="docs-empty-state">
+            <h1>Welcome to FastMode Docs</h1>
+            <p>Documentation pages haven't been added yet. Create your first doc page in the CMS to get started.</p>
+          </div>
+          {{/unless}}
+          
+          <!-- Navigation Footer -->
+          <nav class="docs-nav-footer" id="docs-nav-footer">
+            <a href="#" class="docs-nav-prev" id="docs-nav-prev" style="display: none;">
+              <span class="docs-nav-label">Previous</span>
+              <span class="docs-nav-title" id="docs-prev-title"></span>
+            </a>
+            <a href="#" class="docs-nav-next" id="docs-nav-next" style="display: none;">
+              <span class="docs-nav-label">Next</span>
+              <span class="docs-nav-title" id="docs-next-title"></span>
+            </a>
+          </nav>
+        </article>
         
-        <!-- Fallback if no docs exist -->
-        {{#unless doc_pages}}
-        <div class="docs-empty-state">
-          <h1>Welcome to FastMode Docs</h1>
-          <p>Documentation pages haven't been added yet. Create your first doc page in the CMS to get started.</p>
-        </div>
-        {{/unless}}
-        
-        <!-- Navigation Footer -->
-        <nav class="docs-nav-footer" id="docs-nav-footer">
-          <a href="#" class="docs-nav-prev" id="docs-nav-prev" style="display: none;">
-            <span class="docs-nav-label">Previous</span>
-            <span class="docs-nav-title" id="docs-prev-title"></span>
-          </a>
-          <a href="#" class="docs-nav-next" id="docs-nav-next" style="display: none;">
-            <span class="docs-nav-label">Next</span>
-            <span class="docs-nav-title" id="docs-next-title"></span>
-          </a>
-        </nav>
-      </article>
+        <!-- Table of Contents -->
+        <aside class="docs-toc" id="docs-toc">
+          <div class="docs-toc-header">On this page</div>
+          <nav class="docs-toc-nav" id="docs-toc-nav">
+            <!-- Dynamically populated by JavaScript -->
+          </nav>
+        </aside>
+      </div>
     </main>
   </div>
   
@@ -152,7 +162,83 @@
         nextTitle.textContent = nextLink.textContent.trim();
         nextEl.style.display = 'flex';
       }
+      
+      // Build Table of Contents from headings
+      buildTableOfContents();
     });
+    
+    function buildTableOfContents() {
+      const content = document.querySelector('.docs-page-body');
+      const tocNav = document.getElementById('docs-toc-nav');
+      const tocContainer = document.getElementById('docs-toc');
+      
+      if (!content || !tocNav) return;
+      
+      // Find all h2 and h3 headings in the content
+      const headings = content.querySelectorAll('h2, h3');
+      
+      if (headings.length === 0) {
+        // Hide TOC if no headings
+        if (tocContainer) tocContainer.style.display = 'none';
+        return;
+      }
+      
+      // Generate IDs for headings that don't have them and build TOC
+      const tocItems = [];
+      headings.forEach(function(heading, index) {
+        // Create ID if not present
+        if (!heading.id) {
+          heading.id = 'heading-' + index + '-' + heading.textContent.toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/(^-|-$)/g, '')
+            .substring(0, 50);
+        }
+        
+        tocItems.push({
+          id: heading.id,
+          text: heading.textContent,
+          level: heading.tagName.toLowerCase()
+        });
+      });
+      
+      // Build TOC HTML
+      let tocHtml = '';
+      tocItems.forEach(function(item) {
+        const indent = item.level === 'h3' ? ' docs-toc-link-nested' : '';
+        tocHtml += '<a href="#' + item.id + '" class="docs-toc-link' + indent + '">' + item.text + '</a>';
+      });
+      
+      tocNav.innerHTML = tocHtml;
+      
+      // Set up scroll spy for active state
+      setupScrollSpy(headings);
+    }
+    
+    function setupScrollSpy(headings) {
+      const tocLinks = document.querySelectorAll('.docs-toc-link');
+      
+      function updateActiveLink() {
+        const scrollPosition = window.scrollY + 100;
+        
+        let activeIndex = 0;
+        headings.forEach(function(heading, index) {
+          if (heading.offsetTop <= scrollPosition) {
+            activeIndex = index;
+          }
+        });
+        
+        tocLinks.forEach(function(link, index) {
+          if (index === activeIndex) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+      
+      window.addEventListener('scroll', updateActiveLink);
+      updateActiveLink();
+    }
   </script>
 </body>
 </html>
