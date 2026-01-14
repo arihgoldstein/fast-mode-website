@@ -1059,6 +1059,7 @@ input[type="email"]:focus {
 .docs-content-wrapper {
   display: flex;
   gap: 2rem;
+  align-items: flex-start;
 }
 
 .docs-main-with-toc .docs-content {
