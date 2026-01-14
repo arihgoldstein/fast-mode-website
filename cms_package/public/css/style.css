@@ -1059,7 +1059,6 @@ input[type="email"]:focus {
 .docs-content-wrapper {
   display: flex;
   gap: 2rem;
-  align-items: flex-start;
 }
 
 .docs-main-with-toc .docs-content {
@@ -1075,7 +1074,6 @@ input[type="email"]:focus {
   width: 220px;
   flex-shrink: 0;
   padding: 0;
-  height: fit-content;
 }
 
 @media (min-width: 1280px) {
