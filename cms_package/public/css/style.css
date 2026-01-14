@@ -951,19 +951,29 @@ input[type="email"]:focus {
   flex: 1;
   margin-left: 280px;
   min-height: 100vh;
+  padding-top: 60px; /* Account for fixed header */
 }
 
 .docs-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 30;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--docs-border);
   padding: 1rem 2rem;
+  padding-left: calc(280px + 2rem); /* Account for sidebar width on desktop */
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media (max-width: 1023px) {
+  .docs-header {
+    padding-left: 2rem; /* Normal padding on mobile/tablet */
+  }
 }
 
 .docs-breadcrumb {
