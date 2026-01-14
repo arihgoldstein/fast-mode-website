@@ -936,7 +936,7 @@ input[type="email"]:focus {
 .docs-nav-children .docs-nav-link {
   padding-left: 1rem;
   font-size: 0.8125rem;
-  border-left: 2px solid transparent;
+  border-left: 1px solid transparent;
   margin-left: -1px;
   border-radius: 0;
 }
@@ -1078,41 +1078,32 @@ input[type="email"]:focus {
 /* Docs Content Wrapper with TOC */
 .docs-content-wrapper {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .docs-main-with-toc .docs-content {
   flex: 1;
   min-width: 0;
-  max-width: none;
-  margin: 0;
+  max-width: 720px;
 }
 
-/* Table of Contents Sidebar */
+/* Table of Contents Sidebar - placeholder for fixed TOC */
 .docs-toc {
   display: none;
-  width: 220px;
+  width: 200px;
   flex-shrink: 0;
-  padding: 0;
 }
 
 @media (min-width: 1280px) {
   .docs-toc {
     display: block;
   }
-  
-  .docs-content-wrapper {
-    max-width: none;
-    margin: 0;
-    padding: 0 2rem;
-  }
-  
-  .docs-main-with-toc .docs-content {
-    max-width: 800px;
-    flex: 1;
-  }
 }
 
+/* TOC inner - fixed positioning to stay in view */
 .docs-toc-inner {
   position: fixed;
   top: 80px;

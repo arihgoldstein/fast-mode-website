@@ -9,6 +9,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/public/css/style.css">
+  <style>
+    /* Override cached CSS for sticky header */
+    .docs-header {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      padding-left: calc(280px + 2rem) !important;
+    }
+    @media (max-width: 1023px) {
+      .docs-header {
+        padding-left: 2rem !important;
+      }
+    }
+    .docs-main {
+      padding-top: 60px !important;
+    }
+  </style>
 </head>
 <body class="docs-page">
   <!-- Mobile Overlay -->
