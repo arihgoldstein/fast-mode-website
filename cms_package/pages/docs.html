@@ -158,6 +158,7 @@
     }
     
     document.addEventListener('DOMContentLoaded', function() {
+      document.body.classList.add('loaded');
       const navLinks = Array.from(document.querySelectorAll('.docs-nav-children .docs-nav-link'));
       
       // Highlight first link (this is the index page showing first doc)

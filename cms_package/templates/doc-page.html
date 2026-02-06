@@ -146,6 +146,7 @@
     }
     
     document.addEventListener('DOMContentLoaded', function() {
+      document.body.classList.add('loaded');
       const currentPath = window.location.pathname;
       const navLinks = Array.from(document.querySelectorAll('.docs-nav-children .docs-nav-link'));
       
