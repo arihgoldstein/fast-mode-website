@@ -128,3 +128,56 @@ document.addEventListener('DOMContentLoaded', () => {
   document.body.classList.add('loaded');
 });
 
+// Scroll-triggered reveal animations using IntersectionObserver
+(function() {
+  const revealElements = document.querySelectorAll('.reveal');
+  if (!revealElements.length) return;
+
+  // Check for reduced motion preference
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) {
+    revealElements.forEach(el => {
+      el.classList.add('revealed');
+      el.style.opacity = '1';
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -60px 0px'
+  });
+
+  revealElements.forEach(el => observer.observe(el));
+})();
+
+// Navbar background enhancement on scroll
+(function() {
+  const nav = document.querySelector('nav');
+  if (!nav) return;
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        if (window.scrollY > 50) {
+          nav.style.borderBottomColor = 'rgba(99, 102, 241, 0.15)';
+          nav.style.backdropFilter = 'blur(20px)';
+        } else {
+          nav.style.borderBottomColor = '';
+          nav.style.backdropFilter = '';
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+})();
+

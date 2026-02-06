@@ -1544,3 +1544,437 @@ input[type="email"]:focus {
   .sm\:text-left { text-align: left; }
   .sm\:justify-start { justify-content: flex-start; }
 }
+
+/* ============================================
+   POLISH: Scroll-triggered reveal animations
+   ============================================ */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes reveal-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes reveal-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+}
+
+.reveal.revealed {
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-up.revealed {
+  animation-name: reveal-up;
+  animation-duration: 0.8s;
+}
+
+.reveal-scale.revealed {
+  animation-name: reveal-scale;
+  animation-duration: 0.7s;
+}
+
+.reveal-left.revealed {
+  animation-name: reveal-left;
+  animation-duration: 0.8s;
+}
+
+.reveal-right.revealed {
+  animation-name: reveal-right;
+  animation-duration: 0.8s;
+}
+
+/* Staggered children animation delays */
+.reveal-stagger > .reveal:nth-child(1) { animation-delay: 0ms; }
+.reveal-stagger > .reveal:nth-child(2) { animation-delay: 100ms; }
+.reveal-stagger > .reveal:nth-child(3) { animation-delay: 200ms; }
+.reveal-stagger > .reveal:nth-child(4) { animation-delay: 300ms; }
+.reveal-stagger > .reveal:nth-child(5) { animation-delay: 400ms; }
+.reveal-stagger > .reveal:nth-child(6) { animation-delay: 500ms; }
+
+/* ============================================
+   POLISH: Card hover shine/shimmer effect
+   ============================================ */
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.03),
+    transparent
+  );
+  transition: left 0.7s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.card-shine:hover::before {
+  left: 100%;
+}
+
+/* Elevated card hover with lift and glow */
+.card-hover {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3),
+              0 0 30px -10px rgba(99, 102, 241, 0.15);
+}
+
+/* ============================================
+   POLISH: Gradient section dividers
+   ============================================ */
+.section-divider {
+  position: relative;
+}
+
+.section-divider::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.5), transparent);
+}
+
+.gradient-border-top {
+  position: relative;
+}
+
+.gradient-border-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.3), rgba(139, 92, 246, 0.3), transparent);
+}
+
+/* ============================================
+   POLISH: Button micro-interactions
+   ============================================ */
+.btn-glow {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 0 40px -5px rgba(79, 70, 229, 0.6);
+  pointer-events: none;
+}
+
+.btn-glow:hover::after {
+  opacity: 1;
+}
+
+.btn-glow:hover {
+  transform: translateY(-2px);
+}
+
+.btn-glow:active {
+  transform: translateY(0);
+}
+
+/* Secondary button hover */
+.btn-secondary {
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   POLISH: Nav link animation
+   ============================================ */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--indigo-400), var(--violet-400));
+  border-radius: 1px;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: var(--indigo-400);
+}
+
+/* ============================================
+   POLISH: Animated CTA gradient background
+   ============================================ */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.cta-gradient-bg {
+  background: linear-gradient(135deg,
+    var(--slate-950) 0%,
+    rgba(30, 27, 75, 0.4) 25%,
+    rgba(49, 46, 129, 0.2) 50%,
+    rgba(30, 27, 75, 0.4) 75%,
+    var(--slate-950) 100%
+  );
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+@keyframes float-orb {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -20px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 15px) scale(0.95);
+  }
+}
+
+.cta-orb {
+  animation: float-orb 12s ease-in-out infinite;
+}
+
+.cta-orb-delay {
+  animation: float-orb 15s ease-in-out infinite;
+  animation-delay: -5s;
+}
+
+/* ============================================
+   POLISH: Hero grid pattern background
+   ============================================ */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+}
+
+/* ============================================
+   POLISH: Footer gradient border
+   ============================================ */
+.footer-gradient-border {
+  border-top: none;
+  position: relative;
+}
+
+.footer-gradient-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(99, 102, 241, 0.3) 20%,
+    rgba(139, 92, 246, 0.4) 50%,
+    rgba(99, 102, 241, 0.3) 80%,
+    transparent
+  );
+}
+
+/* ============================================
+   POLISH: Logo bar refined hover
+   ============================================ */
+.logo-item {
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  filter: brightness(0) invert(1);
+  opacity: 0.5;
+}
+
+.logo-item:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(99, 102, 241, 0.4));
+}
+
+/* ============================================
+   POLISH: Improved focus-visible states
+   ============================================ */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--indigo-400);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ============================================
+   POLISH: Smooth page load transition
+   ============================================ */
+body {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+/* ============================================
+   POLISH: Feature icon float animation
+   ============================================ */
+@keyframes icon-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-3px) scale(1.08); }
+}
+
+.feature-icon-animated {
+  transition: all 0.3s ease;
+}
+
+.group:hover .feature-icon-animated {
+  animation: icon-float 1s ease-in-out;
+}
+
+/* ============================================
+   POLISH: Text gradient shimmer
+   ============================================ */
+@keyframes text-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.text-shimmer {
+  background-size: 200% auto;
+  animation: text-shimmer 4s linear infinite;
+}
+
+/* ============================================
+   POLISH: Noise texture overlay (subtle depth)
+   ============================================ */
+.noise-overlay::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* ============================================
+   POLISH: Stat counter emphasis
+   ============================================ */
+.stat-value {
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ============================================
+   POLISH: Smooth scrollbar
+   ============================================ */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(99, 102, 241, 0.3) transparent;
+}
+
+html::-webkit-scrollbar {
+  width: 6px;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.3);
+  border-radius: 3px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.5);
+}
