@@ -2151,8 +2151,8 @@ html::-webkit-scrollbar-thumb:hover {
    ============================================ */
 .feature-showcase {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 5rem;
   align-items: center;
 }
 
@@ -2164,13 +2164,44 @@ html::-webkit-scrollbar-thumb:hover {
   direction: ltr;
 }
 
+.feature-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #818cf8;
+  letter-spacing: 0.05em;
+}
+
+.feature-step-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
 .feature-image-wrapper {
   position: relative;
   border-radius: 1rem;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.06), rgba(139, 92, 246, 0.06));
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.08));
   aspect-ratio: 16 / 10;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4),
+              0 0 60px -15px rgba(99, 102, 241, 0.08);
 }
 
 .feature-image-wrapper img {
@@ -2216,7 +2247,7 @@ html::-webkit-scrollbar-thumb:hover {
 @media (max-width: 1023px) {
   .feature-showcase {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 3rem;
   }
   .feature-showcase.reverse {
     direction: ltr;
