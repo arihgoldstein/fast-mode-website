@@ -158,22 +158,50 @@ document.addEventListener('DOMContentLoaded', () => {
   revealElements.forEach(el => observer.observe(el));
 })();
 
-// Navbar background enhancement on scroll
+// Navbar: scroll-direction hide/show + background enhancement
 (function() {
+  const floatingNav = document.getElementById('floating-nav');
+  const navWrap = floatingNav ? floatingNav.closest('.floating-nav-wrap') : null;
   const nav = document.querySelector('nav');
-  if (!nav) return;
 
+  let lastScrollY = 0;
   let ticking = false;
+
   window.addEventListener('scroll', () => {
     if (!ticking) {
       window.requestAnimationFrame(() => {
-        if (window.scrollY > 50) {
-          nav.style.borderBottomColor = 'rgba(99, 102, 241, 0.15)';
-          nav.style.backdropFilter = 'blur(20px)';
-        } else {
-          nav.style.borderBottomColor = '';
-          nav.style.backdropFilter = '';
+        const currentY = window.scrollY;
+
+        if (floatingNav && navWrap) {
+          // Scrolled state (background change)
+          if (currentY > 50) {
+            floatingNav.classList.add('scrolled');
+          } else {
+            floatingNav.classList.remove('scrolled');
+          }
+
+          // Hide on scroll down, show on scroll up (only after 100px)
+          if (currentY > 100) {
+            if (currentY > lastScrollY + 5) {
+              navWrap.classList.add('nav-hidden');
+            } else if (currentY < lastScrollY - 5) {
+              navWrap.classList.remove('nav-hidden');
+            }
+          } else {
+            navWrap.classList.remove('nav-hidden');
+          }
+        } else if (nav) {
+          // Fallback for pages with old nav
+          if (currentY > 50) {
+            nav.style.borderBottomColor = 'rgba(99, 102, 241, 0.15)';
+            nav.style.backdropFilter = 'blur(20px)';
+          } else {
+            nav.style.borderBottomColor = '';
+            nav.style.backdropFilter = '';
+          }
         }
+
+        lastScrollY = currentY;
         ticking = false;
       });
       ticking = true;
