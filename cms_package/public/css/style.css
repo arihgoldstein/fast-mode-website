@@ -2063,7 +2063,8 @@ input[type="email"]:focus {
   color: #6B7280;
   background: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.08);
-  margin-bottom: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
   transition: all 0.2s;
   backdrop-filter: blur(8px);
 }
@@ -3468,6 +3469,11 @@ html::-webkit-scrollbar-thumb:hover {
   }
   .deep-dive > div:not(.deep-dive-image) > *:not(.feature-pill) {
     order: 3;
+  }
+}
+@media (max-width: 639px) {
+  .deep-dive-image {
+    aspect-ratio: 4 / 3;
   }
 }
 
