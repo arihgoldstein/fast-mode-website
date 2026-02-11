@@ -409,13 +409,22 @@
     <section style="background: #ffffff; border-top: 1px solid rgba(0,0,0,0.06);">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="padding-top: 3.5rem; padding-bottom: 3.5rem;">
         <p class="reveal reveal-up text-center text-sm font-semibold uppercase tracking-widest" style="color: #9CA3AF; letter-spacing: 0.1em; margin-bottom: 2rem;">Works with every AI coding tool</p>
-        <div class="reveal reveal-up flex flex-wrap justify-center items-center" style="gap: 2.5rem 3.5rem;">
-          <img src="/public/images/logos/cursor.svg" alt="Cursor" style="height: 22px; opacity: 0.5; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.5'" />
-          <img src="/public/images/logos/lovable.svg" alt="Lovable" style="height: 22px; opacity: 0.5; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.5'" />
-          <img src="/public/images/logos/claude.svg" alt="Claude" style="height: 22px; opacity: 0.5; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.5'" />
-          <img src="/public/images/logos/replit.svg" alt="Replit" style="height: 22px; opacity: 0.5; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.5'" />
-          <img src="/public/images/logos/windsurf.svg" alt="Windsurf" style="height: 22px; opacity: 0.5; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.5'" />
-          <img src="/public/images/logos/google-ai-studio.svg" alt="Google AI Studio" style="height: 22px; opacity: 0.5; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.5'" />
+        <style>
+          .logo-strip { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2.5rem 3.5rem; }
+          .logo-strip img { height: 22px; opacity: 0.5; transition: opacity 0.3s; }
+          .logo-strip img:hover { opacity: 1; }
+          @media (max-width: 639px) {
+            .logo-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem 1rem; }
+            .logo-strip img { height: 18px; margin: 0 auto; max-width: 100px; object-fit: contain; }
+          }
+        </style>
+        <div class="reveal reveal-up logo-strip">
+          <img src="/public/images/logos/cursor.svg" alt="Cursor" />
+          <img src="/public/images/logos/lovable.svg" alt="Lovable" />
+          <img src="/public/images/logos/claude.svg" alt="Claude" />
+          <img src="/public/images/logos/replit.svg" alt="Replit" />
+          <img src="/public/images/logos/windsurf.svg" alt="Windsurf" />
+          <img src="/public/images/logos/google-ai-studio.svg" alt="Google AI Studio" />
         </div>
       </div>
     </section>
