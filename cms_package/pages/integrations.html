@@ -3,42 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog | FastMode</title>
-  <meta name="description" content="Insights, tutorials, and updates from the FastMode team.">
+  <title>Integrations | FastMode</title>
+  <meta name="description" content="Connect FastMode with your favorite AI coding tools, deployment services, and automation platforms.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/public/css/style.css">
   <style>
-    /* Glassmorphism & Cards */
-    .glass-card {
-      background: #ffffff;
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      border-radius: 1.25rem;
-      transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-      overflow: hidden;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .glass-card:hover {
-      background: #ffffff;
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
-      border-color: rgba(0, 0, 0, 0.1);
-    }
-
-    .gradient-text {
-      background: linear-gradient(to right, #111827, #6366f1);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
     .tag-pill {
       background: rgba(99, 102, 241, 0.08);
-      border: 1px solid rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.2);
       color: #6366f1;
       padding: 0.35rem 1rem;
       border-radius: 9999px;
@@ -50,41 +24,26 @@
       align-items: center;
       gap: 0.375rem;
     }
-
-    /* CTA Styles */
-    .cta-gradient {
-      background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
-      position: relative;
+    .logo-strip { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2.5rem 3.5rem; }
+    .logo-strip img { height: 22px; opacity: 0.5; transition: opacity 0.3s; }
+    .logo-strip img:hover { opacity: 1; }
+    @media (max-width: 639px) {
+      .logo-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem 1.5rem; align-items: center; }
+      .logo-strip img { height: auto; width: 100%; max-height: 20px; margin: 0 auto; object-fit: contain; }
     }
-
-    .cta-glow {
-      position: absolute;
-      width: 100%;
+    .int-card {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 1.25rem;
+      padding: 2rem;
       height: 100%;
-      top: 0;
-      left: 0;
-      overflow: hidden;
-      border-radius: 1.5rem;
-      pointer-events: none;
+      transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
-
-    .cta-glow::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
-      animation: rotate 20s linear infinite;
+    .int-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+      border-color: rgba(0, 0, 0, 0.1);
     }
-
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    /* Mobile Menu - Inline fix */
     #mobile-menu-btn span {
       display: block;
       width: 20px;
@@ -109,24 +68,18 @@
             </svg>
             <span class="text-lg font-bold nav-logo-text" style="color: #111827;">FastMode</span>
           </a>
-
-          <!-- Desktop Navigation -->
           <div class="hidden md:flex items-center gap-1">
             <a href="/" class="floating-nav-link">Home</a>
             <a href="/pricing" class="floating-nav-link">Pricing</a>
             <a href="/docs" class="floating-nav-link">Docs</a>
-            <a href="/integrations" class="floating-nav-link">Integrations</a>
+            <a href="/integrations" class="floating-nav-link active">Integrations</a>
             <a href="/videos" class="floating-nav-link">Videos</a>
-            <a href="/blog" class="floating-nav-link active">Blog</a>
+            <a href="/blog" class="floating-nav-link">Blog</a>
           </div>
-
-          <!-- Desktop CTA Buttons -->
           <div class="hidden md:flex items-center gap-3">
             <a href="https://app.fastmode.ai/login" class="floating-nav-btn-ghost">Log in</a>
             <a href="https://app.fastmode.ai/register" class="floating-nav-btn-primary">Get Started</a>
           </div>
-
-          <!-- Mobile Menu Button -->
           <button type="button" id="mobile-menu-btn" class="md:hidden flex items-center justify-center transition-all duration-300 focus:outline-none" style="width: 36px; height: 36px; border-radius: 10px; color: #6B7280;" aria-expanded="false" aria-controls="mobile-menu">
             <span class="sr-only">Open main menu</span>
             <div style="width: 18px; height: 12px; display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
@@ -136,19 +89,17 @@
             </div>
           </button>
         </div>
-
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden overflow-hidden transition-all duration-300 ease-out" style="max-height: 0; opacity: 0;">
           <div class="pt-3 pb-4 px-1 space-y-1" style="border-top: 1px solid rgba(0,0,0,0.06);">
             <a href="/" class="block px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200" style="color: #4B5563;">Home</a>
             <a href="/pricing" class="block px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200" style="color: #4B5563;">Pricing</a>
             <a href="/docs" class="block px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200" style="color: #4B5563;">Docs</a>
-            <a href="/integrations" class="block px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200" style="color: #4B5563;">Integrations</a>
+            <a href="/integrations" class="block px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200" style="color: #6366f1; background: rgba(99,102,241,0.06);">Integrations</a>
             <a href="/videos" class="block px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200" style="color: #4B5563;">Videos</a>
-            <a href="/blog" class="block px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200" style="color: #6366f1; background: rgba(99,102,241,0.06);">Blog</a>
+            <a href="/blog" class="block px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200" style="color: #4B5563;">Blog</a>
             <div class="pt-3 mt-2 flex gap-3" style="border-top: 1px solid rgba(0,0,0,0.06);">
-              <a href="https://app.fastmode.ai/login" class="flex-1 text-center px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200" style="color: #374151; background: rgba(0,0,0,0.04);">Log in</a>
-              <a href="https://app.fastmode.ai/register" class="flex-1 text-center px-4 py-2.5 rounded-lg text-sm font-medium text-white transition-all duration-200" style="background: #6366f1;">Get Started</a>
+              <a href="https://app.fastmode.ai/login" class="flex-1 text-center py-2.5 rounded-lg text-sm font-medium transition-all duration-200" style="color: #374151; border: 1px solid rgba(0,0,0,0.06);">Log in</a>
+              <a href="https://app.fastmode.ai/register" class="flex-1 text-center py-2.5 rounded-lg text-sm font-medium transition-all duration-200" style="background: #6366f1; color: white;">Get Started</a>
             </div>
           </div>
         </div>
@@ -157,138 +108,129 @@
   </nav>
 
   <main class="pt-24">
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="relative pt-12 pb-16 sm:pt-20 sm:pb-20 text-center page-hero">
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col items-center gap-6">
           <div class="tag-pill mb-2">
-            <span class="flex h-2 w-2 rounded-full bg-indigo-500 animate-pulse"></span>
-            Insights & Updates
+            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            Integrations
           </div>
-
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight" style="color: #111827;" data-edit-key="blog-title">
-            The FastMode Blog
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight" style="color: #111827;" data-edit-key="integrations-title">
+            Works with your entire stack
           </h1>
-
-          <p class="text-lg max-w-2xl leading-relaxed" style="color: #6B7280;" data-edit-key="blog-description">
-            Tutorials, product updates, and insights on building modern CMS-driven websites.
+          <p class="text-lg max-w-2xl leading-relaxed" style="color: #6B7280;" data-edit-key="integrations-subtitle">
+            FastMode connects with the AI coding tools, deployment services, and automation platforms you already use.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Featured Post -->
-    {{#each blog featured=true limit=1}}
-    <section class="pb-12">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <article class="relative overflow-hidden rounded-3xl glass-card">
-          <div class="grid lg:grid-cols-2 gap-5 sm:gap-6 md:gap-8 h-full">
-            {{#if main_image}}
-            <div class="aspect-video lg:aspect-auto lg:h-full relative overflow-hidden">
-              <img src="{{main_image}}" alt="{{name}}" class="w-full h-full object-cover">
-              <!-- Overlay Gradient -->
-              <div class="absolute inset-0 bg-gradient-to-t from-white/30 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-white/30"></div>
-            </div>
-            {{/if}}
-            <div class="p-5 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-center">
-              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium mb-6 w-fit" style="background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.15); color: #6366f1;">
-                Featured
-              </div>
-              <h2 class="text-2xl md:text-4xl font-bold mb-4 leading-tight" style="color: #111827;">
-                <a href="{{url}}" class="hover:text-indigo-600 transition-colors">{{name}}</a>
-              </h2>
-              <p class="text-lg mb-6 leading-relaxed line-clamp-3" style="color: #6B7280;">{{post_summary}}</p>
-              <div class="flex items-center gap-4 mt-auto">
-                {{#if author}}
-                <div class="flex items-center gap-3">
-                  {{#if author.picture}}
-                  <img src="{{author.picture}}" alt="{{author.name}}" class="w-10 h-10 rounded-full" style="border: 1px solid rgba(0,0,0,0.06);">
-                  {{else}}
-                  <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold" style="background: #F3F4F6; color: #6B7280; border: 1px solid rgba(0,0,0,0.06);">
-                    {{author.name}}
-                  </div>
-                  {{/if}}
-                  <div>
-                    <div class="font-medium" style="color: #111827;">{{author.name}}</div>
-                    <div class="text-sm" style="color: #9CA3AF;">{{publishedAt}}</div>
-                  </div>
-                </div>
-                {{/if}}
-              </div>
-            </div>
-          </div>
-        </article>
+    <!-- AI Coding Tools -->
+    <section style="background: #ffffff; border-top: 1px solid rgba(0,0,0,0.06);">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="padding-top: 3.5rem; padding-bottom: 3.5rem;">
+        <p class="reveal reveal-up text-center text-sm font-semibold uppercase tracking-widest" style="color: #9CA3AF; letter-spacing: 0.1em; margin-bottom: 2rem;">Works with every AI coding tool</p>
+        <div class="reveal reveal-up logo-strip">
+          <img src="/public/images/logos/cursor.svg" alt="Cursor" />
+          <img src="/public/images/logos/lovable.svg" alt="Lovable" />
+          <img src="/public/images/logos/claude.svg" alt="Claude" />
+          <img src="/public/images/logos/replit.svg" alt="Replit" />
+          <img src="/public/images/logos/windsurf.svg" alt="Windsurf" />
+          <img src="/public/images/logos/google-ai-studio.svg" alt="Google AI Studio" />
+        </div>
+        <p class="reveal reveal-up text-center text-sm mt-8" style="color: #9CA3AF;">All tools connect via our <a href="/docs/mcp-setup" style="color: #6366f1; font-weight: 500;">MCP Server</a></p>
       </div>
     </section>
-    {{/each}}
 
-    <!-- All Posts Grid -->
-    <section class="pb-16 sm:pb-20 md:pb-24">
+    <!-- Platform Integrations -->
+    <section class="py-16 sm:py-20 md:py-24 lg:py-32 relative overflow-hidden" style="background: #ffffff;">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Removed Latest Articles Heading -->
+        <div class="text-center mb-10 sm:mb-14 md:mb-20">
+          <div class="reveal reveal-up section-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            Platform
+          </div>
+          <h2 class="reveal reveal-up text-3xl md:text-5xl font-bold mb-6" style="color: #111827;">Deploy, automate, extend</h2>
+          <p class="reveal reveal-up text-lg max-w-2xl mx-auto" style="color: #6B7280;">Powerful integrations that automate your workflow and extend FastMode beyond the dashboard.</p>
+        </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
-          {{#each blog limit=12}}
-          <a href="{{url}}" class="group block h-full">
-            <article class="glass-card">
-              <!-- Thumbnail -->
-              <div class="relative aspect-video overflow-hidden" style="border-bottom: 1px solid rgba(0,0,0,0.06);">
-                {{#if main_image}}
-                <img src="{{main_image}}" alt="{{name}}" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500">
-                {{else}}
-                <div class="w-full h-full flex items-center justify-center" style="background: linear-gradient(to bottom right, rgba(99,102,241,0.08), #F3F4F6);">
-                  <svg class="w-12 h-12" style="color: rgba(99,102,241,0.2);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                </div>
-                {{/if}}
-
-                <!-- Overlay Gradient -->
-                <div class="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent opacity-50"></div>
+          <!-- GitHub -->
+          <div class="reveal reveal-up">
+            <div class="int-card">
+              <div style="margin-bottom: 1.5rem;">
+                <svg style="width: 36px; height: 36px; color: #24292e;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
               </div>
-
-              <!-- Content -->
-              <div class="flex flex-col flex-grow p-6 relative">
-                <h3 class="text-xl font-bold mb-3 leading-snug transition-colors line-clamp-2" style="color: #111827;">
-                  {{name}}
-                </h3>
-                <p class="text-sm mb-4 line-clamp-2 flex-grow" style="color: #6B7280;">{{post_summary}}</p>
-
-                <div class="flex items-center justify-between pt-4 mt-auto" style="border-top: 1px solid rgba(0,0,0,0.06);">
-                  {{#if author}}
-                  <div class="flex items-center gap-2">
-                    {{#if author.picture}}
-                    <img src="{{author.picture}}" alt="{{author.name}}" class="w-6 h-6 rounded-full" style="border: 1px solid rgba(0,0,0,0.06);">
-                    {{/if}}
-                    <span class="text-sm" style="color: #9CA3AF;">{{author.name}}</span>
-                  </div>
-                  {{/if}}
-                  <span class="text-xs" style="color: #D1D5DB;">{{publishedAt}}</span>
-                </div>
-              </div>
-            </article>
-          </a>
-          {{/each}}
-        </div>
-
-        <!-- Empty State -->
-        {{#unless blog}}
-        <div class="text-center py-20 glass-card max-w-lg mx-auto">
-          <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.12);">
-            <svg class="w-8 h-8" style="color: #6366f1;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              <h3 class="text-lg font-bold mb-2" style="color: #111827;">GitHub</h3>
+              <p class="text-sm leading-relaxed" style="color: #6B7280;">Connect your repo and auto-deploy on every push to main. Full version history with one-click rollback to any previous deployment.</p>
+            </div>
           </div>
-          <h3 class="text-xl font-bold mb-2" style="color: #111827;">No posts yet</h3>
-          <p style="color: #6B7280;">Check back soon for new articles and updates.</p>
+
+          <!-- MCP Server -->
+          <div class="reveal reveal-up">
+            <div class="int-card">
+              <div style="margin-bottom: 1.5rem;">
+                <svg style="width: 36px; height: 36px; color: #8b5cf6;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+              </div>
+              <h3 class="text-lg font-bold mb-2" style="color: #111827;">MCP Server</h3>
+              <p class="text-sm leading-relaxed" style="color: #6B7280;">Model Context Protocol server that lets any AI coding assistant build, deploy, and manage FastMode sites directly from the editor.</p>
+            </div>
+          </div>
+
+          <!-- Zapier -->
+          <div class="reveal reveal-up">
+            <div class="int-card">
+              <div style="margin-bottom: 1.5rem;">
+                <svg style="width: 36px; height: 36px;" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" fill="#FF4A00"/><path d="M2 17l10 5 10-5" stroke="#FF4A00" stroke-width="2" fill="none"/><path d="M2 12l10 5 10-5" stroke="#FF4A00" stroke-width="2" fill="none"/></svg>
+              </div>
+              <h3 class="text-lg font-bold mb-2" style="color: #111827;">Zapier</h3>
+              <p class="text-sm leading-relaxed" style="color: #6B7280;">Trigger workflows on form submissions and CMS updates. Connect to Slack, Google Sheets, Notion, and 6,000+ apps.</p>
+            </div>
+          </div>
+
+          <!-- OpenClaw -->
+          <div class="reveal reveal-up">
+            <div class="int-card">
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+                <svg style="width: 36px; height: 36px; color: #6366f1;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 5 5v3a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/><path d="M12 18v4"/><path d="M8 22h8"/></svg>
+                <span style="display: inline-flex; padding: 0.15rem 0.5rem; border-radius: 6px; font-size: 0.6875rem; font-weight: 600; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.15); color: #10b981;">New</span>
+              </div>
+              <h3 class="text-lg font-bold mb-2" style="color: #111827;">OpenClaw</h3>
+              <p class="text-sm leading-relaxed" style="color: #6B7280;">Give AI agents direct access to FastMode. Build, deploy, and manage CMS sites through the OpenClaw skill platform.</p>
+            </div>
+          </div>
+
+          <!-- External API -->
+          <div class="reveal reveal-up">
+            <div class="int-card">
+              <div style="margin-bottom: 1.5rem;">
+                <svg style="width: 36px; height: 36px; color: #10b981;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <h3 class="text-lg font-bold mb-2" style="color: #111827;">External API</h3>
+              <p class="text-sm leading-relaxed" style="color: #6B7280;">Full REST API for reading and writing CMS content programmatically. Works with JavaScript, Python, cURL, and any HTTP client.</p>
+            </div>
+          </div>
+
+          <!-- Let's Encrypt -->
+          <div class="reveal reveal-up">
+            <div class="int-card">
+              <div style="margin-bottom: 1.5rem;">
+                <svg style="width: 36px; height: 36px; color: #3b82f6;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <h3 class="text-lg font-bold mb-2" style="color: #111827;">Let's Encrypt</h3>
+              <p class="text-sm leading-relaxed" style="color: #6B7280;">Automatic SSL certificates for every site. Free HTTPS with auto-renewal on all custom domains — zero configuration required.</p>
+            </div>
+          </div>
         </div>
-        {{/unless}}
       </div>
     </section>
 
-    <!-- New CTA Section (Same as Video Index) -->
+    <!-- CTA Section -->
     <section class="py-16 sm:py-20 md:py-24 lg:py-32">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="section-dark relative overflow-hidden rounded-3xl" style="background: #0F172A; border: 1px solid rgba(255,255,255,0.08);">
           <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl"></div>
           <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-violet-500/15 rounded-full blur-3xl"></div>
-
           <div class="relative z-10 px-8 py-16 md:py-20 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6 tracking-tight" style="color: #FFFFFF;">Start building today</h2>
             <p class="mb-8 text-lg max-w-2xl mx-auto leading-relaxed" style="color: #94A3B8;">
@@ -327,6 +269,7 @@
           <div class="space-y-2 text-sm">
             <div><a href="/#features" class="transition-colors" style="color: #94A3B8;">Features</a></div>
             <div><a href="/pricing" class="transition-colors" style="color: #94A3B8;">Pricing</a></div>
+            <div><a href="/integrations" class="transition-colors" style="color: #94A3B8;">Integrations</a></div>
           </div>
         </div>
         <div>

@@ -13,6 +13,12 @@
       "editable": true
     },
     {
+      "path": "/integrations",
+      "file": "pages/integrations.html",
+      "title": "Integrations",
+      "editable": true
+    },
+    {
       "path": "/privacy",
       "file": "pages/privacy.html",
       "title": "Privacy Policy",

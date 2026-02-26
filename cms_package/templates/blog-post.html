@@ -170,6 +170,7 @@
               <a href="/" class="floating-nav-link">Home</a>
               <a href="/pricing" class="floating-nav-link">Pricing</a>
               <a href="/docs" class="floating-nav-link">Docs</a>
+              <a href="/integrations" class="floating-nav-link">Integrations</a>
               <a href="/videos" class="floating-nav-link">Videos</a>
               <a href="/blog" class="floating-nav-link active">Blog</a>
             </div>
@@ -197,6 +198,7 @@
               <a href="/" class="block px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200" style="color: #4B5563;">Home</a>
               <a href="/pricing" class="block px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200" style="color: #4B5563;">Pricing</a>
               <a href="/docs" class="block px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200" style="color: #4B5563;">Docs</a>
+              <a href="/integrations" class="block px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200" style="color: #4B5563;">Integrations</a>
               <a href="/videos" class="block px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200" style="color: #4B5563;">Videos</a>
               <a href="/blog" class="block px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200" style="color: #6366f1; background: rgba(99,102,241,0.06);">Blog</a>
               <div class="pt-3 mt-2 flex gap-3" style="border-top: 1px solid rgba(0,0,0,0.06);">
@@ -239,7 +241,7 @@
 
         <!-- Hero Image -->
         {{#if main_image}}
-        <div class="relative aspect-video rounded-2xl overflow-hidden" style="border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);">
+        <div class="relative aspect-video rounded-2xl overflow-hidden" style="border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.06);">
           <img src="{{main_image}}" alt="{{name}}" class="w-full h-full object-cover">
         </div>
         {{/if}}
@@ -276,7 +278,7 @@
       <aside class="glass-card p-5 sm:p-6 md:p-8">
         <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left">
           {{#if author.picture}}
-          <img src="{{author.picture}}" alt="{{author.name}}" class="w-20 h-20 rounded-full shrink-0" style="border: 2px solid rgba(0,0,0,0.08);">
+          <img src="{{author.picture}}" alt="{{author.name}}" class="w-20 h-20 rounded-full shrink-0" style="border: 2px solid rgba(0,0,0,0.06);">
           {{else}}
           <div class="w-20 h-20 rounded-full bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-2xl font-bold text-white shrink-0">
             {{author.name}}
@@ -315,7 +317,7 @@
     <!-- CTA Section -->
     <section class="py-16 sm:py-20">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="relative overflow-hidden rounded-3xl cta-gradient shadow-2xl" style="box-shadow: 0 25px 50px -12px rgba(79, 70, 229, 0.25);">
+        <div class="section-dark relative overflow-hidden rounded-3xl cta-gradient shadow-2xl" style="box-shadow: 0 25px 50px -12px rgba(79, 70, 229, 0.25);">
           <div class="cta-glow"></div>
 
           <div class="relative z-10 px-5 sm:px-8 py-10 sm:py-14 md:py-20 text-center">
@@ -323,11 +325,11 @@
             <p class="text-indigo-100 mb-8 text-lg max-w-2xl mx-auto leading-relaxed">
               Join thousands of developers using FastMode to ship production-ready sites faster than ever before.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://app.fastmode.ai/register" class="btn-glow inline-flex items-center justify-center px-8 py-3.5 bg-white text-indigo-950 rounded-full font-bold text-base hover:bg-indigo-50 transition-all shadow-lg hover:shadow-xl">
-                Get Started for Free
+            <div class="hero-buttons">
+              <a href="https://app.fastmode.ai/register" class="cta-btn-primary">
+                Get Started for Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
-              <a href="/pricing" class="btn-secondary inline-flex items-center justify-center px-8 py-3.5 text-white rounded-full font-bold text-base border border-white/20 transition-all" style="background: rgba(255,255,255,0.1);">
+              <a href="/pricing" class="cta-btn-secondary">
                 View Pricing
               </a>
             </div>
