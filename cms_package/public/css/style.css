@@ -3958,11 +3958,11 @@ html::-webkit-scrollbar-thumb:hover {
   /* --- Standardized Mobile Heading Scale ---
      text-4xl  1.875rem  → hero / CTA headlines
      text-3xl  1.5rem    → section headers
-     text-2xl  1.5rem    → feature / deep-dive titles (same weight as section headers)
+     text-2xl  1.375rem  → feature / deep-dive titles
      text-xl   1.125rem  → card titles, plan names
      text-lg   0.9375rem → body text, descriptions */
   .text-3xl { font-size: 1.5rem; line-height: 1.3; }
-  .text-2xl { font-size: 1.5rem; line-height: 1.3; }
+  .text-2xl { font-size: 1.375rem; line-height: 1.3; }
   .text-xl  { font-size: 1.125rem; line-height: 1.4; }
   .text-lg  { font-size: 0.9375rem; line-height: 1.6; }
 
