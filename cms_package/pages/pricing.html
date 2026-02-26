@@ -107,41 +107,41 @@
 
         <div class="grid md:grid-cols-2 gap-5 sm:gap-6 md:gap-8 max-w-4xl mx-auto">
           <!-- Free Plan -->
-          <div class="p-5 sm:p-6 md:p-8 rounded-3xl flex flex-col relative overflow-hidden" style="background: #ffffff; border: 1px solid rgba(0,0,0,0.06);">
+          <div class="p-5 sm:p-6 md:p-8 rounded-3xl flex flex-col relative" style="background: #ffffff; border: 1px solid rgba(0,0,0,0.06); transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);">
             <div class="mb-8">
-              <h3 class="text-xl font-bold mb-2" style="color: #111827;">Free</h3>
-              <div class="flex items-baseline gap-1 mb-2">
+              <h3 class="text-xl font-bold mb-3" style="color: #111827;">Free</h3>
+              <div class="flex items-baseline gap-1 mb-3">
                 <span class="text-4xl font-bold" style="color: #111827;">$0</span>
               </div>
               <p class="text-sm" style="color: #6B7280;" data-edit-key="free-plan-tagline">Fast hosting on a Fastmode subdomain</p>
             </div>
 
-            <ul class="space-y-4 mb-8 flex-1">
-              <li class="flex items-start gap-3 text-sm" style="color: #4B5563;">
-                <svg class="w-5 h-5 text-indigo-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Hosted on a fastmode.site subdomain</span>
-              </li>
-              <li class="flex items-start gap-3 text-sm" style="color: #4B5563;">
-                <svg class="w-5 h-5 text-indigo-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>CMS: Blogs, Authors, Team, Downloads</span>
-              </li>
-              <li class="flex items-start gap-3 text-sm" style="color: #4B5563;">
-                <svg class="w-5 h-5 text-indigo-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Visual editor for page copy</span>
-              </li>
-              <li class="flex items-start gap-3 text-sm" style="color: #4B5563;">
-                <svg class="w-5 h-5 text-indigo-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Page-level SEO controls</span>
-              </li>
-              <li class="flex items-start gap-3 text-sm" style="color: #4B5563;">
-                <svg class="w-5 h-5 text-indigo-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Global head code injection (pixels, scripts)</span>
-              </li>
-              <li class="flex items-start gap-3 text-sm" style="color: #4B5563;">
-                <svg class="w-5 h-5 text-indigo-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>API access for CMS + forms</span>
-              </li>
-            </ul>
+            <div class="check-list mb-8 flex-1" style="margin-top: 0;">
+              <div class="check-item">
+                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                Hosted on a fastmode.site subdomain
+              </div>
+              <div class="check-item">
+                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                CMS: Blogs, Authors, Team, Downloads
+              </div>
+              <div class="check-item">
+                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                Visual editor for page copy
+              </div>
+              <div class="check-item">
+                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                Page-level SEO controls
+              </div>
+              <div class="check-item">
+                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                Global head code injection
+              </div>
+              <div class="check-item">
+                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                API access for CMS + forms
+              </div>
+            </div>
 
             <div class="mt-auto">
               <p class="text-xs mb-4 text-center" style="color: #9CA3AF;">Includes Fastmode branding.</p>
@@ -152,45 +152,44 @@
           </div>
 
           <!-- Pro Plan -->
-          <div class="p-5 sm:p-6 md:p-8 rounded-3xl flex flex-col relative overflow-hidden" style="background: #ffffff; border: 1px solid rgba(99,102,241,0.3); box-shadow: 0 25px 50px -12px rgba(99,102,241,0.08);">
-            <div class="absolute top-0 right-0 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-bl-xl">
-              Most popular
-            </div>
+          <div class="p-5 sm:p-6 md:p-8 rounded-3xl flex flex-col relative" style="background: #ffffff; border: 1px solid rgba(99,102,241,0.2); box-shadow: 0 25px 50px -12px rgba(99,102,241,0.08); transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);">
             <div class="mb-8">
-              <h3 class="text-xl font-bold mb-2" style="color: #111827;">Pro</h3>
-              <div class="flex items-baseline gap-1 mb-2">
+              <div class="flex items-center gap-3 mb-3">
+                <h3 class="text-xl font-bold" style="color: #111827;">Pro</h3>
+                <span style="display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.2rem 0.625rem; border-radius: 9999px; font-size: 0.6875rem; font-weight: 600; background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.2); color: #6366f1;">
+                  <svg style="width: 10px; height: 10px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  Recommended
+                </span>
+              </div>
+              <div class="flex items-baseline gap-1 mb-3">
                 <span class="text-4xl font-bold" style="color: #111827;">$29</span>
                 <span style="color: #6B7280;">/ month</span>
               </div>
               <p class="text-sm" style="color: #6B7280;" data-edit-key="pro-plan-tagline">Your domain, no branding, delivered via CDN</p>
             </div>
 
-            <ul class="space-y-4 mb-8 flex-1">
-              <li class="flex items-start gap-3 text-sm" style="color: #111827;">
-                <div class="w-5 h-5 rounded-full flex items-center justify-center shrink-0" style="background: rgba(99,102,241,0.1);">
-                  <svg class="w-3 h-3 text-indigo-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                </div>
-                <span>Connect and host on your custom domain</span>
-              </li>
-              <li class="flex items-start gap-3 text-sm" style="color: #111827;">
-                <div class="w-5 h-5 rounded-full flex items-center justify-center shrink-0" style="background: rgba(99,102,241,0.1);">
-                  <svg class="w-3 h-3 text-indigo-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                </div>
-                <span>Removes Fastmode branding (white-label)</span>
-              </li>
-              <li class="flex items-start gap-3 text-sm" style="color: #111827;">
-                <div class="w-5 h-5 rounded-full flex items-center justify-center shrink-0" style="background: rgba(99,102,241,0.1);">
-                  <svg class="w-3 h-3 text-indigo-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                </div>
-                <span>CDN delivery for faster global performance</span>
-              </li>
-              <li class="flex items-start gap-3 text-sm" style="color: #111827;">
-                <div class="w-5 h-5 rounded-full flex items-center justify-center shrink-0" style="background: rgba(99,102,241,0.1);">
-                  <svg class="w-3 h-3 text-indigo-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                </div>
-                <span>Everything in Free, plus priority support</span>
-              </li>
-            </ul>
+            <div class="check-list mb-8 flex-1" style="margin-top: 0;">
+              <div class="check-item">
+                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                Everything in Free, plus:
+              </div>
+              <div class="check-item">
+                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                Host on your custom domain
+              </div>
+              <div class="check-item">
+                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                Remove Fastmode branding
+              </div>
+              <div class="check-item">
+                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                CDN delivery for global performance
+              </div>
+              <div class="check-item">
+                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                Priority support
+              </div>
+            </div>
 
             <div class="mt-auto">
               <p class="text-xs mb-4 text-center" style="color: #9CA3AF;">Upgrade anytime. Downgrade whenever.</p>
