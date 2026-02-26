@@ -412,63 +412,87 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="padding-top: 3.5rem; padding-bottom: 3.5rem;">
         <p class="reveal reveal-up text-center text-sm font-semibold uppercase tracking-widest" style="color: #9CA3AF; letter-spacing: 0.1em; margin-bottom: 2rem;">Works with every AI coding tool</p>
         <style>
-          /* Desktop logo strip */
-          .logo-strip { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2.5rem 3.5rem; }
-          .logo-strip img { height: 22px; opacity: 0.5; transition: opacity 0.3s; }
-          .logo-strip img:hover { opacity: 1; }
-          .logo-strip img[alt="Replit"] { height: 26px; }
-          .logo-strip img[alt="Windsurf"] { height: 25px; }
+          /* ---- Shared card style ---- */
+          .logo-card {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.625rem 1.5rem;
+            background: #f9fafb;
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 0.75rem;
+            height: 52px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+          }
+          .logo-card:hover {
+            border-color: rgba(99,102,241,0.2);
+            box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+          }
+          .logo-card img {
+            height: 20px;
+            width: auto;
+            opacity: 0.55;
+            transition: opacity 0.3s;
+          }
+          .logo-card:hover img { opacity: 1; }
+          .logo-card img[alt="Replit"] { height: 24px; }
+          .logo-card img[alt="Windsurf"] { height: 23px; }
 
-          /* Mobile marquee - hidden on desktop */
+          /* ---- Desktop: static card grid ---- */
+          .logo-strip {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 0.75rem;
+          }
+
+          /* ---- Mobile marquee: hidden on desktop ---- */
           .logo-marquee { display: none; }
 
           @media (max-width: 639px) {
             .logo-strip { display: none; }
+            .logo-card {
+              height: 48px;
+              padding: 0.625rem 1.25rem;
+            }
+            .logo-card img { height: 18px; opacity: 0.6; }
+            .logo-card img[alt="Replit"] { height: 22px; }
+            .logo-card img[alt="Windsurf"] { height: 21px; }
             .logo-marquee {
               display: block;
               overflow: hidden;
-              mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
               -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+              mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
             }
             .logo-marquee-track {
               display: flex;
-              gap: 0.75rem;
               width: max-content;
-              animation: logoScroll 20s linear infinite;
+              will-change: transform;
+              -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+              animation: logoScroll 18s linear infinite;
             }
-            .logo-card {
-              flex-shrink: 0;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              padding: 0.625rem 1.25rem;
-              background: #f9fafb;
-              border: 1px solid rgba(0,0,0,0.06);
-              border-radius: 0.75rem;
-              height: 48px;
+            /* Use margin instead of gap so -50% lands exactly at the seam */
+            .logo-marquee-track .logo-card {
+              margin-right: 0.75rem;
             }
-            .logo-card img {
-              height: 18px;
-              width: auto;
-              opacity: 0.6;
-            }
-            .logo-card img[alt="Replit"] { height: 22px; }
-            .logo-card img[alt="Windsurf"] { height: 21px; }
             @keyframes logoScroll {
-              0% { transform: translateX(0); }
-              100% { transform: translateX(-50%); }
+              from { transform: translate3d(0, 0, 0); }
+              to   { transform: translate3d(-50%, 0, 0); }
             }
           }
         </style>
 
-        <!-- Desktop: static logo strip -->
+        <!-- Desktop: static logo cards -->
         <div class="reveal reveal-up logo-strip">
-          <img src="/public/images/logos/cursor.svg" alt="Cursor" />
-          <img src="/public/images/logos/lovable.svg" alt="Lovable" />
-          <img src="/public/images/logos/claude.svg" alt="Claude" />
-          <img src="/public/images/logos/replit.svg" alt="Replit" />
-          <img src="/public/images/logos/windsurf.svg" alt="Windsurf" />
-          <img src="/public/images/logos/google-ai-studio.svg" alt="Google AI Studio" />
+          <div class="logo-card"><img src="/public/images/logos/cursor.svg" alt="Cursor" /></div>
+          <div class="logo-card"><img src="/public/images/logos/lovable.svg" alt="Lovable" /></div>
+          <div class="logo-card"><img src="/public/images/logos/claude.svg" alt="Claude" /></div>
+          <div class="logo-card"><img src="/public/images/logos/replit.svg" alt="Replit" /></div>
+          <div class="logo-card"><img src="/public/images/logos/windsurf.svg" alt="Windsurf" /></div>
+          <div class="logo-card"><img src="/public/images/logos/google-ai-studio.svg" alt="Google AI Studio" /></div>
         </div>
 
         <!-- Mobile: scrolling marquee with cards -->
