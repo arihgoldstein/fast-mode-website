@@ -3949,23 +3949,6 @@ html::-webkit-scrollbar-thumb:hover {
   padding-top: 8rem;
 }
 
-/* Mobile-specific reveal keyframes (subtle movement, no opacity change) */
-@keyframes reveal-up-mobile {
-  from { transform: translateY(12px); }
-  to { transform: translateY(0); }
-}
-@keyframes reveal-scale-mobile {
-  from { transform: scale(0.98) translateY(8px); }
-  to { transform: scale(1) translateY(0); }
-}
-@keyframes reveal-left-mobile {
-  from { transform: translateX(-12px); }
-  to { transform: translateX(0); }
-}
-@keyframes reveal-right-mobile {
-  from { transform: translateX(12px); }
-  to { transform: translateX(0); }
-}
 
 /* ============================================
    COMPREHENSIVE MOBILE OPTIMIZATION (< 640px)
@@ -4222,7 +4205,7 @@ html::-webkit-scrollbar-thumb:hover {
 
   /* --- Logo Strip --- */
   .logo-strip img {
-    height: 18px;
+    height: 22px;
     width: auto;
   }
 
@@ -4246,25 +4229,17 @@ html::-webkit-scrollbar-thumb:hover {
     padding: 1.25rem;
   }
 
-  /* --- Reveal animations: disable blank-before-scroll on mobile --- */
+  /* --- Reveal animations: fully disable on mobile to prevent blank/twitch --- */
   .reveal {
     opacity: 1 !important;
+    transform: none !important;
   }
-  .reveal-up.revealed {
-    animation-name: reveal-up-mobile;
-    animation-duration: 0.5s;
-  }
-  .reveal-scale.revealed {
-    animation-name: reveal-scale-mobile;
-    animation-duration: 0.4s;
-  }
-  .reveal-left.revealed {
-    animation-name: reveal-left-mobile;
-    animation-duration: 0.5s;
-  }
+  .reveal.revealed,
+  .reveal-up.revealed,
+  .reveal-scale.revealed,
+  .reveal-left.revealed,
   .reveal-right.revealed {
-    animation-name: reveal-right-mobile;
-    animation-duration: 0.5s;
+    animation: none !important;
   }
 
   /* --- text-4xl (pricing prices, CTA headlines) --- */
