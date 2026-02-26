@@ -4013,7 +4013,7 @@ html::-webkit-scrollbar-thumb:hover {
 
   /* --- Deep Dive Sections --- */
   .deep-dive + .deep-dive {
-    margin-top: 2.5rem;
+    margin-top: 4rem;
   }
   .deep-dive-image {
     aspect-ratio: 16 / 10;
