@@ -3955,12 +3955,15 @@ html::-webkit-scrollbar-thumb:hover {
    ============================================ */
 @media (max-width: 639px) {
 
-  /* --- Global Typography Scaling ---
-     Reduce heading & body sizes so text feels proportional on phones.
-     Responsive variants (sm:, md:, lg:) override these at wider screens. */
+  /* --- Standardized Mobile Heading Scale ---
+     text-4xl  1.875rem  → hero / CTA headlines
+     text-3xl  1.5rem    → section headers
+     text-2xl  1.5rem    → feature / deep-dive titles (same weight as section headers)
+     text-xl   1.125rem  → card titles, plan names
+     text-lg   0.9375rem → body text, descriptions */
   .text-3xl { font-size: 1.5rem; line-height: 1.3; }
-  .text-2xl { font-size: 1.125rem; line-height: 1.35; }
-  .text-xl  { font-size: 1rem; line-height: 1.5; }
+  .text-2xl { font-size: 1.5rem; line-height: 1.3; }
+  .text-xl  { font-size: 1.125rem; line-height: 1.4; }
   .text-lg  { font-size: 0.9375rem; line-height: 1.6; }
 
   /* --- Page Hero (sub-pages) --- */
