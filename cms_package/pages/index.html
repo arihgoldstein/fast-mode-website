@@ -415,17 +415,21 @@
           .logo-strip { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2.5rem 3.5rem; }
           .logo-strip img { height: 22px; opacity: 0.5; transition: opacity 0.3s; }
           .logo-strip img:hover { opacity: 1; }
+          .logo-strip img[alt="Replit"] { height: 34px; }
+          .logo-strip img[alt="Windsurf"] { height: 30px; }
           @media (max-width: 639px) {
             .logo-strip { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.25rem 2rem; }
             .logo-strip img { height: 22px; width: auto; max-width: none; }
+            .logo-strip img[alt="Replit"] { height: 34px !important; }
+            .logo-strip img[alt="Windsurf"] { height: 30px !important; }
           }
         </style>
         <div class="reveal reveal-up logo-strip">
           <img src="/public/images/logos/cursor.svg" alt="Cursor" />
           <img src="/public/images/logos/lovable.svg" alt="Lovable" />
           <img src="/public/images/logos/claude.svg" alt="Claude" />
-          <img src="/public/images/logos/replit.svg" alt="Replit" style="height: 28px;" />
-          <img src="/public/images/logos/windsurf.svg" alt="Windsurf" style="height: 26px;" />
+          <img src="/public/images/logos/replit.svg" alt="Replit" />
+          <img src="/public/images/logos/windsurf.svg" alt="Windsurf" />
           <img src="/public/images/logos/google-ai-studio.svg" alt="Google AI Studio" />
         </div>
       </div>
