@@ -3949,6 +3949,24 @@ html::-webkit-scrollbar-thumb:hover {
   padding-top: 8rem;
 }
 
+/* Mobile-specific reveal keyframes (subtle movement, no opacity change) */
+@keyframes reveal-up-mobile {
+  from { transform: translateY(12px); }
+  to { transform: translateY(0); }
+}
+@keyframes reveal-scale-mobile {
+  from { transform: scale(0.98) translateY(8px); }
+  to { transform: scale(1) translateY(0); }
+}
+@keyframes reveal-left-mobile {
+  from { transform: translateX(-12px); }
+  to { transform: translateX(0); }
+}
+@keyframes reveal-right-mobile {
+  from { transform: translateX(12px); }
+  to { transform: translateX(0); }
+}
+
 /* ============================================
    COMPREHENSIVE MOBILE OPTIMIZATION (< 640px)
    ============================================ */
@@ -3957,14 +3975,14 @@ html::-webkit-scrollbar-thumb:hover {
   /* --- Global Typography Scaling ---
      Reduce heading & body sizes so text feels proportional on phones.
      Responsive variants (sm:, md:, lg:) override these at wider screens. */
-  .text-3xl { font-size: 1.5rem; line-height: 1.3; }
-  .text-2xl { font-size: 1.25rem; line-height: 1.35; }
-  .text-xl  { font-size: 1.0625rem; line-height: 1.5; }
+  .text-3xl { font-size: 1.25rem; line-height: 1.3; }
+  .text-2xl { font-size: 1.125rem; line-height: 1.35; }
+  .text-xl  { font-size: 1rem; line-height: 1.5; }
   .text-lg  { font-size: 0.9375rem; line-height: 1.6; }
 
   /* --- Page Hero (sub-pages) --- */
   .page-hero {
-    padding-top: 6rem;
+    padding-top: 6rem !important;
   }
 
   /* --- Hero Section (Homepage) --- */
@@ -4204,7 +4222,8 @@ html::-webkit-scrollbar-thumb:hover {
 
   /* --- Logo Strip --- */
   .logo-strip img {
-    max-height: 18px;
+    height: 18px;
+    width: auto;
   }
 
   /* --- Blog / Video Cards --- */
@@ -4225,6 +4244,27 @@ html::-webkit-scrollbar-thumb:hover {
   /* --- Bento cards --- */
   .bento-card {
     padding: 1.25rem;
+  }
+
+  /* --- Reveal animations: disable blank-before-scroll on mobile --- */
+  .reveal {
+    opacity: 1 !important;
+  }
+  .reveal-up.revealed {
+    animation-name: reveal-up-mobile;
+    animation-duration: 0.5s;
+  }
+  .reveal-scale.revealed {
+    animation-name: reveal-scale-mobile;
+    animation-duration: 0.4s;
+  }
+  .reveal-left.revealed {
+    animation-name: reveal-left-mobile;
+    animation-duration: 0.5s;
+  }
+  .reveal-right.revealed {
+    animation-name: reveal-right-mobile;
+    animation-duration: 0.5s;
   }
 
   /* --- text-4xl (pricing prices, CTA headlines) --- */
