@@ -24,13 +24,6 @@
       align-items: center;
       gap: 0.375rem;
     }
-    .logo-strip { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2.5rem 3.5rem; }
-    .logo-strip img { height: 22px; opacity: 0.5; transition: opacity 0.3s; }
-    .logo-strip img:hover { opacity: 1; }
-    @media (max-width: 639px) {
-      .logo-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem 1.5rem; align-items: center; }
-      .logo-strip img { height: auto; width: 100%; max-height: 20px; margin: 0 auto; object-fit: contain; }
-    }
     .int-card {
       background: #ffffff;
       border: 1px solid rgba(0, 0, 0, 0.06);
@@ -44,6 +37,51 @@
       box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
       border-color: rgba(0, 0, 0, 0.1);
     }
+    .int-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .int-icon svg { width: 22px; height: 22px; }
+    .int-icon img { width: 24px; height: 24px; object-fit: contain; }
+    .int-category {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.3rem 0.875rem;
+      border-radius: 9999px;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .int-category svg { width: 12px; height: 12px; }
+    .int-section + .int-section { margin-top: 1rem; }
+    .ai-logo-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      background: #f3f4f6;
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+    .ai-logo-icon img {
+      height: 18px;
+      width: auto;
+      max-width: 28px;
+      object-fit: contain;
+    }
+    .ai-logo-icon img[alt="Replit"] { height: 20px; }
+    .ai-logo-icon img[alt="Windsurf"] { height: 19px; }
+    .ai-logo-icon img[alt="Google AI Studio"] { height: 20px; max-width: 32px; }
     #mobile-menu-btn span {
       display: block;
       width: 20px;
@@ -109,10 +147,10 @@
 
   <main class="pt-24">
     <!-- Hero -->
-    <section class="relative pt-12 pb-16 sm:pt-20 sm:pb-20 text-center page-hero">
+    <section class="relative pt-12 pb-8 sm:pt-20 sm:pb-12 text-center page-hero">
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col items-center gap-6">
-          <div class="tag-pill mb-2">
+        <div class="flex flex-col items-center gap-5">
+          <div class="tag-pill">
             <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
             Integrations
           </div>
@@ -120,57 +158,161 @@
             Works with your entire stack
           </h1>
           <p class="text-lg max-w-2xl leading-relaxed" style="color: #6B7280;" data-edit-key="integrations-subtitle">
-            FastMode connects with the AI coding tools, deployment services, and automation platforms you already use.
+            From AI code generation to deployment and automation &mdash; FastMode plugs into the tools you already use.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- AI Coding Tools -->
-    <section style="background: #ffffff; border-top: 1px solid rgba(0,0,0,0.06);">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="padding-top: 3.5rem; padding-bottom: 3.5rem;">
-        <p class="reveal reveal-up text-center text-sm font-semibold uppercase tracking-widest" style="color: #9CA3AF; letter-spacing: 0.1em; margin-bottom: 2rem;">Works with every AI coding tool</p>
-        <div class="reveal reveal-up logo-strip">
-          <img src="/public/images/logos/cursor.svg" alt="Cursor" />
-          <img src="/public/images/logos/lovable.svg" alt="Lovable" />
-          <img src="/public/images/logos/claude.svg" alt="Claude" />
-          <img src="/public/images/logos/replit.svg" alt="Replit" />
-          <img src="/public/images/logos/windsurf.svg" alt="Windsurf" />
-          <img src="/public/images/logos/google-ai-studio.svg" alt="Google AI Studio" />
+    <!-- ==================== AI BUILDERS ==================== -->
+    <section class="int-section py-12 sm:py-16 md:py-20" style="background: #ffffff; border-top: 1px solid rgba(0,0,0,0.06);">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10 sm:mb-12">
+          <div class="reveal reveal-up int-category" style="background: rgba(99,102,241,0.06); color: #6366f1;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            AI Builders
+          </div>
+          <h2 class="reveal reveal-up text-2xl md:text-4xl font-bold mb-4" style="color: #111827;">Compatible with every AI coding tool</h2>
+          <p class="reveal reveal-up text-lg max-w-2xl mx-auto" style="color: #6B7280;">Build your site with any AI tool, then upload to FastMode for instant CMS, hosting, and deployment.</p>
         </div>
-        <p class="reveal reveal-up text-center text-sm mt-8" style="color: #9CA3AF;">All tools connect via our <a href="/docs/mcp-setup" style="color: #6366f1; font-weight: 500;">MCP Server</a></p>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+          <!-- Cursor -->
+          <div class="reveal reveal-up">
+            <div class="int-card">
+              <div class="ai-logo-icon">
+                <img src="/public/images/logos/cursor.svg" alt="Cursor" />
+              </div>
+              <h3 class="text-lg font-bold mb-2" style="color: #111827;">Cursor</h3>
+              <p class="text-sm leading-relaxed" style="color: #6B7280;">Build full-stack sites with AI-powered code editing, then deploy instantly through FastMode.</p>
+            </div>
+          </div>
+
+          <!-- Lovable -->
+          <div class="reveal reveal-up">
+            <div class="int-card">
+              <div class="ai-logo-icon">
+                <img src="/public/images/logos/lovable.svg" alt="Lovable" />
+              </div>
+              <h3 class="text-lg font-bold mb-2" style="color: #111827;">Lovable</h3>
+              <p class="text-sm leading-relaxed" style="color: #6B7280;">Generate production-ready frontends with Lovable, then add CMS and custom domains via FastMode.</p>
+            </div>
+          </div>
+
+          <!-- Claude -->
+          <div class="reveal reveal-up">
+            <div class="int-card">
+              <div class="ai-logo-icon">
+                <img src="/public/images/logos/claude.svg" alt="Claude" />
+              </div>
+              <h3 class="text-lg font-bold mb-2" style="color: #111827;">Claude</h3>
+              <p class="text-sm leading-relaxed" style="color: #6B7280;">Use Claude to generate complete websites with artifacts, then upload the HTML directly to FastMode.</p>
+            </div>
+          </div>
+
+          <!-- Replit -->
+          <div class="reveal reveal-up">
+            <div class="int-card">
+              <div class="ai-logo-icon">
+                <img src="/public/images/logos/replit.svg" alt="Replit" />
+              </div>
+              <h3 class="text-lg font-bold mb-2" style="color: #111827;">Replit</h3>
+              <p class="text-sm leading-relaxed" style="color: #6B7280;">Prototype and build with Replit Agent, then export to FastMode for managed hosting and CMS.</p>
+            </div>
+          </div>
+
+          <!-- Windsurf -->
+          <div class="reveal reveal-up">
+            <div class="int-card">
+              <div class="ai-logo-icon">
+                <img src="/public/images/logos/windsurf.svg" alt="Windsurf" />
+              </div>
+              <h3 class="text-lg font-bold mb-2" style="color: #111827;">Windsurf</h3>
+              <p class="text-sm leading-relaxed" style="color: #6B7280;">Code with Windsurf's AI flows, then ship to production on FastMode with one upload.</p>
+            </div>
+          </div>
+
+          <!-- Google AI Studio -->
+          <div class="reveal reveal-up">
+            <div class="int-card">
+              <div class="ai-logo-icon">
+                <img src="/public/images/logos/google-ai-studio.svg" alt="Google AI Studio" />
+              </div>
+              <h3 class="text-lg font-bold mb-2" style="color: #111827;">Google AI Studio</h3>
+              <p class="text-sm leading-relaxed" style="color: #6B7280;">Generate sites with Gemini in Google AI Studio, then bring them to life on FastMode.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Platform Integrations -->
-    <section class="py-16 sm:py-20 md:py-24 lg:py-32 relative overflow-hidden" style="background: #ffffff;">
+    <!-- ==================== INFRASTRUCTURE ==================== -->
+    <section class="int-section py-12 sm:py-16 md:py-20" style="background: #ffffff;">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-10 sm:mb-14 md:mb-20">
-          <div class="reveal reveal-up section-badge">
+        <div class="text-center mb-10 sm:mb-12">
+          <div class="reveal reveal-up int-category" style="background: rgba(16,185,129,0.06); color: #10b981;">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-            Platform
+            Infrastructure
           </div>
-          <h2 class="reveal reveal-up text-3xl md:text-5xl font-bold mb-6" style="color: #111827;">Deploy, automate, extend</h2>
-          <p class="reveal reveal-up text-lg max-w-2xl mx-auto" style="color: #6B7280;">Powerful integrations that automate your workflow and extend FastMode beyond the dashboard.</p>
+          <h2 class="reveal reveal-up text-2xl md:text-4xl font-bold mb-4" style="color: #111827;">Deploy, secure, and scale</h2>
+          <p class="reveal reveal-up text-lg max-w-2xl mx-auto" style="color: #6B7280;">Enterprise-grade infrastructure with global CDN, automatic SSL, and Git-based deployments.</p>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
           <!-- GitHub -->
           <div class="reveal reveal-up">
             <div class="int-card">
-              <div style="margin-bottom: 1.5rem;">
-                <svg style="width: 36px; height: 36px; color: #24292e;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              <div class="int-icon" style="background: rgba(36,41,46,0.06);">
+                <svg style="color: #24292e;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
               </div>
               <h3 class="text-lg font-bold mb-2" style="color: #111827;">GitHub</h3>
               <p class="text-sm leading-relaxed" style="color: #6B7280;">Connect your repo and auto-deploy on every push to main. Full version history with one-click rollback to any previous deployment.</p>
             </div>
           </div>
 
+          <!-- Cloudflare -->
+          <div class="reveal reveal-up">
+            <div class="int-card">
+              <div class="int-icon" style="background: rgba(245,130,32,0.06);">
+                <svg style="color: #f58220;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/><path d="M12 14l-2-2m2 2l2-2m-2 2V8"/></svg>
+              </div>
+              <h3 class="text-lg font-bold mb-2" style="color: #111827;">Cloudflare</h3>
+              <p class="text-sm leading-relaxed" style="color: #6B7280;">Global CDN with edge caching, DDoS protection, and automatic SSL certificates. Every site gets enterprise-grade performance and security.</p>
+            </div>
+          </div>
+
+          <!-- Custom Domains -->
+          <div class="reveal reveal-up">
+            <div class="int-card">
+              <div class="int-icon" style="background: rgba(99,102,241,0.06);">
+                <svg style="color: #6366f1;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <h3 class="text-lg font-bold mb-2" style="color: #111827;">Custom Domains</h3>
+              <p class="text-sm leading-relaxed" style="color: #6B7280;">Connect any domain with automatic DNS configuration and free SSL. Go live on your own brand in minutes, not hours.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DEVELOPER TOOLS ==================== -->
+    <section class="int-section py-12 sm:py-16 md:py-20" style="background: #ffffff;">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10 sm:mb-12">
+          <div class="reveal reveal-up int-category" style="background: rgba(139,92,246,0.06); color: #8b5cf6;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            Developer Tools
+          </div>
+          <h2 class="reveal reveal-up text-2xl md:text-4xl font-bold mb-4" style="color: #111827;">Automate and extend</h2>
+          <p class="reveal reveal-up text-lg max-w-2xl mx-auto" style="color: #6B7280;">APIs, webhooks, and AI agent access to build custom workflows on top of FastMode.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
           <!-- MCP Server -->
           <div class="reveal reveal-up">
             <div class="int-card">
-              <div style="margin-bottom: 1.5rem;">
-                <svg style="width: 36px; height: 36px; color: #8b5cf6;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+              <div class="int-icon" style="background: rgba(139,92,246,0.06);">
+                <svg style="color: #8b5cf6;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
               </div>
               <h3 class="text-lg font-bold mb-2" style="color: #111827;">MCP Server</h3>
               <p class="text-sm leading-relaxed" style="color: #6B7280;">Model Context Protocol server that lets any AI coding assistant build, deploy, and manage FastMode sites directly from the editor.</p>
@@ -180,8 +322,8 @@
           <!-- Zapier -->
           <div class="reveal reveal-up">
             <div class="int-card">
-              <div style="margin-bottom: 1.5rem;">
-                <svg style="width: 36px; height: 36px;" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" fill="#FF4A00"/><path d="M2 17l10 5 10-5" stroke="#FF4A00" stroke-width="2" fill="none"/><path d="M2 12l10 5 10-5" stroke="#FF4A00" stroke-width="2" fill="none"/></svg>
+              <div class="int-icon" style="background: rgba(255,74,0,0.06);">
+                <svg style="color: #FF4A00;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
               </div>
               <h3 class="text-lg font-bold mb-2" style="color: #111827;">Zapier</h3>
               <p class="text-sm leading-relaxed" style="color: #6B7280;">Trigger workflows on form submissions and CMS updates. Connect to Slack, Google Sheets, Notion, and 6,000+ apps.</p>
@@ -191,8 +333,10 @@
           <!-- OpenClaw -->
           <div class="reveal reveal-up">
             <div class="int-card">
-              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
-                <svg style="width: 36px; height: 36px; color: #6366f1;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 5 5v3a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/><path d="M12 18v4"/><path d="M8 22h8"/></svg>
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+                <div class="int-icon" style="background: rgba(99,102,241,0.06); margin-bottom: 0;">
+                  <svg style="color: #6366f1;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 5 5v3a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/><path d="M12 18v4"/><path d="M8 22h8"/></svg>
+                </div>
                 <span style="display: inline-flex; padding: 0.15rem 0.5rem; border-radius: 6px; font-size: 0.6875rem; font-weight: 600; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.15); color: #10b981;">New</span>
               </div>
               <h3 class="text-lg font-bold mb-2" style="color: #111827;">OpenClaw</h3>
@@ -200,25 +344,14 @@
             </div>
           </div>
 
-          <!-- External API -->
+          <!-- REST API -->
           <div class="reveal reveal-up">
             <div class="int-card">
-              <div style="margin-bottom: 1.5rem;">
-                <svg style="width: 36px; height: 36px; color: #10b981;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <div class="int-icon" style="background: rgba(16,185,129,0.06);">
+                <svg style="color: #10b981;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
               </div>
-              <h3 class="text-lg font-bold mb-2" style="color: #111827;">External API</h3>
+              <h3 class="text-lg font-bold mb-2" style="color: #111827;">REST API</h3>
               <p class="text-sm leading-relaxed" style="color: #6B7280;">Full REST API for reading and writing CMS content programmatically. Works with JavaScript, Python, cURL, and any HTTP client.</p>
-            </div>
-          </div>
-
-          <!-- Let's Encrypt -->
-          <div class="reveal reveal-up">
-            <div class="int-card">
-              <div style="margin-bottom: 1.5rem;">
-                <svg style="width: 36px; height: 36px; color: #3b82f6;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              </div>
-              <h3 class="text-lg font-bold mb-2" style="color: #111827;">Let's Encrypt</h3>
-              <p class="text-sm leading-relaxed" style="color: #6B7280;">Automatic SSL certificates for every site. Free HTTPS with auto-renewal on all custom domains — zero configuration required.</p>
             </div>
           </div>
         </div>
