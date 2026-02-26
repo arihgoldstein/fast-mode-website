@@ -224,8 +224,15 @@
           </a>
         </div>
 
+        <!-- Hero Image -->
+        {{#if main_image}}
+        <div class="relative aspect-video rounded-2xl overflow-hidden mb-8" style="border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.06);">
+          <img src="{{main_image}}" alt="{{name}}" class="w-full h-full object-cover">
+        </div>
+        {{/if}}
+
         <!-- Post Header -->
-        <header class="mb-8 text-center">
+        <header class="text-center">
           {{#if featured}}
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium mb-4" style="background: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.15); color: #6366f1;">
             Featured
@@ -238,13 +245,6 @@
             {{#if author}}by <span style="color: #111827;">{{author.name}}</span>{{/if}}{{#if publishedAt}}{{#if author}} | {{/if}}{{publishedAt}}{{/if}}
           </p>
         </header>
-
-        <!-- Hero Image -->
-        {{#if main_image}}
-        <div class="relative aspect-video rounded-2xl overflow-hidden" style="border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.06);">
-          <img src="{{main_image}}" alt="{{name}}" class="w-full h-full object-cover">
-        </div>
-        {{/if}}
       </div>
     </div>
   </div>
